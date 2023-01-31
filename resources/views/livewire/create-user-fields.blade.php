@@ -17,7 +17,26 @@
     <x-adminlte-input name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-4" type="password"/>
     <x-adminlte-input name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-4" type="password"/>
     <h4 class="text-bold col-12 text-center">Personal information</h4>
+    
+    <x-adminlte-input name="fname" label="Father name *" placeholder="{{$role}}'s Father name" fgroup-class="col-md-3" enable-old-support/>
+    <x-adminlte-select name="f_occupation" label="Father Occupation *" fgroup-class="col-md-3" enable-old-support>
+        @php ($occupations = ['FARMER', 'BUISNESSMAN','GOVERNMENT SERVANT' ,'LABOUR'])
+        @foreach ($occupations as $occupation)
+            <option value="{{$occupation}}" >{{$occupation}}</option>
+        @endforeach
+    </x-adminlte-select>
+
+    <x-adminlte-input name="mname" label="Mother name *" placeholder="{{$role}}'s Mother name" fgroup-class="col-md-3" enable-old-support/>
+    <x-adminlte-select name="m_occupation" label="Mother Occupation *" fgroup-class="col-md-3" enable-old-support>
+        @php ($occupations = ['FARMER', 'BUISNESSMAN','GOVERNMENT SERVANT' ,'LABOUR','HOUSE WOMAN'])
+        @foreach ($occupations as $occupation)
+            <option value="{{$occupation}}" >{{$occupation}}</option>
+        @endforeach
+    </x-adminlte-select>
+    
     <x-adminlte-input-date name="birthday" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose {{$role}}'s birthday..." label="Birthday *"  fgroup-class="col-md-3" value="{{old('birthday')}}" autocomplete="off"/>
+   
+    
     <x-adminlte-select name="gender" label="Gender *" fgroup-class="col-md-3" enable-old-support>
         @php ($genders = ['Male', 'Female'])
         @foreach ($genders as $gender)
@@ -31,18 +50,30 @@
         @endforeach
     </x-adminlte-select>
     <x-adminlte-input name="phone" label="Phone number" placeholder="{{$role}}'s phone number" fgroup-class="col-md-3" enable-old-support/>
-    <x-adminlte-input name="address" placeholder="{{$role}}'s address" fgroup-class="col-md-12 no-resize" label="Address *" enable-old-support/>
+    <x-adminlte-input name="aadhaar_number" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-6"/>
+    <x-adminlte-input name="address" placeholder="{{$role}}'s address" fgroup-class="col-md-12 no-resize" label="Address *" enable-old-support fgroup-class="col-md-6"/>
+   
+   
+    <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Student's Previos School"  enable-old-support autocomplete="off"/>
     <div class="col-md-8">
         @livewire('nationality-and-state-input-fields', ['nationality' => old('nationality'), 'state' => old('state')])
     </div>
     <x-adminlte-input name="city" label="City *" placeholder="{{$role}}'s city" fgroup-class="col-md-4" enable-old-support/>
     @section('plugins.BsCustomFileInput', true)
-    <x-adminlte-select name="religion" label="Religion *" fgroup-class="col-md-6" enable-old-support>
-        @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism', 'Other'])
+    <x-adminlte-select name="religion" label="Religion *" fgroup-class="col-md-4" enable-old-support>
+        @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
         @foreach ($religions as $religion)
             <option value="{{$religion}}"  >{{$religion}}</option>
         @endforeach
     </x-adminlte-select>
+
+    <x-adminlte-select name="caste" label="Caste *" fgroup-class="col-md-4" enable-old-support>
+        @php ($castes = ['GENERAL', 'OBC', 'SC/ST'])
+        @foreach ($castes as $caste)
+            <option value="{{$caste}}"  >{{$caste}}</option>
+        @endforeach
+    </x-adminlte-select>
+
     @section('plugins.TempusDominusBs4', true)
     
     <script>

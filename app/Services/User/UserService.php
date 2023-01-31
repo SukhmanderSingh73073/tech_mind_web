@@ -89,6 +89,16 @@ class UserService
             'city'                  => $record['city'],
             'gender'                => $record['gender'],
             'phone'                 => $record['phone'],
+
+            'aadhaar_number'        =>$record['aadhaar_number'],
+            'caste'                 =>$record['caste'],
+            'fname'                 =>$record['fname'],
+            'mname'                 =>$record['mname'],
+            'f_occupation'          =>$record['f_occupation'],
+            'm_occupation'          =>$record['m_occupation'],
+            'previous_school'       =>$record['previous_school'],
+
+
         ]);
 
         return $user;

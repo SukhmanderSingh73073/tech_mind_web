@@ -23,16 +23,23 @@ class UserSeeder extends Seeder
             'id'                => 1,
             'name'              => 'John Doe',
             'email'             => 'super@admin.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'super admin street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
 
         $superAdmin->assignRole('super-admin');
@@ -42,17 +49,23 @@ class UserSeeder extends Seeder
             'id'                => 2,
             'name'              => 'Jane Doe',
             'email'             => 'admin@admin.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'admin street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
 
         $admin->assignRole('admin');
@@ -61,17 +74,23 @@ class UserSeeder extends Seeder
             'id'                => 3,
             'name'              => 'John Doe',
             'email'             => 'teacher@teacher.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'teacher street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
 
         $teacher->assignRole('teacher');
@@ -84,17 +103,23 @@ class UserSeeder extends Seeder
             'id'                => 4,
             'name'              => 'Jane Doe',
             'email'             => 'student@student.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'student street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
         $student->studentRecord()->create([
             'my_class_id'      => 1,
@@ -109,17 +134,23 @@ class UserSeeder extends Seeder
         $parent = User::create([
             'name'              => 'John Doe',
             'email'             => 'parent@parent.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'parent street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
 
         $parent->assignRole('parent');
@@ -129,17 +160,23 @@ class UserSeeder extends Seeder
         $accountant = User::create([
             'name'              => 'Jane Doe',
             'email'             => 'accountant@accountant.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'accountant street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
 
         $accountant->assignRole('accountant');
@@ -147,17 +184,23 @@ class UserSeeder extends Seeder
         $librarian = User::create([
             'name'              => 'John Doe',
             'email'             => 'libratian@librarian.com',
-            'password'          => Hash::make('password'),
+            'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
             'address'           => 'librarian street',
             'birthday'          => '22/04/04',
-            'nationality'       => 'nigeria',
-            'state'             => 'lagos',
-            'city'              => 'lagos',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
         ]);
 
         $librarian->assignRole('librarian');

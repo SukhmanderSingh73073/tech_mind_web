@@ -119,7 +119,7 @@
                     <x-jet-input-error for="phone" />
                 </div>
                 <x-adminlte-select name="religion" label="Religion" fgroup-class="my-3 col-12" enable-old-support wire:model="state.religion">
-                    @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism', 'Other'])
+                    @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
                     @foreach ($religions as $religion)
                         <option value="{{$religion}}" {{Str::lower($religion) == str::lower($this->user->religion) ? 'selected' : ''}} >{{$religion}}</option>
                     @endforeach

@@ -32,7 +32,7 @@
     </div>
     <x-adminlte-input name="city" label="City" placeholder="{{$role}}'s city" fgroup-class="col-md-4" enable-old-support value="{{$user->city}}"/>
     <x-adminlte-select name="religion" label="Religion" fgroup-class="col-md-6" enable-old-support>
-        @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism', 'Other'])
+        @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
         @foreach ($religions as $religion)
             <option value="{{$religion}}" {{Str::lower($religion) == str::lower($user->religion) ? 'selected' : ''}} >{{$religion}}</option>
         @endforeach

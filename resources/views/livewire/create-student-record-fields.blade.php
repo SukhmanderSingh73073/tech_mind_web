@@ -16,5 +16,7 @@
     </x-adminlte-select>
     <x-adminlte-input name="admission_number" label="Admission number *" placeholder="Student's admission number" fgroup-class="col-md-6" enable-old-support autocomplete="off"/>
     <x-adminlte-input-date name="admission_date" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose student's admission date..." label="Date of admission"  fgroup-class="col-md-6" value="{{old('admission_date')}}"  autocomplete="off"/>
+
+    
     @section('plugins.TempusDominusBs4', true)
 </div>
