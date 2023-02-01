@@ -24,6 +24,35 @@ class AdminController extends Controller
     {
         return view('pages.admin.index');
     }
+/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editAdmin()
+    {
+        return view('pages.admin.index');
+    }
+/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteAdmin()
+    {
+        return view('pages.admin.index');
+    }
+
+
+/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function permissionAdmin()
+    {
+        return view('pages.admin.index');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -35,6 +64,16 @@ class AdminController extends Controller
         return view('pages.admin.create');
     }
 
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function abc()
+    {
+        dd("dfd") ; 
+        return view('pages.admin.create');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -77,6 +116,7 @@ class AdminController extends Controller
      */
     public function edit(User $admin)
     {
+        
         $this->authorize('update', [$admin, 'admin']);
 
         return view('pages.admin.edit', compact('admin'));

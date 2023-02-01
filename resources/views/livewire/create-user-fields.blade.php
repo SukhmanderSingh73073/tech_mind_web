@@ -55,6 +55,12 @@
    
    
     <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Student's Previos School"  enable-old-support autocomplete="off"/>
+    
+    
+    
+    
+    
+    
     <div class="col-md-8">
         @livewire('nationality-and-state-input-fields', ['nationality' => old('nationality'), 'state' => old('state')])
     </div>

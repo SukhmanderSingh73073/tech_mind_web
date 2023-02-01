@@ -268,141 +268,138 @@ return [
             'text'  => 'Dashboard',
             'route' => 'dashboard',
         ],
-        ['header' => 'Manage Profile'],
+        // ['header' => 'Manage Profile'],
+        // [
+        //     'type'  => 'sidebar-menu-item',
+        //     'icon'  => 'fas fa-user',
+        //     'text'  => 'User Profile',
+        //     'route' => 'profile.show',
+        // ],
+        // ['header' => 'Multi Schools Management', 'can' => 'header-schools'],
+        
+        
+/////////////////STARTT HERE
+
+
+[
+    'type'    => 'sidebar-menu-item',
+    'text'    => 'ADMIN MANAGEMENT',
+    'icon'    => 'fas fa-user',
+    'can'     => 'menu-admin',
+    'submenu' => [
         [
             'type'  => 'sidebar-menu-item',
-            'icon'  => 'fas fa-user',
-            'text'  => 'User Profile',
-            'route' => 'profile.show',
+            'text'  => 'View Admin',
+            'route' => 'admins.index',
+            'can'   => 'read admin',
         ],
-        ['header' => 'Multi Schools Management', 'can' => 'header-schools'],
+        [
+            'type'  => 'sidebar-menu-item',
+            'text'  => 'Create Admin',
+            'route' => 'admins.create',
+            'can'   => 'create admin',
+        ],
+
+        [
+            'type'  => 'sidebar-menu-item',
+            'text'  => 'Edit Admin',
+            'route' => 'admins.index',
+            'can'   => 'edit admin',
+        ],
+        [
+            'type'  => 'sidebar-menu-item',
+            'text'  => 'Remove Admin',
+            'route' => 'admins.index',
+            'can'   => 'delete admin',
+        ],
+        [
+            'type'  => 'sidebar-menu-item',
+            'text'  => 'Permissions',
+            'route' => 'admins.index',
+            'can'   => 'permission admin',
+        ],
+        
+    ],
+],
+         
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'Schools',
+            'text' => 'COLLEGE MANAGEMENT',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
             'submenu' => [[
                 'type'  => 'sidebar-menu-item',
-                'text'  => 'View Schools',
+                'text'  => 'View Collage',
                 'route' => 'schools.index',
                 'can'   => 'read school',
             ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create School',
+                    'text'  => 'Create Collage',
                     'route' => 'schools.create',
                     'can'   => 'create school',
-                ], ],
-        ],
-        ['header' => 'Administration', 'can' => 'header-administrate'],
-        [
-            'type'  => 'sidebar-menu-item',
-            'icon'  => 'fas fa-cog',
-            'text'  => 'School Settings',
-            'route' => 'schools.settings',
-            'can'   => 'manage school settings',
-        ],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Classes',
-            'icon'    => 'fas fa-chalkboard',
-            'can'     => 'menu-class',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Class Groups',
-                    'route' => 'class-groups.index',
-                    'can'   => 'read class group',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Class Group',
-                    'route' => 'class-groups.create',
-                    'can'   => 'create class group',
+                    'text'  => 'Edit Collage Profile',
+                    'route' => 'schools.index',
+                    'can'   => 'update school',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Classes',
-                    'route' => 'classes.index',
-                    'can'   => 'read class',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Class',
-                    'route' => 'classes.create',
-                    'can'   => 'create class',
+                    'text'  => 'Permissions',
+                    'route' => 'schools.index',
+                    'can'   => 'read school',
                 ],
 
+            
             ],
         ],
+
         [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'sections',
-            'icon'    => 'fas fa-landmark',
-            'can'     => 'menu-section',
-            'submenu' => [
+            'type' => 'sidebar-menu-item',
+            'text' => 'DOCUMENT MANAGEMENT',
+            'icon' => 'fas fa-school',
+            'can'  => 'menu-school',
+
+            'submenu' => [[
+                'type'  => 'sidebar-menu-item',
+                'text'  => 'Collage Document',
+                'route' => 'schools.index',
+                'can'   => 'read school',
+            ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View sections',
-                    'route' => 'sections.index',
-                    'can'   => 'read section',
+                    'text'  => 'Print Document',
+                    'route' => 'schools.create',
+                    'can'   => 'create school',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create section',
-                    'route' => 'sections.create',
-                    'can'   => 'create section',
-                ],
+                
+
+            
             ],
         ],
+
         [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Students',
-            'icon'    => 'fas fa-user',
-            'can'     => 'menu-student',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View students',
-                    'route' => 'students.index',
-                    'can'   => 'read student',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create student',
-                    'route' => 'students.create',
-                    'can'   => 'create student',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Promote students',
-                    'route' => 'students.promote',
-                    'can'   => 'promote student',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Manage promotions',
-                    'route' => 'students.promotions',
-                    'can'   => 'read promotion',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Graduate students',
-                    'route' => 'students.graduate',
-                    'can'   => 'graduate student',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Manage graduations',
-                    'route' => 'students.graduations',
-                    'can'   => 'view graduations',
-                ],
+            'type' => 'sidebar-menu-item',
+            'text' => 'COLOUMN MANAGEMENT',
+            'icon' => 'fas fa-school',
+            'can'  => 'menu-school',
+
+            'submenu' => [[
+                'type'  => 'sidebar-menu-item',
+                'text'  => 'Add Column',
+                'route' => 'schools.index',
+                'can'   => 'read school',
             ],
+               
         ],
+        ],
+        
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'Account Applications',
+            'text'    => 'FINANCE MANAGEMENT',
             'icon'    => 'fas fa-plus',
             'can'     => 'menu-account-application',
             'submenu' => [
@@ -422,218 +419,213 @@ return [
         ],
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'Teachers',
+            'text'    => 'SOFTWARE PLAN',
+            'icon'    => 'fas fa-plus',
+            'can'     => 'menu-account-application',
+            'submenu' => [
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Add Column',
+                    'route' => 'account-applications.index',
+                    'can'   => 'read applicant',
+                ],
+               
+            ],
+        ],
+
+
+        [
+            'type'    => 'sidebar-menu-item',
+            'text'    => 'PAYMENT PLAN',
+            'icon'    => 'fas fa-plus',
+            'can'     => 'menu-account-application',
+            'submenu' => [
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Add Column',
+                    'route' => 'account-applications.index',
+                    'can'   => 'read applicant',
+                ],
+               
+            ],
+        ],
+
+
+        
+
+        [
+            'type'    => 'sidebar-menu-item',
+            'text'    => 'STAFF MANAGEMENT',
             'icon'    => 'fas fa-user',
             'can'     => 'menu-teacher',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View teachers',
+                    'text'  => 'View Staff',
                     'route' => 'teachers.index',
                     'can'   => 'read teacher',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create teacher',
+                    'text'  => 'Add Staff',
                     'route' => 'teachers.create',
                     'can'   => 'create teacher',
                 ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Roll Assignment',
+                    'route' => 'teachers.index',
+                    'can'   => 'read role asignment',
+                ],
+
+                
             ],
         ],
+
+        
+
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'Parents',
+            'text'    => 'STUDENT MANAGEMENT',
             'icon'    => 'fas fa-user',
-            'can'     => 'menu-parent',
+            'can'     => 'menu-student',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View parents',
-                    'route' => 'parents.index',
-                    'can'   => 'read parent',
+                    'text'  => 'VIEW STUDENT',
+                    'route' => 'students.index',
+                    'can'   => 'read student',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create parent',
-                    'route' => 'parents.create',
-                    'can'   => 'create parent',
+                    'text'  => 'ADD STUDENT',
+                    'route' => 'students.create',
+                    'can'   => 'create student',
                 ],
+                
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'WITHDRAW STUDENT',
+                    'route' => 'students.promote',
+                    'can'   => 'promote student',
+                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Promote students',
+                //     'route' => 'students.promote',
+                //     'can'   => 'promote student',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Manage promotions',
+                //     'route' => 'students.promotions',
+                //     'can'   => 'read promotion',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Graduate students',
+                //     'route' => 'students.graduate',
+                //     'can'   => 'graduate student',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Manage graduations',
+                //     'route' => 'students.graduations',
+                //     'can'   => 'view graduations',
+                // ],
             ],
         ],
+
+        
+
+
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'Admins',
-            'icon'    => 'fas fa-user',
-            'can'     => 'menu-admin',
+            'text'    => 'CLASS MANAGEMENT',
+            'icon'    => 'fas fa-chalkboard',
+            'can'     => 'menu-class',
             'submenu' => [
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View Class Groups',
+                //     'route' => 'class-groups.index',
+                //     'can'   => 'read class group',
+                // ],
                 [
+                
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View admins',
-                    'route' => 'admins.index',
-                    'can'   => 'read admin',
+                    'text'  => 'MAKE NEW SECTION',
+                    'route' => 'sections.create',
+                    'can'   => 'create section',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create admin',
-                    'route' => 'admins.create',
-                    'can'   => 'create admin',
+                    'text'  => 'VIEW CLASS',
+                    'route' => 'classes.index',
+                    'can'   => 'read class',
                 ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'ADD CLASS',
+                    'route' => 'classes.create',
+                    'can'   => 'create class',
+                ],
+
             ],
         ],
+
+        
+
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'Academic years',
-            'icon'    => 'fas fa-calendar',
-            'can'     => 'menu-academic-year',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View academic years',
-                    'route' => 'academic-years.index',
-                    'can'   => 'read academic year',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create academic year',
-                    'route' => 'academic-years.create',
-                    'can'   => 'create academic year',
-                ],
-            ],
-        ],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Semesters',
-            'icon'    => 'fas fa-clock',
-            'can'     => 'menu-semester',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View semesters',
-                    'route' => 'semesters.index',
-                    'can'   => 'read semester',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create semester',
-                    'route' => 'semesters.create',
-                    'can'   => 'create semester',
-                ],
-            ],
-        ],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Subjects',
-            'icon'    => 'fas fa-lightbulb',
-            'can'     => 'menu-subject',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View subjects',
-                    'route' => 'subjects.index',
-                    'can'   => 'read subject',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create subject',
-                    'route' => 'subjects.create',
-                    'can'   => 'create subject',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Assign teacher to subjects',
-                    'route' => 'subjects.assign-teacher',
-                    'can'   => 'update subject',
-                ],
-            ],
-        ],
-        ['header' => 'Academics', 'can' => 'header-academics'],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Notices',
-            'icon'    => 'fas fa-bell',
-            'can'     => 'menu-notice',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View notices',
-                    'route' => 'notices.index',
-                    'can'   => 'read notice',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create notice',
-                    'route' => 'notices.create',
-                    'can'   => 'create notice',
-                ],
-            ],
-        ],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Syllabi',
-            'icon'    => 'fas fa-list-alt',
-            'can'     => 'menu-syllabus',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Syllabi',
-                    'route' => 'syllabi.index',
-                    'can'   => 'read syllabus',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Syllabus',
-                    'route' => 'syllabi.create',
-                    'can'   => 'create syllabus',
-                ],
-            ],
-        ],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Timetables',
+            'text'    => 'TIME TABLE MANAGEMENT',
             'icon'    => 'fas fa-tasks',
             'can'     => 'menu-timetable',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Timetables',
+                    'text'  => 'VIEW TIME TABLE',
                     'route' => 'timetables.index',
                     'can'   => 'read timetable',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Timetable',
+                    'text'  => 'CREATE TIME TABLE',
                     'route' => 'timetables.create',
                     'can'   => 'create timetable',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View custom items',
-                    'route' => 'custom-timetable-items.index',
-                    'can'   => 'read custom timetable items',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Custom Items',
-                    'route' => 'custom-timetable-items.create',
-                    'can'   => 'create custom timetable items',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View custom items',
+                //     'route' => 'custom-timetable-items.index',
+                //     'can'   => 'read custom timetable items',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Create Custom Items',
+                //     'route' => 'custom-timetable-items.create',
+                //     'can'   => 'create custom timetable items',
+                // ],
             ],
         ],
+
+        
+
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'Exams',
+            'text'    => 'EXAM MANAGEMENT',
             'icon'    => 'fas fa-book-open',
             'can'     => 'menu-exam',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Exams',
+                    'text'  => 'VIEW EXAM',
                     'route' => 'exams.index',
                     'can'   => 'read exam',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Exam',
+                    'text'  => 'CREATE EXAM',
                     'route' => 'exams.create',
                     'can'   => 'create exam',
                 ],
@@ -657,32 +649,249 @@ return [
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Result Checker',
+                    'text'  => 'RESULT SHEET',
                     'route' => 'exams.result-checker',
                     'can'   => 'check result',
                 ],
             ],
         ],
-        [
-            'type'    => 'sidebar-menu-item',
-            'text'    => 'Grade systems',
-            'icon'    => 'fa fa-graduation-cap',
-            'can'     => 'menu-grade-system',
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Grades',
-                    'route' => 'grade-systems.index',
-                    'can'   => 'read grade system',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Grades',
-                    'route' => 'grade-systems.create',
-                    'can'   => 'create grade system',
-                ],
-            ],
-        ],
+
+
+
+
+
+
+
+
+
+
+
+
+        // ['header' => 'Administration', 'can' => 'header-administrate'],
+        // [
+        //     'type'  => 'sidebar-menu-item',
+        //     'icon'  => 'fas fa-cog',
+        //     'text'  => 'School Settings',
+        //     'route' => 'schools.settings',
+        //     'can'   => 'manage school settings',
+        // ],
+      
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'sections',
+        //     'icon'    => 'fas fa-landmark',
+        //     'can'     => 'menu-section',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View sections',
+        //             'route' => 'sections.index',
+        //             'can'   => 'read section',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create section',
+        //             'route' => 'sections.create',
+        //             'can'   => 'create section',
+        //         ],
+        //     ],
+        // ],
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Students',
+        //     'icon'    => 'fas fa-user',
+        //     'can'     => 'menu-student',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View students',
+        //             'route' => 'students.index',
+        //             'can'   => 'read student',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create student',
+        //             'route' => 'students.create',
+        //             'can'   => 'create student',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Promote students',
+        //             'route' => 'students.promote',
+        //             'can'   => 'promote student',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Manage promotions',
+        //             'route' => 'students.promotions',
+        //             'can'   => 'read promotion',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Graduate students',
+        //             'route' => 'students.graduate',
+        //             'can'   => 'graduate student',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Manage graduations',
+        //             'route' => 'students.graduations',
+        //             'can'   => 'view graduations',
+        //         ],
+        //     ],
+        // ],
+       
+    
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Parents',
+        //     'icon'    => 'fas fa-user',
+        //     'can'     => 'menu-parent',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View parents',
+        //             'route' => 'parents.index',
+        //             'can'   => 'read parent',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create parent',
+        //             'route' => 'parents.create',
+        //             'can'   => 'create parent',
+        //         ],
+        //     ],
+        // ],
+     
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Academic years',
+        //     'icon'    => 'fas fa-calendar',
+        //     'can'     => 'menu-academic-year',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View academic years',
+        //             'route' => 'academic-years.index',
+        //             'can'   => 'read academic year',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create academic year',
+        //             'route' => 'academic-years.create',
+        //             'can'   => 'create academic year',
+        //         ],
+        //     ],
+        // ],
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Semesters',
+        //     'icon'    => 'fas fa-clock',
+        //     'can'     => 'menu-semester',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View semesters',
+        //             'route' => 'semesters.index',
+        //             'can'   => 'read semester',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create semester',
+        //             'route' => 'semesters.create',
+        //             'can'   => 'create semester',
+        //         ],
+        //     ],
+        // ],
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Subjects',
+        //     'icon'    => 'fas fa-lightbulb',
+        //     'can'     => 'menu-subject',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View subjects',
+        //             'route' => 'subjects.index',
+        //             'can'   => 'read subject',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create subject',
+        //             'route' => 'subjects.create',
+        //             'can'   => 'create subject',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Assign teacher to subjects',
+        //             'route' => 'subjects.assign-teacher',
+        //             'can'   => 'update subject',
+        //         ],
+        //     ],
+        // ],
+        // ['header' => 'Academics', 'can' => 'header-academics'],
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Notices',
+        //     'icon'    => 'fas fa-bell',
+        //     'can'     => 'menu-notice',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View notices',
+        //             'route' => 'notices.index',
+        //             'can'   => 'read notice',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create notice',
+        //             'route' => 'notices.create',
+        //             'can'   => 'create notice',
+        //         ],
+        //     ],
+        // ],
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Syllabi',
+        //     'icon'    => 'fas fa-list-alt',
+        //     'can'     => 'menu-syllabus',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View Syllabi',
+        //             'route' => 'syllabi.index',
+        //             'can'   => 'read syllabus',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create Syllabus',
+        //             'route' => 'syllabi.create',
+        //             'can'   => 'create syllabus',
+        //         ],
+        //     ],
+        // ],
+     
+       
+        // [
+        //     'type'    => 'sidebar-menu-item',
+        //     'text'    => 'Grade systems',
+        //     'icon'    => 'fa fa-graduation-cap',
+        //     'can'     => 'menu-grade-system',
+        //     'submenu' => [
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'View Grades',
+        //             'route' => 'grade-systems.index',
+        //             'can'   => 'read grade system',
+        //         ],
+        //         [
+        //             'type'  => 'sidebar-menu-item',
+        //             'text'  => 'Create Grades',
+        //             'route' => 'grade-systems.create',
+        //             'can'   => 'create grade system',
+        //         ],
+        //     ],
+        // ],
         [
             'type'  => 'sidebar-menu-item',
             'text'  => 'View Logs',

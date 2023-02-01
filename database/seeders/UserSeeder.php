@@ -45,8 +45,64 @@ class UserSeeder extends Seeder
         $superAdmin->assignRole('super-admin');
         $superAdmin->save();
 
-        $admin = User::firstOrCreate([
+
+        $superAdmin = User::firstOrCreate([
             'id'                => 2,
+            'name'              => 'John Doe',
+            'email'             => 'subsuper@admin.com',
+            'password'          => Hash::make('Qwerty@123'),
+            'school_id'         => 1,
+            'address'           => 'Sub super admin street',
+            'birthday'          => '22/04/04',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
+            'blood_group'       => 'B+',
+            'email_verified_at' => now(),
+            'gender'            => 'male',
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
+        ]);
+
+        $superAdmin->assignRole('sub-super-admin');
+        $superAdmin->save();
+
+
+        $superAdmin = User::firstOrCreate([
+            'id'                => 3,
+            'name'              => 'John Doe',
+            'email'             => 'manager@admin.com',
+            'password'          => Hash::make('Qwerty@123'),
+            'school_id'         => 1,
+            'address'           => 'Sub super admin street',
+            'birthday'          => '22/04/04',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
+            'blood_group'       => 'B+',
+            'email_verified_at' => now(),
+            'gender'            => 'male',
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
+        ]);
+
+        $superAdmin->assignRole('manager');
+        $superAdmin->save();
+
+
+
+        $admin = User::firstOrCreate([
+            'id'                => 4,
             'name'              => 'Jane Doe',
             'email'             => 'admin@admin.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -71,7 +127,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
 
         $teacher = User::create([
-            'id'                => 3,
+            'id'                => 5,
             'name'              => 'John Doe',
             'email'             => 'teacher@teacher.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -100,7 +156,7 @@ class UserSeeder extends Seeder
         ]);
 
         $student = User::create([
-            'id'                => 4,
+            'id'                => 6,
             'name'              => 'Jane Doe',
             'email'             => 'student@student.com',
             'password'          => Hash::make('Qwerty@123'),

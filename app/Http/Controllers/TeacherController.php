@@ -25,6 +25,18 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function roleAssign()
+    {
+        $this->authorize('viewAny', [User::class, 'teacher']);
+
+        return view('pages.teacher.index');
+    }
+
+      /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $this->authorize('viewAny', [User::class, 'teacher']);

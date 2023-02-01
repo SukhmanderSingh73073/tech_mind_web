@@ -94,7 +94,10 @@ class PermissionSeeder extends Seeder
         Permission::firstOrCreate([
             'name' => 'delete student',
         ]);
-
+        Permission::firstOrCreate([
+            'name' => 'withdraw student',
+        ]);
+        
         //Permission for academic year
         Permission::firstOrCreate([
             'name' => 'create academic year',
@@ -125,7 +128,10 @@ class PermissionSeeder extends Seeder
         Permission::firstOrCreate([
             'name' => 'delete teacher',
         ]);
-
+        Permission::firstOrCreate([
+            'name' => 'read role asignment',
+        ]);
+        
         //Permission for parent
         Permission::firstOrCreate([
             'name' => 'create parent',
@@ -250,6 +256,38 @@ class PermissionSeeder extends Seeder
             'name' => 'delete exam',
         ]);
 
+        Permission::firstOrCreate([
+            'name' => 'exam type',
+        ]);
+
+
+        Permission::firstOrCreate([
+            'name' => 'exam scheam',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'exam admit card',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'exam desk slip',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'exam result sheet',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'exam marksheet',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'exam tc form',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'exam tc',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'exam character certificate',
+        ]);
+        
+
         //permission for grade system
         Permission::firstOrCreate([
             'name' => 'create grade system',
@@ -291,6 +329,9 @@ class PermissionSeeder extends Seeder
         Permission::firstOrCreate([
             'name' => 'delete exam record',
         ]);
+
+
+
 
         //check result permission
         Permission::firstOrCreate([
@@ -384,9 +425,377 @@ class PermissionSeeder extends Seeder
         Permission::firstOrCreate([
             'name' => 'menu-account-application',
         ]);
+
+
+
+         //permission for admins
+         Permission::firstOrCreate([
+            'name' => 'read admin',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'create admin',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'edit admin',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'delete admin',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'permission admin',
+        ]);
+
+        
+
+          //permission for Attendance
+          Permission::firstOrCreate([
+            'name' => 'read attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'create attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'edit attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'delete attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'attendance register',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'read staff attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'create staff attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'edit staff attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'delete staff attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'staff attendance register',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'read student attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'create student attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'edit student attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'delete student attendance',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'student attendance register',
+        ]);
+
+
+          //permission for Documents
+          Permission::firstOrCreate([
+            'name' => 'read documents',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'create documents',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'edit documents',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'delete documents',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage documents',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'print documents',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage logo',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage sign',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage manager',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage teachers',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage exam incharge',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'collage office incharge',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'collage icard',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'collage fees card',
+        ]);
+
+        Permission::firstOrCreate([
+            'name' => 'collage scheam',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'collage admit card',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'collage number sheet',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'collage mark sheet',
+        ]);
+
+       //permission for Finance
+       Permission::firstOrCreate([
+        'name' => 'read finance',
+    ]);
+    Permission::firstOrCreate([
+        'name' => 'incoming finance',
+    ]);
+    Permission::firstOrCreate([
+        'name' => 'expences finance',
+    ]);
+
+    //permission for Software Plan
+    Permission::firstOrCreate([
+        'name' => 'read software plan',
+    ]);
+
+    
+
+
+    //permission for Payment Plan
+    Permission::firstOrCreate([
+        'name' => 'read payment plan',
+    ]);
+//permission for Profile
+Permission::firstOrCreate([
+    'name' => 'read self profile',
+]);
+Permission::firstOrCreate([
+    'name' => 'read collage profile',
+]);
+
+
+//permission for Fees
+Permission::firstOrCreate([
+    'name' => 'read fees',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'create fees',
+]);
+Permission::firstOrCreate([
+    'name' => 'edit fees',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'delete fees',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'create fees chart',
+]);
+Permission::firstOrCreate([
+    'name' => 'fees consession',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'fees collection',
+]);
+
+
+
+//permission for Transport
+Permission::firstOrCreate([
+    'name' => 'read root',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'create root',
+]);
+Permission::firstOrCreate([
+    'name' => 'edit root',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'delete root',
+]);
+
+
+//permission for Transport
+Permission::firstOrCreate([
+    'name' => 'read root fees',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'create root fees',
+]);
+Permission::firstOrCreate([
+    'name' => 'edit root fees',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'delete root fees',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'asign driver',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'read root students',
+]);
+
+
+
+//permission for Work
+Permission::firstOrCreate([
+    'name' => 'read class work',
+]);
+Permission::firstOrCreate([
+    'name' => 'manage class work',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'read home work',
+]);
+Permission::firstOrCreate([
+    'name' => 'manage home work',
+]);
+
+//permission for salary
+Permission::firstOrCreate([
+    'name' => 'read salary',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'create salary',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'edit salary',
+]);
+Permission::firstOrCreate([
+    'name' => 'delete salary',
+]);
+
+Permission::firstOrCreate([
+    'name' => 'distribute salary',
+]);
+
+
+
         /**
          * assign permissions to roles.
          */
+         // assign permission to super-admin
+         $super_admin = Role::where('name', 'local-super-admin')->first();
+         $super_admin->givePermissionTo([
+
+            'read admin',
+            'create admin',
+            'edit admin',
+            'delete admin',
+            'permission admin',
+            'create school',
+            'read school',
+            'update school',
+            'delete school' ,
+            'collage documents',
+            'print documents' ,
+            'read finance' ,
+            'read software plan' ,
+            'read payment plan' ,
+
+         ]) ;  
+
+ // assign permission to sub-super-admin
+ $super_admin = Role::where('name', 'sub-super-admin')->first();
+ $super_admin->givePermissionTo([
+
+    'read self profile',
+    'create attendance',
+    'create school',
+    'read school',
+    'collage documents',
+    'print documents' ,
+    
+ ]) ; 
+
+ // assign permission to Manager
+ $super_admin = Role::where('name', 'manager')->first();
+ $super_admin->givePermissionTo([
+
+    'read self profile',
+    'read collage profile',
+    'create attendance',
+    'create teacher' ,
+    'read teacher' ,
+    'read role asignment' ,
+    'create student',
+    'read student',
+    'withdraw student',
+    'create class',
+    'create section',
+    'read promotion',
+    'reset promotion',
+    
+    'create staff attendance',
+    'staff attendance register',
+       
+    'create student attendance',
+    'student attendance register',
+    'create fees chart' ,
+    'fees consession' ,
+    'fees collection' ,
+    'read fees',
+    'create timetable',
+    'read timetable',
+
+    'create root',
+    'read root',
+    'create root fees',
+    'read root fees',
+    'asign driver' ,
+    'read root students' ,
+    'incoming finance',
+    'expences finance',
+    
+    'read salary',
+    'create salary',
+    'distribute salary' ,
+
+    'exam type' ,
+    'exam scheam',
+    'exam admit card' ,
+    'exam desk slip' ,
+    'exam result sheet' ,
+    'exam marksheet',
+    'exam tc form',
+    'exam tc',
+    'exam character certificate',
+    'read software plan' ,
+    'read payment plan' ,
+    
+ ]) ; 
+
 
         //assign permissions to admin
         $admin = Role::where('name', 'admin')->first();
@@ -543,7 +952,6 @@ class PermissionSeeder extends Seeder
         ]);
 
         //assign permissions to librarian
-
         //assign permissions to accountant
     }
 }

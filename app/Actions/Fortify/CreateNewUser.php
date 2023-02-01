@@ -37,7 +37,18 @@ class CreateNewUser implements CreatesNewUsers
             'state'       => ['required', 'string', 'max:255'],
             'city'        => ['required', 'string', 'max:255'],
             'gender'      => ['required', 'string', 'max:255'],
-            'phone'       => ['string', 'max:255'],
+            'phone'       => ['string', 'max:10'],
+            'aadhaar_number'       => ['string', 'max:12'],
+            'caste'         => ['required', 'string', 'max:255'],
+            'fname'         => ['required', 'string', 'max:255'],
+            'mname'         => ['required', 'string', 'max:255'],
+            'f_occupation'  => ['required', 'string', 'max:255'],
+            'm_occupation'  => ['required', 'string', 'max:255'],
+            'previous_school' => ['required', 'string', 'max:255'],
+
+
+
+
         ])->validate();
 
         $user = User::create([
@@ -54,6 +65,13 @@ class CreateNewUser implements CreatesNewUsers
             'city'        => $input['city'],
             'gender'      => $input['gender'],
             'phone'       => $input['phone'],
+            'aadhaar_number'       => $input['aadhaar_number'],
+            'caste'       => $input['caste'],
+            'fname'       => $input['fname'],
+            'mname'       => $input['mname'],
+            'f_occupation'       => $input['f_occupation'],
+            'm_occupation'       => $input['m_occupation'],
+            'previous_school'       => $input['previous_school'],
         ]);
 
         if (isset($input['photo'])) {

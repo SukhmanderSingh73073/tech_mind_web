@@ -19,17 +19,18 @@ class NationalityAndStateInputFields extends Component
 
     public function mount()
     {
-        $this->nationalities = World::countries()->data->pluck('name');
-
+         $this->nationalities = World::countries()->data->pluck('name');
         //set nationality to null if not found
-        if ($this->nationality != null && !in_array($this->nationality, $this->nationalities->toArray())) {
+        if ($this->nationality != null
+         && !in_array($this->nationality,
+          $this->nationalities->toArray())) {
             $this->nationality = null;
+           
         }
     }
 
     public function updatedNationality()
     {
-        // $this->states = collect(World::where('name.common' , $this->nationality)->first()->hydrateStates()->states->pluck('name'));
         $this->states = collect(World::countries([
             'fields'  => 'states',
             'filters' => [
@@ -40,13 +41,13 @@ class NationalityAndStateInputFields extends Component
             $this->states = collect([['name' => $this->nationality]]);
         }
         $this->state = $this->states[0]['name'];
-
         $this->dispatchBrowserEvent('nationality-updated', ['nationality' => $this->nationality]);
         $this->dispatchBrowserEvent('state-updated', ['state' => $this->state]);
     }
 
     public function loadInitialStates()
     {
+        
         if ($this->nationality == null) {
             $this->nationality = $this->nationalities->first();
         }

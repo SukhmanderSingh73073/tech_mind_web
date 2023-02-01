@@ -8,7 +8,7 @@ use App\Http\Requests\SchoolUpdateRequest;
 use App\Models\School;
 use App\Services\School\SchoolService;
 
-class SchoolController extends Controller
+class DocumentController extends Controller
 {
     /**
      * @var SchoolService
@@ -16,7 +16,7 @@ class SchoolController extends Controller
     public $school;
 
     /**
-     * SchoolController constructor.
+     * DocumentController constructor.
      *
      * @param SchoolService $school
      */

@@ -42,6 +42,14 @@ class User extends Authenticatable implements MustVerifyEmail
         'city',
         'gender',
         'school_id',
+        'aadhaar_number',
+        'caste',
+        'fname',
+        'mname',
+        'f_occupation' ,
+        'm_occupation'  ,
+        'previous_school'
+
     ];
 
     /**
