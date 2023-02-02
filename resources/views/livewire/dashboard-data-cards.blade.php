@@ -1,4 +1,4 @@
-@hasanyrole('admin|super-admin')
+@hasanyrole('admin|super-admin|local-super-admin|sub-super-admin')
 <div class="card">
     <div class="my-4 card-body">
         @can('read school')

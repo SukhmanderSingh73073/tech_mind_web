@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Implicitly grant "Super-Admin" role all permission checks using can()
         Gate::after(function ($user, $ability) {
-            if ($user->hasRole('super-admin')) {
+            if ($user->hasRole('super-admin|local-super-admin|sub-super-admin')) {
                 return true;
             }
         });

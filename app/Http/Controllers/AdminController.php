@@ -29,8 +29,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function editAdmin()
+    public function editAdmins()
     {
+        dd("dfsdf") ;
         return view('pages.admin.index');
     }
 /**

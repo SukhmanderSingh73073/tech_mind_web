@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('test', [App\Http\Controllers\SchoolController::class, "testing"]);
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -134,6 +135,10 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
 
         //admin routes
         Route::resource('admins', AdminController::class);
+        // Route::get('admins/edit_admin', [App\Http\Controllers\AdminController::class, "editAdmins"]);
+
+
+
 
         //teacher routes
         Route::resource('teachers', TeacherController::class);

@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
 
         $superAdmin = User::firstOrCreate([
             'id'                => 1,
-            'name'              => 'John Doe',
+            'name'              => 'super admin',
             'email'             => 'super@admin.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -46,9 +46,36 @@ class UserSeeder extends Seeder
         $superAdmin->save();
 
 
-        $superAdmin = User::firstOrCreate([
+        $localsuperAdmin = User::firstOrCreate([
             'id'                => 2,
-            'name'              => 'John Doe',
+            'name'              => 'local super admin',
+            'email'             => 'localsuper@admin.com',
+            'password'          => Hash::make('Qwerty@123'),
+            'school_id'         => 1,
+            'address'           => 'super admin street',
+            'birthday'          => '22/04/04',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
+            'blood_group'       => 'B+',
+            'email_verified_at' => now(),
+            'gender'            => 'male',
+            'aadhaar_number'    => '567654432', 
+            'caste'             => 'GENERAL', 
+            'fname'             => 'Test Father', 
+            'mname'             => 'Test Mother', 
+            'f_occupation'      => 'FARMER', 
+            'm_occupation'      => 'FARMER', 
+            'previous_school'    => "Test School"
+        ]);
+
+        $localsuperAdmin->assignRole('local-super-admin');
+        $localsuperAdmin->save();
+
+
+        $subsuper = User::firstOrCreate([
+            'id'                => 3,
+            'name'              => 'sub super admin',
             'email'             => 'subsuper@admin.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -69,13 +96,13 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School"
         ]);
 
-        $superAdmin->assignRole('sub-super-admin');
-        $superAdmin->save();
+        $subsuper->assignRole('sub-super-admin');
+        $subsuper->save();
 
 
-        $superAdmin = User::firstOrCreate([
-            'id'                => 3,
-            'name'              => 'John Doe',
+        $manager = User::firstOrCreate([
+            'id'                => 4,
+            'name'              => 'manager',
             'email'             => 'manager@admin.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -96,14 +123,14 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School"
         ]);
 
-        $superAdmin->assignRole('manager');
-        $superAdmin->save();
+        $manager->assignRole('manager');
+        $manager->save();
 
 
 
         $admin = User::firstOrCreate([
-            'id'                => 4,
-            'name'              => 'Jane Doe',
+            'id'                => 5,
+            'name'              => 'admin',
             'email'             => 'admin@admin.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -127,8 +154,8 @@ class UserSeeder extends Seeder
         $admin->assignRole('admin');
 
         $teacher = User::create([
-            'id'                => 5,
-            'name'              => 'John Doe',
+            'id'                => 6,
+            'name'              => 'teacher',
             'email'             => 'teacher@teacher.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -156,8 +183,8 @@ class UserSeeder extends Seeder
         ]);
 
         $student = User::create([
-            'id'                => 6,
-            'name'              => 'Jane Doe',
+            'id'                => 7,
+            'name'              => 'student',
             'email'             => 'student@student.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -188,7 +215,8 @@ class UserSeeder extends Seeder
         $student->assignRole('student');
 
         $parent = User::create([
-            'name'              => 'John Doe',
+            'id'                => 8,
+            'name'              => 'parent',
             'email'             => 'parent@parent.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -214,7 +242,8 @@ class UserSeeder extends Seeder
         $parent->parentRecord()->create();
 
         $accountant = User::create([
-            'name'              => 'Jane Doe',
+            'id'                => 9,
+            'name'              => 'accountant',
             'email'             => 'accountant@accountant.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -238,7 +267,8 @@ class UserSeeder extends Seeder
         $accountant->assignRole('accountant');
 
         $librarian = User::create([
-            'name'              => 'John Doe',
+            'id'                => 10,
+            'name'              => 'libratian',
             'email'             => 'libratian@librarian.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,

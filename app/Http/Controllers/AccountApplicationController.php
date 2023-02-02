@@ -51,6 +51,7 @@ class AccountApplicationController extends Controller
      */
     public function show(User $applicant)
     {
+       // dd("ghhg") ;
         $this->userService->verifyUserIsOfRoleElseNotFound($applicant, 'applicant');
         $this->authorize('view', [$applicant, 'applicant']);
         $data['applicant'] = $applicant;

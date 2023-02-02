@@ -14,41 +14,28 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
+        Role::upsert(
+            [
+            ['guard_name'=>'web' , 'name' => 'super-admin'],
+            ['guard_name'=>'web' , 'name' => 'local-super-admin'],
+            ['guard_name'=>'web' , 'name' => 'sub-super-admin'],
+            ['guard_name'=>'web' , 'name' => 'manager'],
+            ['guard_name'=>'web' , 'name' => 'admin'],
+            ['guard_name'=>'web' , 'name' => 'teacher'],
+            ['guard_name'=>'web' , 'name' => 'student'],
+            ['guard_name'=>'web' , 'name' => 'parent'],
+            ['guard_name'=>'web' , 'name' => 'accountant'],
+            ['guard_name'=>'web' , 'name' => 'librarian'],
+            ['guard_name'=>'web' , 'name' => 'applicant'],
+            
+
+
+            ],
+            ['name']
+            
+        );
+
+   
         
-        
-        Role::firstOrCreate([
-            'name' => 'super-admin',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'local-super-admin',
-        ]);
-        
-        Role::firstOrCreate([
-            'name' => 'sub-super-admin',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'manager',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'admin',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'teacher',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'student',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'parent',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'accountant',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'librarian',
-        ]);
-        Role::firstOrCreate([
-            'name' => 'applicant',
-        ]);
     }
 }

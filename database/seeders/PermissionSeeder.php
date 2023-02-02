@@ -23,6 +23,10 @@ class PermissionSeeder extends Seeder
          */
 
         // Permissions for school
+
+      
+
+
         Permission::firstOrCreate([
             'name' => 'create school',
         ]);
@@ -706,8 +710,8 @@ Permission::firstOrCreate([
          * assign permissions to roles.
          */
          // assign permission to super-admin
-         $super_admin = Role::where('name', 'local-super-admin')->first();
-         $super_admin->givePermissionTo([
+         $local_super_admin = Role::where('name', 'local-super-admin')->first();
+         $local_super_admin->givePermissionTo([
 
             'read admin',
             'create admin',
@@ -727,8 +731,8 @@ Permission::firstOrCreate([
          ]) ;  
 
  // assign permission to sub-super-admin
- $super_admin = Role::where('name', 'sub-super-admin')->first();
- $super_admin->givePermissionTo([
+ $sub_super_admin = Role::where('name', 'sub-super-admin')->first();
+ $sub_super_admin->givePermissionTo([
 
     'read self profile',
     'create attendance',
@@ -740,8 +744,8 @@ Permission::firstOrCreate([
  ]) ; 
 
  // assign permission to Manager
- $super_admin = Role::where('name', 'manager')->first();
- $super_admin->givePermissionTo([
+ $manager = Role::where('name', 'manager')->first();
+ $manager->givePermissionTo([
 
     'read self profile',
     'read collage profile',
