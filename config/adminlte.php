@@ -275,12 +275,12 @@ return [
             'route' => 'profile.show',
         ],
 
-        [
-            'type'  => 'sidebar-menu-item',
-            'icon'  => 'fas fa-user',
-            'text'  => 'PROFILE NEW',
-            'route' => 'create.profiles',
-        ],
+        // [
+        //     'type'  => 'sidebar-menu-item',
+        //     'icon'  => 'fas fa-user',
+        //     'text'  => 'PROFILE NEW',
+        //     'route' => 'create.profiles',
+        // ],
         
 
         /////////////////STARTT HERE
@@ -310,7 +310,7 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Edit Admin',
-                    'route' => 'admins.index',
+                    'route' => 'admins.edit_admin',
                     'can'   => 'edit admin',
                 ],
                 [
@@ -371,6 +371,12 @@ return [
             'icon'    => 'fas fa-user',
             'can'     => 'menu-teacher',
             'submenu' => [
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View Collage',
+                //     'route' => 'schools.index',
+                //     'can'   => 'read school',
+                // ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Staff',

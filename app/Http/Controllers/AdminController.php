@@ -31,7 +31,7 @@ class AdminController extends Controller
      */
     public function editAdmins()
     {
-        dd("dfsdf") ;
+        dd("Sddf") ; 
         return view('pages.admin.index');
     }
 /**

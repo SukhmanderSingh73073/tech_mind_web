@@ -135,8 +135,9 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
 
         //admin routes
         Route::resource('admins', AdminController::class);
-        // Route::get('admins/edit_admin', [App\Http\Controllers\AdminController::class, "editAdmins"]);
+        Route::get('admins/edit_admin', [App\Http\Controllers\AdminController::class, "editAdmins"])->name("admins.edit_admin");
 
+        
 
 
 
