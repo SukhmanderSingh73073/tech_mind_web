@@ -316,13 +316,13 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Remove Admin',
-                    'route' => 'admins.index',
+                    'route' => 'admins.delete_admin',
                     'can'   => 'delete admin',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Permissions',
-                    'route' => 'admins.index',
+                    'route' => 'admins.admin_permission',
                     'can'   => 'permission admin',
                 ],
 
@@ -351,13 +351,13 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Edit Collage Profile',
-                    'route' => 'schools.index',
+                    'route' => 'schools.edit_schools',
                     'can'   => 'update school',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Permissions',
-                    'route' => 'schools.index',
+                    'route' => 'schools.schools_permission',
                     'can'   => 'read school',
                 ],
 
@@ -383,18 +383,18 @@ return [
                     'route' => 'teachers.index',
                     'can'   => 'read teacher',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Staff',
-                    'route' => 'teachers.create',
-                    'can'   => 'create teacher',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Roll Assignment',
-                    'route' => 'teachers.index',
-                    'can'   => 'read role asignment',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Add Staff',
+                //     'route' => 'teachers.create',
+                //     'can'   => 'create teacher',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View Roll Assignment',
+                //     'route' => 'teachers.index',
+                //     'can'   => 'read role asignment',
+                // ],
 
 
             ],
@@ -503,7 +503,7 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Print Document',
-                    'route' => 'schools.create',
+                    'route' => 'schools.index',
                     'can'   => 'create school',
                 ],
 

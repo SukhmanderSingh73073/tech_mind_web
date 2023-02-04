@@ -139,7 +139,26 @@ class SchoolController extends Controller
     }
 
 
+    
+ /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editSchools()
+    {
+        return view('pages.school.index');
+    }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function permissionSchools()
+    {
+        return view('pages.school.index');
+    }
 
     /**
      * SchoolController constructor.

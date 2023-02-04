@@ -24,14 +24,17 @@ class AdminController extends Controller
     {
         return view('pages.admin.index');
     }
-/**
+
+    
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function editAdmins()
+    public function permissionAdmins()
     {
-        dd("Sddf") ; 
+        
         return view('pages.admin.index');
     }
 /**
@@ -39,7 +42,17 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function deleteAdmin()
+    public function editAdmins()
+    {
+        
+        return view('pages.admin.index');
+    }
+/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteAdmins()
     {
         return view('pages.admin.index');
     }

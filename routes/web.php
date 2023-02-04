@@ -34,6 +34,9 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
     Route::get('schools/settings', ['App\Http\Controllers\SchoolController', 'settings'])->name('schools.settings')->middleware('App\Http\Middleware\EnsureSuperAdminHasSchoolId');
 
     //School routes
+    Route::get('schools/schools_permission', [App\Http\Controllers\SchoolController::class, "permissionSchools"])->name("schools.schools_permission");
+        Route::get('schools/edit_schools', [App\Http\Controllers\SchoolController::class, "editSchools"])->name("schools.edit_schools");
+       
     Route::resource('schools', SchoolController::class);
     Route::post('schools/set-school', ['App\Http\Controllers\SchoolController', 'setSchool'])->name('schools.setSchool');
 
@@ -134,8 +137,10 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('students/{student}/print', ['App\Http\Controllers\StudentController', 'printProfile'])->name('students.print-profile')->withoutMiddleware(['App\Http\Middleware\PreventGraduatedStudent']);
 
         //admin routes
-        Route::resource('admins', AdminController::class);
+        Route::get('admins/admin_permission', [App\Http\Controllers\AdminController::class, "permissionAdmins"])->name("admins.admin_permission");
         Route::get('admins/edit_admin', [App\Http\Controllers\AdminController::class, "editAdmins"])->name("admins.edit_admin");
+        Route::get('admins/delete_admin', [App\Http\Controllers\AdminController::class, "deleteAdmins"])->name("admins.delete_admin");
+        Route::resource('admins', AdminController::class);
 
         
 
