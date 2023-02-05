@@ -24,6 +24,15 @@ class AdminController extends Controller
     {
         return view('pages.admin.index');
     }
+ /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminCreateProfile()
+    {
+        return view('pages.admin.createprofile');
+    }
 
     
 

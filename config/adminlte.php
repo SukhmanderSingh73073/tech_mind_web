@@ -325,6 +325,14 @@ return [
                     'route' => 'admins.admin_permission',
                     'can'   => 'permission admin',
                 ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Create Profile',
+                    'route' => 'admins.admin_create_profile',
+                    'can'   => 'permission admin',
+                ],
+
+                
 
             ],
         ],

@@ -137,6 +137,7 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('students/{student}/print', ['App\Http\Controllers\StudentController', 'printProfile'])->name('students.print-profile')->withoutMiddleware(['App\Http\Middleware\PreventGraduatedStudent']);
 
         //admin routes
+        Route::get('admins/admin_create_profile', [App\Http\Controllers\AdminController::class, "adminCreateProfile"])->name("admins.admin_create_profile");
         Route::get('admins/admin_permission', [App\Http\Controllers\AdminController::class, "permissionAdmins"])->name("admins.admin_permission");
         Route::get('admins/edit_admin', [App\Http\Controllers\AdminController::class, "editAdmins"])->name("admins.edit_admin");
         Route::get('admins/delete_admin', [App\Http\Controllers\AdminController::class, "deleteAdmins"])->name("admins.delete_admin");
