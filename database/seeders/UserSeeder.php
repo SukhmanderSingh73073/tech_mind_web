@@ -130,7 +130,7 @@ class UserSeeder extends Seeder
 
         $admin = User::firstOrCreate([
             'id'                => 5,
-            'name'              => 'admin',
+            'name'              => 'admin principal',
             'email'             => 'admin@admin.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -155,7 +155,7 @@ class UserSeeder extends Seeder
 
         $teacher = User::create([
             'id'                => 6,
-            'name'              => 'teacher',
+            'name'              => 'school teacher',
             'email'             => 'teacher@teacher.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -184,7 +184,7 @@ class UserSeeder extends Seeder
 
         $student = User::create([
             'id'                => 7,
-            'name'              => 'student',
+            'name'              => 'class student',
             'email'             => 'student@student.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -216,7 +216,7 @@ class UserSeeder extends Seeder
 
         $parent = User::create([
             'id'                => 8,
-            'name'              => 'parent',
+            'name'              => 'student parent',
             'email'             => 'parent@parent.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -243,7 +243,7 @@ class UserSeeder extends Seeder
 
         $accountant = User::create([
             'id'                => 9,
-            'name'              => 'accountant',
+            'name'              => 'collage accountant',
             'email'             => 'accountant@accountant.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -268,7 +268,7 @@ class UserSeeder extends Seeder
 
         $librarian = User::create([
             'id'                => 10,
-            'name'              => 'libratian',
+            'name'              => 'collage libratian',
             'email'             => 'libratian@librarian.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,

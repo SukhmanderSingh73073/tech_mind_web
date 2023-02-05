@@ -5,7 +5,7 @@
 
 @section('content_header')
     <h1 class=""> 
-        {{ __('Teachers') }}
+        {{ __('Teachersddddd') }}
     </h1>
 
     @livewire('show-set-school')
@@ -18,7 +18,10 @@
 @stop
 
 @section('content') 
-    @livewire('list-teachers-table')
+
+@livewire('school-set')
+
+@livewire('list-teachers-table')
     
     @livewire('display-status')
 @stop

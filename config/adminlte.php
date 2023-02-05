@@ -281,7 +281,7 @@ return [
         //     'text'  => 'PROFILE NEW',
         //     'route' => 'create.profiles',
         // ],
-        
+
 
         /////////////////STARTT HERE
 
@@ -332,7 +332,7 @@ return [
                     'can'   => 'permission admin',
                 ],
 
-                
+
 
             ],
         ],
@@ -367,6 +367,18 @@ return [
                     'text'  => 'Permissions',
                     'route' => 'schools.schools_permission',
                     'can'   => 'read school',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View academic years',
+                    'route' => 'academic-years.index',
+                    'can'   => 'read academic year',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Create academic year',
+                    'route' => 'academic-years.create',
+                    'can'   => 'create academic year',
                 ],
 
 
@@ -466,12 +478,12 @@ return [
             'icon'    => 'fas fa-chalkboard',
             'can'     => 'menu-class',
             'submenu' => [
-                // [
-                //     'type'  => 'sidebar-menu-item',
-                //     'text'  => 'View Class Groups',
-                //     'route' => 'class-groups.index',
-                //     'can'   => 'read class group',
-                // ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Create Class Group',
+                    'route' => 'class-groups.create',
+                    'can'   => 'create class group',
+                ],
                 [
 
                     'type'  => 'sidebar-menu-item',
