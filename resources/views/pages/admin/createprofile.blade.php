@@ -21,19 +21,22 @@
 
 @stop
 
-
-
-
 @section('content') 
-
-<x-adminlte-select name="role_type" label="Select Role Here *" fgroup-class="col-md-3" enable-old-support>
-        @php ($occupations = ['Admin' , 'Manager' , 'Teacher' ,'Student'])
+<x-adminlte-select 
+onchange="changeHandler"
+name="role_type" label="Select Role Here *" fgroup-class="col-md-3" enable-old-support>
+        @php ($occupations = ['Admin' , 'Teacher' ,'Student'])
         @foreach ($occupations as $occupation)
-            <option value="{{$occupation}}" >{{$occupation}}</option>
+            <option  value="{{$occupation}}" >{{$occupation}}</option>
         @endforeach
     </x-adminlte-select>
 
+  
     @livewire('create-admin-form')
-
     @livewire('display-status')
+    <scrip>
+        function changeHandler(e){
+            console.log("Tests ",e)
+        }
+    </scrip>
 @stop
