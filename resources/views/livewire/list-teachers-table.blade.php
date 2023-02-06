@@ -11,12 +11,12 @@
                     <td style="text-transform: none">{{ $teacher->email}}</td>
                     <td>{{$teacher->gender}}</td>
                     <td>{{$teacher->address}}</td>
-                    <td>@livewire('dropdown-links', [
-                        'links' => [
-                        ['href' => route("teachers.edit", $teacher->id), 'text' => 'Edit profile', 'icon' => 'fas fa-cog'],
-                        ['href' => route("teachers.show", $teacher->id), 'text' => 'View profile', 'icon' => 'fas fa-eye'],
-                        ],
-                    ],)</td>
+                    
+                    <td>
+                  <button  class="btn btn-primary" onclick="actionHandle('/dashboard/teachers/{{$teacher->id}}/edit')"   ><i class="fas fa-pen"></i></button>
+                  <button  class="btn btn-secondary" onclick="actionHandle('/dashboard/teachers/{{$teacher->id}}')" data-url="teachers.edit" data-id="{{$teacher->id}}"  ><i class="fas fa-eye "></i></button>
+                </td>
+                   
                     <td>
                         @livewire('delete-modal', ['modal_id' => $teacher->id ,"action" => route('teachers.destroy', $teacher->id), 'item_name' => $teacher->name])
                     </td>

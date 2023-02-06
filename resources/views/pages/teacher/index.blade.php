@@ -5,7 +5,7 @@
 
 @section('content_header')
     <h1 class=""> 
-        {{ __('Teachersddddd') }}
+        {{ __('Teachers') }}
     </h1>
 
     @livewire('show-set-school')
@@ -35,4 +35,10 @@
 @livewire('list-teachers-table')
     
     @livewire('display-status')
+
+    <script>
+        function actionHandle(url){
+            window.open(window.location.origin+url,"_self")
+        }
+    </script>
 @stop

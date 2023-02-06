@@ -437,12 +437,12 @@ return [
                     'route' => 'students.index',
                     'can'   => 'read student',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'ADD STUDENT',
-                    'route' => 'students.create',
-                    'can'   => 'create student',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'ADD STUDENT',
+                //     'route' => 'students.create',
+                //     'can'   => 'create student',
+                // ],
 
                 [
                     'type'  => 'sidebar-menu-item',

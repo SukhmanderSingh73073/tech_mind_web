@@ -30,4 +30,9 @@
     @livewire('list-students-table')
 
     @livewire('display-status')
+    <script>
+        function actionHandle(url){
+            window.open(window.location.origin+url,"_self")
+        }
+    </script>
 @stop
