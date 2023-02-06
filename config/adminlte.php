@@ -276,7 +276,7 @@ return [
         // [
         //     'type'  => 'sidebar-menu-item',
         //     'icon'  => 'fas fa-user',
-        //     'text'  => 'PROFILE',
+        //     'text'  => 'PROFILE SElf',
         //     'route' => 'profile.show',
         // ],
         
@@ -305,25 +305,25 @@ return [
                     'route' => 'admins.index',
                     'can'   => 'read admin',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Admin',
-                    'route' => 'admins.create',
-                    'can'   => 'create admin',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Create Admin',
+                //     'route' => 'admins.create',
+                //     'can'   => 'create admin',
+                // ],
 
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Edit Admin',
-                    'route' => 'admins.edit_admin',
-                    'can'   => 'edit admin',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Remove Admin',
-                    'route' => 'admins.delete_admin',
-                    'can'   => 'delete admin',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Edit Admin',
+                //     'route' => 'admins.edit_admin',
+                //     'can'   => 'edit admin',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Remove Admin',
+                //     'route' => 'admins.delete_admin',
+                //     'can'   => 'delete admin',
+                // ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Permissions',

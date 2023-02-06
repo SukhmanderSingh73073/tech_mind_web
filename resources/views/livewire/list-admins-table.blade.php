@@ -30,7 +30,17 @@
                 </td> 
 
 
-                <!-- @if (strpos(url()->current(), 'edit_admin') !== false)
+
+
+
+            </tr>
+            @endforeach
+        </x-adminlte-datatable>
+    </div>
+</div>
+
+
+               <!-- @if (strpos(url()->current(), 'edit_admin') !== false)
                 <td>@livewire('dropdown-links', [
                     'links' => [
                     ['href' => route("admins.edit", $admin->id), 'text' => 'Edit profile', 'icon' => 'fas fa-cog'],
@@ -49,12 +59,6 @@
                     ],)
                 </td>
                 
-                @endif -->
+                @endif  
 
-
-
-            </tr>
-            @endforeach
-        </x-adminlte-datatable>
-    </div>
-</div>
+                
