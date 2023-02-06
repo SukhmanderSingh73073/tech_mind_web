@@ -18,7 +18,7 @@
 @stop
 
 @section('content') 
-
+@livewire('school-set')
 <div style='text-align:right' class='col-12'>
     <row>
     

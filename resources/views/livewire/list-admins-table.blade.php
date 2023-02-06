@@ -15,6 +15,10 @@
                 <td>{{$admin->address}}</td>
 
 
+                <!-- <td>
+                 <a href="route('admins.edit', $admin->id)">Edit</a>
+                 
+                </td> -->
              
                 <td>@livewire('dropdown-links', [
                     'links' => [

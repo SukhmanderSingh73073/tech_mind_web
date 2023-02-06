@@ -19,11 +19,15 @@
 <div style='text-align:right' class='col-12'>
     <row>
     
-    <form action={{ route("school.create") }}>
+    <form action={{ route("schools.create") }}>
     <x-adminlte-button type="submit" label="Create New School"  theme="primary" icon="fas fa-key"  />
     <!-- <x-adminlte-button label="Bulk Upload" theme="primary" icon="fas fa-key"  /> -->
     </form>
-    
+    <!-- <div class="col-12">
+    <x-adminlte-input-file name="profile_photo" placeholder="Select profile photo" accept="image/*" fgroup-class="col-md-4 mx-auto my-4"  id="profile-image-input">
+            
+            </x-adminlte-input-file>
+    </div> -->
     </row>
                 
       </div>

@@ -33,12 +33,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -60,12 +60,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -87,12 +87,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -114,12 +114,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -142,12 +142,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -167,12 +167,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -196,12 +196,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
         $student->studentRecord()->create([
@@ -228,12 +228,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -255,12 +255,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 
@@ -280,12 +280,12 @@ class UserSeeder extends Seeder
             'blood_group'       => 'B+',
             'email_verified_at' => now(),
             'gender'            => 'male',
-            'aadhaar_number'    => '567654432', 
-            'caste'             => 'GENERAL', 
-            'fname'             => 'Test Father', 
-            'mname'             => 'Test Mother', 
-            'f_occupation'      => 'FARMER', 
-            'm_occupation'      => 'FARMER', 
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
             'previous_school'    => "Test School"
         ]);
 

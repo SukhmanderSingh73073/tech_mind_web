@@ -16,7 +16,7 @@ return [
 
     'title'         => env('APP_NAME'),
     'title_prefix'  => '',
-    'title_postfix' => '',
+    'title_postfix' => 'School Club',
 
     /*
     |--------------------------------------------------------------------------
@@ -295,7 +295,7 @@ return [
         ///ADMIN MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'ADMIN MANAGEMENT',
+            'text'    => 'Admin Managment',
             'icon'    => 'fas fa-user',
             'can'     => 'menu-admin',
             'submenu' => [
@@ -344,7 +344,7 @@ return [
         ///COLLAGE MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'COLLEGE MANAGEMENT',
+            'text' => 'Collage Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -355,18 +355,18 @@ return [
                     'route' => 'schools.index',
                     'can'   => 'read school',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Collage',
-                    'route' => 'schools.create',
-                    'can'   => 'create school',
-                ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Edit Collage Profile',
-                    'route' => 'schools.edit_schools',
-                    'can'   => 'update school',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Create Collage',
+                //     'route' => 'schools.create',
+                //     'can'   => 'create school',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Edit Collage Profile',
+                //     'route' => 'schools.edit_schools',
+                //     'can'   => 'update school',
+                // ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Permissions',
@@ -392,7 +392,7 @@ return [
         ///STAFF MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'STAFF MANAGEMENT',
+            'text'    => 'Staff Managment',
             'icon'    => 'fas fa-user',
             'can'     => 'menu-teacher',
             'submenu' => [
@@ -427,7 +427,7 @@ return [
         ///STUDENT MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'STUDENT MANAGEMENT',
+            'text'    => 'Student Managment',
             'icon'    => 'fas fa-user',
             'can'     => 'menu-student',
             'submenu' => [
@@ -479,7 +479,7 @@ return [
         ///CLASS MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'CLASS MANAGEMENT',
+            'text'    => 'Class Managment',
             'icon'    => 'fas fa-chalkboard',
             'can'     => 'menu-class',
             'submenu' => [
@@ -514,7 +514,7 @@ return [
         ///DOCUMENT MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'DOCUMENT MANAGEMENT',
+            'text' => 'Document Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -539,7 +539,7 @@ return [
         ///TIME TABLE MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'TIME TABLE MANAGEMENT',
+            'text'    => 'Time Table Managment',
             'icon'    => 'fas fa-tasks',
             'can'     => 'menu-timetable',
             'submenu' => [
@@ -572,7 +572,7 @@ return [
         ///ATTANDANCE MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'ATTANDANCE MANAGEMENT',
+            'text'    => 'Attandance Managment',
             'icon'    => 'fas fa-tasks',
             'can'     => 'menu-timetable',
             'submenu' => [
@@ -594,7 +594,7 @@ return [
         ///FEES MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'FEES MANAGEMENT',
+            'text'    => 'Fees Managment',
             'icon'    => 'fas fa-tasks',
             'can'     => 'menu-timetable',
             'submenu' => [
@@ -616,7 +616,7 @@ return [
         ///TRANSPORT MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'TRANSPORT MANAGEMENT',
+            'text'    => 'Transport Managment',
             'icon'    => 'fas fa-tasks',
             'can'     => 'menu-timetable',
             'submenu' => [
@@ -638,7 +638,7 @@ return [
         ///FINANCE MANAGMENT
         [
             'type'    => 'sidebar-menu-item',
-            'text'    => 'FINANCE MANAGEMENT',
+            'text'    => 'Finance Managment',
             'icon'    => 'fas fa-plus',
             'can'     => 'menu-account-application',
             'submenu' => [
@@ -659,7 +659,7 @@ return [
         ///CLASSWORK MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'CLASSWORK MANAGEMENT',
+            'text' => 'Class Work Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -676,7 +676,7 @@ return [
         ///HOME WORK MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'HOME WORK MANAGEMENT',
+            'text' => 'Home Work Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -693,7 +693,7 @@ return [
         ///SALARY MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'SALARY MANAGEMENT',
+            'text' => 'Salary Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -710,7 +710,7 @@ return [
         ///EXAM MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'EXAM MANAGEMENT',
+            'text' => 'Exam Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -727,7 +727,7 @@ return [
         ///LIBRARY MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'LIBRARY MANAGEMENT',
+            'text' => 'Library Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -744,7 +744,7 @@ return [
         ///PLAN MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'PLAN MANAGEMENT',
+            'text' => 'Plan Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -761,7 +761,7 @@ return [
         ///COLUMN MANAGMENT
         [
             'type' => 'sidebar-menu-item',
-            'text' => 'COLUMN MANAGEMENT',
+            'text' => 'Column Managment',
             'icon' => 'fas fa-school',
             'can'  => 'menu-school',
 
@@ -1321,7 +1321,7 @@ return [
 //             'text'  => 'User Profile',
 //             'route' => 'profile.show',
 //         ],
-//         ['header' => 'Multi Schools Management', 'can' => 'header-schools'],
+//         ['header' => 'Multi Schools Managment', 'can' => 'header-schools'],
 //         [
 //             'type' => 'sidebar-menu-item',
 //             'text' => 'Schools',
