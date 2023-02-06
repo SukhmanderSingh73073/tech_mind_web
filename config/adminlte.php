@@ -267,14 +267,19 @@ return [
             'route' => 'dashboard',
         ],
 
-
         [
             'type'  => 'sidebar-menu-item',
             'icon'  => 'fas fa-user',
             'text'  => 'PROFILE',
-            'route' => 'profile.show',
+            'route' => 'admins.admin_create_profile',
         ],
-
+        // [
+        //     'type'  => 'sidebar-menu-item',
+        //     'icon'  => 'fas fa-user',
+        //     'text'  => 'PROFILE',
+        //     'route' => 'profile.show',
+        // ],
+        
         // [
         //     'type'  => 'sidebar-menu-item',
         //     'icon'  => 'fas fa-user',
@@ -325,13 +330,13 @@ return [
                     'route' => 'admins.admin_permission',
                     'can'   => 'permission admin',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Create Profile',
-                    'route' => 'admins.admin_create_profile',
-                    'can'   => 'permission admin',
-                ],
-
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'Create Profile',
+                //     'route' => 'admins.admin_create_profile',
+                //     'can'   => 'permission admin',
+                // ],
+                    
 
 
             ],
