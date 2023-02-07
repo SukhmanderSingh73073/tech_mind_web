@@ -7,10 +7,10 @@ use Livewire\Component;
 
 class EditClassTeacherForm extends Component
 {
-    public User $teacher;
+    public User $classteacher;
 
     public function render()
     {
-        return view('livewire.edit-classteacher-form');
+        return view('livewire.edit-class-teacher-form');
     }
 }

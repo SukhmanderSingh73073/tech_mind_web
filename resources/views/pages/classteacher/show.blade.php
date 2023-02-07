@@ -18,7 +18,7 @@
 
 @section('content')
 
-    @livewire('show-classteacher-profile', ['classteacher' => $classteacher])
+    @livewire('show-class-teacher-profile', ['classteacher' => $classteacher])
 
     @livewire('display-status')
 

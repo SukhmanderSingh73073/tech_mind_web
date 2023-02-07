@@ -4,7 +4,10 @@
 
 
 @section('content_header')
-    <h1 class=""> 
+<h4 >
+        {{ __('Class Teacher') }}
+    </h4>
+{{-- <h1 class=""> 
         {{ __('classteachers') }}
     </h1>
 
@@ -14,22 +17,11 @@
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
         ['href'=> route('classteachers.index'), 'text'=> 'classteachers', 'active'],
     ]])
-
+--}}
 @stop
 
 @section('content') 
 
-<div style='text-align:right' class='col-12'>
-    <row>
-    
-    <form action={{ route("classteachers.create") }}>
-    <x-adminlte-button type="submit" label="Create New classteacher"  theme="primary" icon="fas fa-key"  />
-    <!-- <x-adminlte-button label="Bulk Upload" theme="primary" icon="fas fa-key"  /> -->
-    </form>
-    
-    </row>
-                
-      </div>
 @livewire('school-set')
 
 @livewire('list-class-teachers-table')

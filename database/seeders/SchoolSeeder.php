@@ -22,6 +22,7 @@ class SchoolSeeder extends Seeder
                 'address'  => 'School of Computing',
                 'code'     => Str::Random(10),
                 'initials' => 'DSI',
+                'phone'    => '5433567897'
             ]
         );
 

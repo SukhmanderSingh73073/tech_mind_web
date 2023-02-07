@@ -18,7 +18,7 @@
 
 @section('content')
 
-@livewire('edit-classteacher-form', ['classteacher' => $classteacher])
+@livewire('edit-class-teacher-form', ['classteacher' => $classteacher])
 
 @livewire('display-status')
 

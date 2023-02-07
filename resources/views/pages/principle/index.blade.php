@@ -4,7 +4,11 @@
 
 
 @section('content_header')
-    <h1 class=""> 
+<h4 class="">
+        {{ __('Manage Principles') }}
+    </h4>
+
+    {{--  <h1 class=""> 
         {{ __('principles') }}
     </h1>
 
@@ -14,22 +18,11 @@
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
         ['href'=> route('principles.index'), 'text'=> 'principles', 'active'],
     ]])
-
+--}}
 @stop
 
 @section('content') 
 
-<div style='text-align:right' class='col-12'>
-    <row>
-    
-    <form action={{ route("principles.create") }}>
-    <x-adminlte-button type="submit" label="Create New principle"  theme="primary" icon="fas fa-key"  />
-    <!-- <x-adminlte-button label="Bulk Upload" theme="primary" icon="fas fa-key"  /> -->
-    </form>
-    
-    </row>
-                
-      </div>
 @livewire('school-set')
 
 @livewire('list-principles-table')

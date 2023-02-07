@@ -4,7 +4,12 @@
 
 
 @section('content_header')
-    <h1 class=""> 
+<h4 class=""> 
+        {{ __('Office Incharges') }}
+    </h4>
+
+   {{--
+<h1 class=""> 
         {{ __('incharges') }}
     </h1>
 
@@ -14,22 +19,13 @@
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
         ['href'=> route('incharges.index'), 'text'=> 'incharges', 'active'],
     ]])
+    --}}
 
 @stop
 
 @section('content') 
 
-<div style='text-align:right' class='col-12'>
-    <row>
-    
-    <form action={{ route("incharges.create") }}>
-    <x-adminlte-button type="submit" label="Create New office_incharge"  theme="primary" icon="fas fa-key"  />
-    <!-- <x-adminlte-button label="Bulk Upload" theme="primary" icon="fas fa-key"  /> -->
-    </form>
-    
-    </row>
-                
-      </div>
+
 @livewire('school-set')
 
 @livewire('list-incharge-table')

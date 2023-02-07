@@ -1,1 +1,1 @@
-@livewire('show-user-profile', ['user' => $office_incharge])
+@livewire('show-user-profile', ['user' => $incharge])

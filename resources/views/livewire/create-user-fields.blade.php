@@ -19,7 +19,11 @@
     <h4 class="text-bold col-12 text-center">Personal information</h4>
     
     <x-adminlte-input name="fname" label="Father name *" placeholder="{{$role}}'s Father name" fgroup-class="col-md-3" enable-old-support/>
-    <x-adminlte-select name="f_occupation" label="Father Occupation *" fgroup-class="col-md-3" enable-old-support>
+    <x-adminlte-select
+     name="f_occupation" 
+     label="Father Occupation *"
+      fgroup-class="col-md-3"
+       enable-old-support>
         @php ($occupations = ['FARMER', 'BUISNESSMAN','GOVERNMENT SERVANT' ,'LABOUR'])
         @foreach ($occupations as $occupation)
             <option value="{{$occupation}}" >{{$occupation}}</option>

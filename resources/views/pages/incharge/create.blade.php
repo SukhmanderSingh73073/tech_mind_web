@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', __('Create office_incharge'))
+@section('title', __('Create office Incharge'))
 
 
 @section('content_header')
     <h1 class=""> 
-        {{ __('Create office_incharge') }}
+        {{ __('Create office Incharge') }}
     </h1>
 
     @livewire('show-set-school')

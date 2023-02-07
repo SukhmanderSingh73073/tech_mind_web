@@ -11,6 +11,6 @@ class ShowClassTeacherProfile extends Component
 
     public function render()
     {
-        return view('livewire.show-classteacher-profile');
+        return view('livewire.show-class-teacher-profile');
     }
 }

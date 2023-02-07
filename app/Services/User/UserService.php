@@ -55,7 +55,11 @@ class UserService
      */
     public function getUsersByRole($role)
     {
-        return User::Role($role)->where('school_id', auth()->user()->school_id)->get();
+        return User::Role($role)
+        ->where('school_id', auth()->user()
+        ->school_id)
+        ->with('school')
+        ->get();
     }
 
     /**

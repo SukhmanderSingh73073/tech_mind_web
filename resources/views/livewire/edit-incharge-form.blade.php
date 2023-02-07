@@ -1,10 +1,10 @@
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">Edit manager {{$office_incharge->name}}</h3>
+        <h3 class="card-title">Edit Incharge {{$incharge->name}}</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('incharge.update', $office_incharge->id)}}" method="POST" enctype="multipart/form-data">
-            @livewire('edit-user-fields', ['role' => 'incharge', 'user'=> $office_incharge]
+        <form action="{{route('incharges.update', $incharge->id)}}" method="POST" enctype="multipart/form-data">
+            @livewire('edit-user-fields', ['role' => 'incharge', 'user'=> $incharge]
             )
                 @csrf
                 @method('put')

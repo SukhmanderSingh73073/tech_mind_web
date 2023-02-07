@@ -4,28 +4,34 @@
 
 
 @section('content_header')
-    <h1 class="">
+<h4 >
         {{ __('Admins') }}
-    </h1>
+    </h4>
+{{-- <h1 class="">
+        {{ __('Admins') }}
+    </h1> 
 
-    @livewire('show-set-school')
+     @livewire('show-set-school') 
 
-    @livewire('breadcrumbs', ['paths' => [
+     @livewire('breadcrumbs', ['paths' => [
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
         ['href'=> route('admins.index'), 'text'=> 'admins', 'active'],
-    ]])
+    ]]) 
+
+    --}}
 
 @stop
 
 @section('content')
-@livewire('school-set')
+{{--@livewire('school-set')
+--}}
+
 <div style='text-align:right' class='col-12'>
     <row>
 
-    <form action={{ route("admins.create") }}>
+    <!-- <form action={{ route("admins.create") }}>
     <x-adminlte-button type="submit" label="Create New Admin"  theme="primary" icon="fas fa-key"  />
-    <!-- <x-adminlte-button label="Bulk Upload" theme="primary" icon="fas fa-key"  /> -->
-    </form>
+    </form> -->
 
     </row>
 

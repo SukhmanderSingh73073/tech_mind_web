@@ -4,10 +4,10 @@
 
 
 @section('content_header')
-    <h1 class=" ">
+    <h4 class=" ">
         {{ __('Create Profile') }}
-    </h1>
-
+    </h4>
+{{--
     @livewire('show-set-school')
     
     @livewire('breadcrumbs', ['paths' => [
@@ -16,7 +16,7 @@
         ['href'=> route('admins.admin_create_profile'), 'text'=> 'create', 'active'],
     ]])
 
-
+    --}}
     
 
 @stop
@@ -24,7 +24,7 @@
 @section('content') 
 <x-adminlte-select onchange="changeHandler()" id="select_id"
 name="role_type" label="Select Role Here *" fgroup-class="tttt col-md-3" enable-old-support>
-        @php ($occupations = ['Admin' , 'Teacher' ,'Student'])
+        @php ($occupations = ['Admin' , 'College'])
         @foreach ($occupations as $occupation)
             <option  value="{{$occupation}}" >{{$occupation}}</option>
         @endforeach
@@ -40,6 +40,9 @@ name="role_type" label="Select Role Here *" fgroup-class="tttt col-md-3" enable-
     <div id="student" class="d-none">
     @livewire('create-student-form')
     </div>
+    <div id="collage" class="d-none">
+    @livewire('create-school-form')
+    </div>
     
 
 
@@ -52,15 +55,27 @@ name="role_type" label="Select Role Here *" fgroup-class="tttt col-md-3" enable-
 function changeHandler() {
     d = document.getElementById("select_id").value;
     if(d=="Admin"){
-        document.getElementById("admin").classList.remove('d-none');
+        document.getElementById("admin").classList.add('d-none');
+        document.getElementById("teacher").classList.remove('d-none');
+        document.getElementById("student").classList.add('d-none');
+        document.getElementById("collage").classList.add('d-none');
+    }else if(d=="College"){
+        document.getElementById("collage").classList.remove('d-none');
+
+        document.getElementById("admin").classList.add('d-none');
         document.getElementById("teacher").classList.add('d-none');
         document.getElementById("student").classList.add('d-none');
+    
     }else if(d=="Teacher"){
+        document.getElementById("collage").classList.add('d-none');
+
         document.getElementById("admin").classList.add('d-none');
         document.getElementById("teacher").classList.remove('d-none');
         document.getElementById("student").classList.add('d-none');
     
     }else if(d=="Student"){
+        document.getElementById("collage").classList.add('d-none');
+
         document.getElementById("admin").classList.add('d-none');
         document.getElementById("teacher").classList.add('d-none');
         document.getElementById("student").classList.remove('d-none');
