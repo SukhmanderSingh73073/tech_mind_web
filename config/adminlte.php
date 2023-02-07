@@ -404,6 +404,38 @@ return [
                 // ],
                 [
                     'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Managers',
+                    'route' => 'teachers.index',
+                    'can'   => 'read teacher',
+                ],
+
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Principals',
+                    'route' => 'teachers.index',
+                    'can'   => 'read teacher',
+                ],
+
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Office Incharge',
+                    'route' => 'teachers.index',
+                    'can'   => 'read teacher',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Class Teachers',
+                    'route' => 'teachers.index',
+                    'can'   => 'read teacher',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Teachers',
+                    'route' => 'teachers.index',
+                    'can'   => 'read teacher',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
                     'text'  => 'View Staff',
                     'route' => 'teachers.index',
                     'can'   => 'read teacher',

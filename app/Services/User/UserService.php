@@ -97,8 +97,11 @@ class UserService
             'f_occupation'          =>$record['f_occupation'],
             'm_occupation'          =>$record['m_occupation'],
             'previous_school'       =>$record['previous_school'],
-
-
+            'sub_caste'             =>$record['sub_caste'],
+            'status'                =>'PENDING',
+            'tehsil'               => $record['tehsil'],
+            'locality'             => $record['locality'],
+            
         ]);
 
         return $user;

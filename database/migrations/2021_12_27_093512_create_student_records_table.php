@@ -10,11 +10,15 @@ return new class() extends Migration {
         Schema::create('student_records', static function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->string('sr_no')->nullable();
+            $table->string('roll_no')->nullable();
             $table->string('admission_number')->nullable();
             $table->date('admission_date');
             $table->foreignId('my_class_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('section_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->boolean('is_graduated')->default(false);
+
+
             $table->timestamps();
             //admission number unique
             $table->unique('admission_number');

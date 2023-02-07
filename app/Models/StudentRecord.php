@@ -13,7 +13,16 @@ class StudentRecord extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['admission_number', 'admission_date', 'my_class_id', 'section_id', 'user_id'];
+    protected $fillable = [
+        'admission_number', 
+        'admission_date',
+         'my_class_id', 
+         'section_id', 
+         'user_id',
+         'roll_no',
+         'sr_no',
+        
+        ];
 
     /**
      * The attributes that should be cast.

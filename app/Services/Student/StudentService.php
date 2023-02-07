@@ -99,6 +99,7 @@ class StudentService
      */
     public function createStudent($record)
     {
+       // dd($record) ;
         DB::transaction(function () use ($record) {
             $student = $this->userService->createUser($record);
             $student->assignRole('student');
@@ -132,6 +133,8 @@ class StudentService
             'section_id'       => $record['section_id'],
             'admission_number' => $record['admission_number'],
             'admission_date'   => $record['admission_date'],
+            'sr_no'            => $record['sr_no'],
+            'roll_no'          => $record['roll_no'],
         ]);
 
         //create record history

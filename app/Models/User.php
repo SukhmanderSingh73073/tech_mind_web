@@ -40,6 +40,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'phone',
         'state',
         'city',
+        'tehsil',
+        'locality',
         'gender',
         'school_id',
         'aadhaar_number',
@@ -48,7 +50,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'mname',
         'f_occupation' ,
         'm_occupation'  ,
-        'previous_school'
+        'previous_school' ,
+        'sub_caste',
+        'status'
 
     ];
 

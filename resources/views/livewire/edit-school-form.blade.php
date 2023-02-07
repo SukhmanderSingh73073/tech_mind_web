@@ -10,6 +10,10 @@
                 {{__('All fields marked * are required')}}
             </p>
             <x-adminlte-input name="name" placeholder="Enter name of school" label="School Name *" value="{{$school->name}}" enable-old-support fgroup-class="col-md-6"/>
+            @if(Auth::user()->email =='super@admin.com')         
+            <x-adminlte-input name="code" placeholder="Enter school code" label="School Code" value="{{$school->code}}" enable-old-support fgroup-class="col-md-6"/>   
+            @endif
+
             <x-adminlte-textarea name="address" placeholder="Enter school branch address" label="School Address *" enable-old-support fgroup-class="col-md-6">
                 {{$school->address}}
             </x-adminlte-textarea>

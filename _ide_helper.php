@@ -1968,6 +1968,7 @@
          */ 
         public static function login($user, $remember = false)
         {
+        
                         /** @var \Illuminate\Auth\SessionGuard $instance */
                         $instance->login($user, $remember);
         }

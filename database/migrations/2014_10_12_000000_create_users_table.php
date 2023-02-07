@@ -28,6 +28,12 @@ return new class() extends Migration {
             $table->string('f_occupation')->comment("FARMER,BUISNESSMAN,GOVERNMENT SERVANT,LABOUR");
             $table->string('m_occupation')->comment("FARMER,BUISNESSMAN,GOVERNMENT SERVANT,LABOUR,HOUSE WOMAN");
             $table->string('previous_school');
+            $table->string('sub_caste');
+            $table->string('status')->comment('PENDING' , 'ACTIVE','BANNED','REJECTED','WITHDRAW');
+            $table->string('tehsil')->default("Local");
+            $table->string('locality')->default("Local");
+            
+
 
             $table->timestamps();
         });

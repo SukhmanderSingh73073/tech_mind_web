@@ -39,7 +39,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'   => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $superAdmin->assignRole('super-admin');
@@ -66,7 +68,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $localsuperAdmin->assignRole('local-super-admin');
@@ -93,7 +97,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $subsuper->assignRole('sub-super-admin');
@@ -120,7 +126,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $manager->assignRole('manager');
@@ -148,7 +156,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $admin->assignRole('admin');
@@ -173,7 +183,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $teacher->assignRole('teacher');
@@ -202,7 +214,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
         $student->studentRecord()->create([
             'my_class_id'      => 1,
@@ -210,7 +224,9 @@ class UserSeeder extends Seeder
             'admission_date'   => '22/04/04',
             'is_graduated'     => false,
             'admission_number' => Str::random(10),
-        ]);
+            'sr_no'            => Str::random(10),
+            'roll_no'          => Str::random(10),
+        ]); 
 
         $student->assignRole('student');
 
@@ -234,7 +250,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $parent->assignRole('parent');
@@ -261,7 +279,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $accountant->assignRole('accountant');
@@ -286,7 +306,9 @@ class UserSeeder extends Seeder
             'mname'             => 'Test Mother',
             'f_occupation'      => 'FARMER',
             'm_occupation'      => 'FARMER',
-            'previous_school'    => "Test School"
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
         ]);
 
         $librarian->assignRole('librarian');

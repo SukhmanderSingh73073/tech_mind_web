@@ -60,6 +60,7 @@ class StudentController extends Controller
      */
     public function store(StudentStoreRequest $request)
     {
+       // dd($request) ;
         $this->authorize('create', [User::class, 'student']);
         $this->student->createStudent($request);
 

@@ -18,14 +18,10 @@ class StudentStoreRequest extends FormRequest
             'admission_date'   => 'required|date|date_format:Y/m/d',
             'my_class_id'      => 'required|exists:my_classes,id',
             'section_id'       => 'required|exists:sections,id',
-            
-            // 'aadhaar_number'   => 'required',
-            // 'caste'            => 'required',
-            // 'fname'            => 'required',
-            // 'mname'            => 'required',
-            // 'f_occupation'     => 'required',
-            // 'm_occupation'     => 'required',
-            // 'previous_school'  => 'required',
+            'sr_no'            => 'nullable|unique:student_records,sr_no',
+            'roll_no'          => 'nullable|unique:student_records,roll_no',
+
+           
 
 
         ];

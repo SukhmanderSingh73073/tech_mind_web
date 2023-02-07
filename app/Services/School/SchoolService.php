@@ -76,6 +76,12 @@ class SchoolService
         $school->initials = $records['initials'];
         $school->phone = $records['phone'];
         $school->email = $records['email'];
+        try {
+            $school->code = $records['code'];
+        } catch (\Throwable $th) {
+            
+        }
+        
         $school->save();
     }
 
