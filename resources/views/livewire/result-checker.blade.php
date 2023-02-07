@@ -25,7 +25,7 @@
                         @endisset
                     </x-adminlte-select>
                     {{--fields are not available to any role not in list--}}
-                    @hasanyrole('super-admin|local-super-admin|sub-super-admin|admin|teacher')
+                    @hasanyrole('super-admin|local-super-admin|sub-super-admin|admin|teacher|manager|classteacher')
                         <x-adminlte-select name="class" label="Current Class"  fgroup-class="col-md-2" enable-old-support wire:model="class">
                             @isset($classes)
                                 @foreach ($classes as $item)

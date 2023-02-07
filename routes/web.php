@@ -133,6 +133,8 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         });
 
         //student routes
+        
+        Route::get('students/withdraw_user', [App\Http\Controllers\StudentController::class, "withdrawUser"])->name("students.withdraw_user");
         Route::resource('students', StudentController::class);
         Route::get('students/{student}/print', ['App\Http\Controllers\StudentController', 'printProfile'])->name('students.print-profile')->withoutMiddleware(['App\Http\Middleware\PreventGraduatedStudent']);
 
@@ -146,6 +148,17 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         
 
 
+        //managers routes
+        Route::resource('managers', ManagerController::class);
+
+        //principles routes
+        Route::resource('principles', PrincipleController::class);
+
+        //incharge routes
+        Route::resource('incharges', InchargeController::class);
+        
+        //classteachers routes
+        Route::resource('classteachers', ClassTeacherController::class);
 
         //teacher routes
         Route::resource('teachers', TeacherController::class);

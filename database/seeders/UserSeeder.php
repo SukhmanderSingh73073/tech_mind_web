@@ -105,9 +105,35 @@ class UserSeeder extends Seeder
         $subsuper->assignRole('sub-super-admin');
         $subsuper->save();
 
+        $admin = User::firstOrCreate([
+            'id'                => 4,
+            'name'              => 'admin principal',
+            'email'             => 'admin@admin.com',
+            'password'          => Hash::make('Qwerty@123'),
+            'school_id'         => 1,
+            'address'           => 'admin street',
+            'birthday'          => '22/04/04',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
+            'blood_group'       => 'B+',
+            'email_verified_at' => now(),
+            'gender'            => 'male',
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
+        ]);
+
+        $admin->assignRole('admin');
 
         $manager = User::firstOrCreate([
-            'id'                => 4,
+            'id'                => 5,
             'name'              => 'manager',
             'email'             => 'manager@admin.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -135,14 +161,13 @@ class UserSeeder extends Seeder
         $manager->save();
 
 
-
-        $admin = User::firstOrCreate([
-            'id'                => 5,
-            'name'              => 'admin principal',
-            'email'             => 'admin@admin.com',
+        $principle = User::firstOrCreate([
+            'id'                => 6,
+            'name'              => 'principle principal',
+            'email'             => 'principle@principle.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
-            'address'           => 'admin street',
+            'address'           => 'principle street',
             'birthday'          => '22/04/04',
             'nationality'       => 'india',
             'state'             => 'punjab',
@@ -161,10 +186,73 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
         ]);
 
-        $admin->assignRole('admin');
+        $principle->assignRole('principle');
+        $principle->save();
+
+        $office_incharge = User::firstOrCreate([
+            'id'                => 7,
+            'name'              => 'office incharge',
+            'email'             => 'office@incharge.com',
+            'password'          => Hash::make('Qwerty@123'),
+            'school_id'         => 1,
+            'address'           => 'principle street',
+            'birthday'          => '22/04/04',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
+            'blood_group'       => 'B+',
+            'email_verified_at' => now(),
+            'gender'            => 'male',
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
+        ]);
+
+        $office_incharge->assignRole('incharge');
+        $office_incharge->save();
+
+        $class_teacher = User::create([
+            'id'                => 8,
+            'name'              => 'class teacher',
+            'email'             => 'class_teacher@teacher.com',
+            'password'          => Hash::make('Qwerty@123'),
+            'school_id'         => 1,
+            'address'           => 'teacher street',
+            'birthday'          => '22/04/04',
+            'nationality'       => 'india',
+            'state'             => 'punjab',
+            'city'              => 'moga',
+            'blood_group'       => 'B+',
+            'email_verified_at' => now(),
+            'gender'            => 'male',
+            'aadhaar_number'    => '567654432',
+            'caste'             => 'GENERAL',
+            'fname'             => 'Test Father',
+            'mname'             => 'Test Mother',
+            'f_occupation'      => 'FARMER',
+            'm_occupation'      => 'FARMER',
+            'previous_school'    => "Test School",
+            'sub_caste'         => 'General',
+            'status'            => 'ACTIVE',
+        ]);
+
+        $class_teacher->assignRole('classteacher');
+
+        $class_teacher->teacherRecord()->create([
+            'user_id' => $class_teacher->id,
+            'type'    =>"class_teacher",
+        ]);
+
+
 
         $teacher = User::create([
-            'id'                => 6,
+            'id'                => 9,
             'name'              => 'school teacher',
             'email'             => 'teacher@teacher.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -192,10 +280,11 @@ class UserSeeder extends Seeder
 
         $teacher->teacherRecord()->create([
             'user_id' => $teacher->id,
+            'type'    =>"teacher",
         ]);
 
         $student = User::create([
-            'id'                => 7,
+            'id'                => 10,
             'name'              => 'class student',
             'email'             => 'student@student.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -231,7 +320,7 @@ class UserSeeder extends Seeder
         $student->assignRole('student');
 
         $parent = User::create([
-            'id'                => 8,
+            'id'                => 11,
             'name'              => 'student parent',
             'email'             => 'parent@parent.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -260,7 +349,7 @@ class UserSeeder extends Seeder
         $parent->parentRecord()->create();
 
         $accountant = User::create([
-            'id'                => 9,
+            'id'                => 12,
             'name'              => 'collage accountant',
             'email'             => 'accountant@accountant.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -287,7 +376,7 @@ class UserSeeder extends Seeder
         $accountant->assignRole('accountant');
 
         $librarian = User::create([
-            'id'                => 10,
+            'id'                => 13,
             'name'              => 'collage libratian',
             'email'             => 'libratian@librarian.com',
             'password'          => Hash::make('Qwerty@123'),

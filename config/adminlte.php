@@ -405,27 +405,27 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Managers',
-                    'route' => 'teachers.index',
+                    'route' => 'managers.index',
                     'can'   => 'read teacher',
                 ],
 
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Principals',
-                    'route' => 'teachers.index',
+                    'route' => 'principles.index',
                     'can'   => 'read teacher',
                 ],
 
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Office Incharge',
-                    'route' => 'teachers.index',
+                    'route' => 'incharges.index',
                     'can'   => 'read teacher',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Class Teachers',
-                    'route' => 'teachers.index',
+                    'route' => 'classteachers.index',
                     'can'   => 'read teacher',
                 ],
                 [
@@ -434,12 +434,12 @@ return [
                     'route' => 'teachers.index',
                     'can'   => 'read teacher',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Staff',
-                    'route' => 'teachers.index',
-                    'can'   => 'read teacher',
-                ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View Staff',
+                //     'route' => 'teachers.index',
+                //     'can'   => 'read teacher',
+                // ],
                 // [
                 //     'type'  => 'sidebar-menu-item',
                 //     'text'  => 'Add Staff',
@@ -465,7 +465,7 @@ return [
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'VIEW STUDENT',
+                    'text'  => 'View Students',
                     'route' => 'students.index',
                     'can'   => 'read student',
                 ],
@@ -478,7 +478,7 @@ return [
 
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'WITHDRAW STUDENT',
+                    'text'  => 'Withdraw Students',
                     'route' => 'students.promote',
                     'can'   => 'promote student',
                 ],

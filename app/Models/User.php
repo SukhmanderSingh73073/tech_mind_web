@@ -156,7 +156,12 @@ class User extends Authenticatable implements MustVerifyEmail
     //get last name
     public function lastName()
     {
-        return explode(' ', $this->name)[1];
+        try {
+            return explode(' ', $this->name)[1];
+        } catch (\Throwable $th) {
+            return "" ;
+        }
+        
     }
 
     //get other names

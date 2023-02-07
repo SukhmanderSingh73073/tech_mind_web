@@ -10,6 +10,7 @@ return new class() extends Migration {
         Schema::create('teacher_records', static function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->string('type')->default("teacher");
             $table->timestamps();
         });
     }

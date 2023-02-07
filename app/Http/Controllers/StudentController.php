@@ -129,9 +129,33 @@ class StudentController extends Controller
         $this->authorize('update', [$student, 'student']);
         $data = $request->except('_token', '_method');
         $this->student->updateStudent($student, $data);
-
         return back()->with('success', 'Student Updated Successfully');
     }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param User                     $student
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function withdrawUser(Request $request, User $student)
+    {
+        //change status here
+        $student->status = 'WITHDRAW' ; 
+
+        dd($student) ;
+
+        $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
+        $this->authorize('update', [$student, 'student']);
+        $data = $request->except('_token', '_method');
+        $this->student->updateStudent($student, $data);
+        return back()->with('success', 'Student Updated Successfully');
+    }
+
 
     /**
      * Remove the specified resource from storage.

@@ -152,6 +152,10 @@ class Install extends Command
      */
     protected function generateAppKey()
     {
+        $this->line('discovering livewire ..');
+        $this->call('livewire:discover', ['--force' => true]);
+        $this->info('discovering livewire successfully.');
+
         $this->line('Generating application key..');
         $this->call('key:generate', ['--force' => true]);
         $this->info('Application key generated successfully.');
