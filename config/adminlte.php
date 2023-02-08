@@ -273,6 +273,14 @@ return [
             'text'  => 'PROFILE',
             'route' => 'admins.admin_create_profile',
         ],
+        [
+            'type'  => 'sidebar-menu-item',
+            'icon'  => 'fas fa-user',
+            'text'  => 'VIEW SELF ATTENDANCE',
+            'route' => 'admins.admin_create_profile',
+        ],
+
+        
         // [
         //     'type'  => 'sidebar-menu-item',
         //     'icon'  => 'fas fa-user',
@@ -606,7 +614,7 @@ return [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Attandance Managment',
             'icon'    => 'fas fa-tasks',
-            'can'     => 'menu-timetable',
+            'can'     => 'menu-attendance',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
