@@ -272,22 +272,24 @@ return [
             'icon'  => 'fas fa-user',
             'text'  => 'PROFILE',
             'route' => 'admins.admin_create_profile',
+            'can'   => 'create all-profile'
         ],
         [
             'type'  => 'sidebar-menu-item',
             'icon'  => 'fas fa-user',
             'text'  => 'VIEW SELF ATTENDANCE',
-            'route' => 'admins.admin_create_profile',
+            'route' => 'routes.view_self_attendance',
+            'can'   => 'view self-attendance'
         ],
 
-        
+
         // [
         //     'type'  => 'sidebar-menu-item',
         //     'icon'  => 'fas fa-user',
         //     'text'  => 'PROFILE SElf',
         //     'route' => 'profile.show',
         // ],
-        
+
         // [
         //     'type'  => 'sidebar-menu-item',
         //     'icon'  => 'fas fa-user',
@@ -338,13 +340,8 @@ return [
                     'route' => 'admins.admin_permission',
                     'can'   => 'permission admin',
                 ],
-                // [
-                //     'type'  => 'sidebar-menu-item',
-                //     'text'  => 'Create Profile',
-                //     'route' => 'admins.admin_create_profile',
-                //     'can'   => 'permission admin',
-                // ],
-                    
+
+
 
 
             ],
@@ -402,64 +399,42 @@ return [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Staff Managment',
             'icon'    => 'fas fa-user',
-            'can'     => 'menu-teacher',
+            'can'     => 'menu-staff',
             'submenu' => [
-                // [
-                //     'type'  => 'sidebar-menu-item',
-                //     'text'  => 'View Collage',
-                //     'route' => 'schools.index',
-                //     'can'   => 'read school',
-                // ],
+
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Managers',
                     'route' => 'managers.index',
-                    'can'   => 'read teacher',
+                    'can'   => 'read staff-manager',
                 ],
 
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Principals',
                     'route' => 'principles.index',
-                    'can'   => 'read teacher',
+                    'can'   => 'read staff-principle',
                 ],
 
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Office Incharge',
                     'route' => 'incharges.index',
-                    'can'   => 'read teacher',
+                    'can'   => 'read staff-incharge',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Class Teachers',
                     'route' => 'classteachers.index',
-                    'can'   => 'read teacher',
+                    'can'   => 'read staff-class-teacher',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Teachers',
                     'route' => 'teachers.index',
-                    'can'   => 'read teacher',
+                    'can'   => 'read staff-teacher',
                 ],
-                // [
-                //     'type'  => 'sidebar-menu-item',
-                //     'text'  => 'View Staff',
-                //     'route' => 'teachers.index',
-                //     'can'   => 'read teacher',
-                // ],
-                // [
-                //     'type'  => 'sidebar-menu-item',
-                //     'text'  => 'Add Staff',
-                //     'route' => 'teachers.create',
-                //     'can'   => 'create teacher',
-                // ],
-                // [
-                //     'type'  => 'sidebar-menu-item',
-                //     'text'  => 'View Roll Assignment',
-                //     'route' => 'teachers.index',
-                //     'can'   => 'read role asignment',
-                // ],
+
 
 
             ],
@@ -477,19 +452,18 @@ return [
                     'route' => 'students.index',
                     'can'   => 'read student',
                 ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Withdraw Students',
+                    'route' => 'read student',
+                    'can'   => 'promote student',
+                ],
                 // [
                 //     'type'  => 'sidebar-menu-item',
                 //     'text'  => 'ADD STUDENT',
                 //     'route' => 'students.create',
                 //     'can'   => 'create student',
                 // ],
-
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Withdraw Students',
-                    'route' => 'students.promote',
-                    'can'   => 'promote student',
-                ],
                 // [
                 //     'type'  => 'sidebar-menu-item',
                 //     'text'  => 'Promote students',
@@ -532,22 +506,17 @@ return [
                 [
 
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'MAKE NEW SECTION',
+                    'text'  => 'Make New Section',
                     'route' => 'sections.create',
                     'can'   => 'create section',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'VIEW CLASS',
+                    'text'  => 'View Class',
                     'route' => 'classes.index',
                     'can'   => 'read class',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'ADD CLASS',
-                    'route' => 'classes.create',
-                    'can'   => 'create class',
-                ],
+
 
             ],
         ],
@@ -556,23 +525,69 @@ return [
             'type' => 'sidebar-menu-item',
             'text' => 'Document Managment',
             'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
+            'can'  => 'menu-documents',
 
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Collage Document',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
+                    'route' => 'routes.doc_college',
+                    'can'   => 'read collage-documents',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Print Document',
-                    'route' => 'schools.index',
-                    'can'   => 'create school',
+                    'route' => 'routes.doc_print',
+                    'can'   => 'read print-documents',
                 ],
-
-
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Collage Logo',
+                    'route' => 'routes.doc_logo',
+                    'can'   => 'read document-collage-logo',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Sign',
+                    'route' => 'routes.doc_sign',
+                    'can'   => 'read document-sign',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'I Card',
+                    'route' => 'routes.doc_id_card',
+                    'can'   => 'read document-id-card',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Fees Card',
+                    'route' => 'routes.doc_fees_card',
+                    'can'   => 'read document-fees-card',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Scheam',
+                    'route' => 'routes.doc_scheam',
+                    'can'   => 'read document-scheam',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Admit Card',
+                    'route' => 'routes.doc_admit_card',
+                    'can'   => 'read document-admit-card',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Number Sheet',
+                    'route' => 'routes.doc_number_sheet',
+                    'can'   => 'read document-number-sheet',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Mark Sheet',
+                    'route' => 'routes.doc_mark_sheet',
+                    'can'   => 'read document-mark-sheet',
+                ],
 
             ],
         ],
@@ -585,16 +600,11 @@ return [
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'VIEW TIME TABLE',
+                    'text'  => 'View Time Table',
                     'route' => 'timetables.index',
                     'can'   => 'read timetable',
                 ],
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'CREATE TIME TABLE',
-                    'route' => 'timetables.create',
-                    'can'   => 'create timetable',
-                ],
+
                 // [
                 //     'type'  => 'sidebar-menu-item',
                 //     'text'  => 'View custom items',
@@ -618,16 +628,32 @@ return [
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'VIEW TIME TABLE',
-                    'route' => 'timetables.index',
-                    'can'   => 'read timetable',
+                    'text'  => 'Staff Attendance',
+                    'route' => 'routes.staff_attendance',
+                    'can'   => 'read staff-attendance',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'CREATE TIME TABLE',
-                    'route' => 'timetables.create',
-                    'can'   => 'create timetable',
+                    'text'  => 'Staff Attendance Register',
+                    'route' => 'routes.staff_attendance_register',
+                    'can'   => 'read staff-attendance-register',
                 ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Student Attendance',
+                    'route' => 'routes.student_attendance',
+                    'can'   => 'read student-attendance',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Student Attendance Register',
+                    'route' => 'routes.student_attendance_register',
+                    'can'   => 'read student-attendance-register',
+                ],
+
+
+
+
 
             ],
         ],
@@ -636,113 +662,155 @@ return [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Fees Managment',
             'icon'    => 'fas fa-tasks',
-            'can'     => 'menu-timetable',
+            'can'     => 'menu-fees',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'VIEW TIME TABLE',
-                    'route' => 'timetables.index',
-                    'can'   => 'read timetable',
+                    'text'  => 'View Fees Chart',
+                    'route' => 'routes.fees_chart',
+                    'can'   => 'read fees',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'CREATE TIME TABLE',
-                    'route' => 'timetables.create',
-                    'can'   => 'create timetable',
+                    'text'  => 'Fee Consession',
+                    'route' => 'routes.fees_consrssion',
+                    'can'   => 'read fees',
                 ],
-
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Fee Collection',
+                    'route' => 'routes.fees_collection',
+                    'can'   => 'create fees',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Fees Status',
+                    'route' => 'routes.fees_status',
+                    'can'   => 'read fees',
+                ],
             ],
         ],
-        ///TRANSPORT MANAGMENT
+        ///TRANSPORT MANAGMENT ok
         [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Transport Managment',
             'icon'    => 'fas fa-tasks',
-            'can'     => 'menu-timetable',
+            'can'     => 'menu-transport',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'VIEW TIME TABLE',
-                    'route' => 'timetables.create',
-                    'can'   => 'read timetable',
+                    'text'  => 'View Root',
+                    'route' => 'routes.transport_root',
+                    'can'   => 'read transport',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'CREATE TIME TABLE',
-                    'route' => 'timetables.create',
-                    'can'   => 'create timetable',
+                    'text'  => 'View Root Fees',
+                    'route' => 'routes.transport_root_fees',
+                    'can'   => 'read transport-fees',
                 ],
-
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Assign Driver',
+                    'route' => 'routes.transport_assign_driver',
+                    'can'   => 'read transport-assign-driver',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Student',
+                    'route' => 'routes.transport_student',
+                    'can'   => 'read transport-student',
+                ],
             ],
         ],
-        ///FINANCE MANAGMENT
+        ///FINANCE MANAGMENT ok
         [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Finance Managment',
             'icon'    => 'fas fa-plus',
-            'can'     => 'menu-account-application',
+            'can'     => 'menu-finance',
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View account applications',
-                    'route' => 'account-applications.index',
-                    'can'   => 'read applicant',
+                    'text'  => 'Incoming',
+                    'route' => 'routes.incoming',
+                    'can'   => 'read finance-incoming',
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View rejected applications',
-                    'route' => 'account-applications.rejected-applications',
-                    'can'   => 'read applicant',
+                    'text'  => 'Expences',
+                    'route' => 'routes.expences',
+                    'can'   => 'read finance-expences',
                 ],
+
+
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View account applications',
+                //     'route' => 'account-applications.index',
+                //     'can'   => 'read applicant',
+                // ],
+                // [
+                //     'type'  => 'sidebar-menu-item',
+                //     'text'  => 'View rejected applications',
+                //     'route' => 'account-applications.rejected-applications',
+                //     'can'   => 'read applicant',
+                // ],
             ],
         ],
-        ///CLASSWORK MANAGMENT
+        ///CLASSWORK MANAGMENT ok
         [
             'type' => 'sidebar-menu-item',
             'text' => 'Class Work Managment',
             'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
+            'can'  => 'menu-class-work',
 
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
+                    'text'  => 'View Class Work',
+                    'route' => 'routes.class_work',
+                    'can'   => 'read class-work',
                 ],
 
             ],
         ],
-        ///HOME WORK MANAGMENT
+        ///HOME WORK MANAGMENT ok
         [
             'type' => 'sidebar-menu-item',
             'text' => 'Home Work Managment',
             'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
+            'can'  => 'menu-home-work',
 
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
+                    'text'  => 'View Home Work',
+                    'route' => 'routes.home_work',
+                    'can'   => 'read home-work',
                 ],
 
             ],
         ],
-        ///SALARY MANAGMENT
+        ///SALARY MANAGMENT ok
         [
             'type' => 'sidebar-menu-item',
             'text' => 'Salary Managment',
             'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
+            'can'  => 'menu-salary',
 
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
+                    'text'  => 'View Salary',
+                    'route' => 'routes.salary',
+                    'can'   => 'read salary',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Salary Distribute',
+                    'route' => 'routes.salary_distribute',
+                    'can'   => 'read salary-distribute',
                 ],
 
             ],
@@ -752,14 +820,14 @@ return [
             'type' => 'sidebar-menu-item',
             'text' => 'Exam Managment',
             'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
+            'can'  => 'menu-exam',
 
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
+                    'text'  => 'Exam Type',
+                    'route' => 'routes.exam_type',
+                    'can'   => 'read exam-exam-type',
                 ],
 
             ],
@@ -769,31 +837,14 @@ return [
             'type' => 'sidebar-menu-item',
             'text' => 'Library Managment',
             'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
+            'can'  => 'menu-library',
 
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
-                ],
-
-            ],
-        ],
-        ///PLAN MANAGMENT
-        [
-            'type' => 'sidebar-menu-item',
-            'text' => 'Plan Managment',
-            'icon' => 'fas fa-school',
-            'can'  => 'menu-school',
-
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
+                    'text'  => 'View Library',
+                    'route' => 'routes.library',
+                    'can'   => 'read library',
                 ],
 
             ],
@@ -815,6 +866,70 @@ return [
 
             ],
         ],
+        ///FINANCE MANAGMENT ok
+        [
+            'type' => 'sidebar-menu-item',
+            'text' => 'Finance Managment',
+            'icon' => 'fas fa-school',
+            'can'  => 'menu-finance',
+
+            'submenu' => [
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Add Column',
+                    'route' => 'schools.index',
+                    'can'   => 'read school',
+                ],
+
+            ],
+        ],
+        ///SOFTWARE PLAN MANAGMENT ok
+        [
+            'type' => 'sidebar-menu-item',
+            'text' => 'Software Plan Managment',
+            'icon' => 'fas fa-school',
+            'can'  => 'menu-software-plan',
+
+            'submenu' => [
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Software Plan',
+                    'route' => 'routes.software_plan',
+                    'can'   => 'menu-software-plan',
+                ],
+
+
+
+
+            ],
+        ],
+        ///PAYMENT PLAN MANAGMENT ok
+        [
+            'type' => 'sidebar-menu-item',
+            'text' => 'Payment Plan Managment',
+            'icon' => 'fas fa-school',
+            'can'  => 'menu-payment-plan',
+
+            'submenu' => [
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Payment Plan',
+                    'route' => 'routes.payment_plan',
+                    'can'   => 'menu-payment-plan',
+                ],
+
+
+
+
+            ],
+        ],
+
+
+
+
+
+
+
 
         [
             'type'  => 'sidebar-menu-item',

@@ -92,6 +92,16 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
+    public function getSchool()
+    {
+        //return $this->hasMany(School::class);
+        return $this->hasOne(School::class , 'id' ,'school_id');
+    }
+    /**
+     * Get the school that owns the User.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function school()
     {
         return $this->belongsTo(School::class);

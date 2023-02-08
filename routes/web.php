@@ -145,9 +145,43 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('admins/delete_admin', [App\Http\Controllers\AdminController::class, "deleteAdmins"])->name("admins.delete_admin");
         Route::resource('admins', AdminController::class);
 
+        //all others routes
+        Route::get('routes/view_self_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.view_self_attendance");
+        Route::get('routes/staff_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.staff_attendance");
+        Route::get('routes/staff_attendance_register', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.staff_attendance_register");
+        Route::get('routes/student_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.student_attendance");
+        Route::get('routes/student_attendance_register', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.student_attendance_register");
+        Route::get('routes/fees_chart', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_chart");
+        Route::get('routes/fees_consrssion', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_consrssion");
+        Route::get('routes/fees_collection', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_collection");
+        Route::get('routes/fees_status', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_status");
+        Route::get('routes/transport_root', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_root");
+        Route::get('routes/transport_root_fees', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_root_fees");
+        Route::get('routes/transport_assign_driver', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_assign_driver");
+        Route::get('routes/transport_student', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_student");
+        Route::get('routes/incoming', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.incoming");
+        Route::get('routes/expences', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.expences");
+        Route::get('routes/class_work', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.class_work");
+        Route::get('routes/home_work', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.home_work");
+        Route::get('routes/salary', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.salary");
+        Route::get('routes/salary_distribute', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.salary_distribute");
+        Route::get('routes/doc_college', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_college");
+        Route::get('routes/doc_print', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_print");
+        Route::get('routes/doc_logo', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_logo");
+        Route::get('routes/doc_sign', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_sign");
+        Route::get('routes/doc_id_card', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_id_card");
+        Route::get('routes/doc_fees_card', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_fees_card");
+        Route::get('routes/doc_scheam', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_scheam");
+        Route::get('routes/doc_admit_card', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_admit_card");
+        Route::get('routes/doc_number_sheet', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_number_sheet");
+        Route::get('routes/doc_mark_sheet', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.doc_mark_sheet");
+        Route::get('routes/exam_type', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.exam_type");
+        Route::get('routes/library', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.library");
+        Route::get('routes/software_plan', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.software_plan");
+        Route::get('routes/payment_plan', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.payment_plan");
         
 
-
+        
         //managers routes
         Route::resource('managers', ManagerController::class);
 
