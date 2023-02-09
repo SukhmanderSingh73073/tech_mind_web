@@ -179,6 +179,7 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('routes/library', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.library");
         Route::get('routes/software_plan', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.software_plan");
         Route::get('routes/payment_plan', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.payment_plan");
+        Route::get('routes/staff_driver', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.staff_driver");
         
 
         

@@ -434,7 +434,13 @@ return [
                     'route' => 'teachers.index',
                     'can'   => 'read staff-teacher',
                 ],
-
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Teachers',
+                    'route' => 'routes.staff_driver',
+                    'can'   => 'read staff-driver',
+                ],
+                
 
 
             ],
