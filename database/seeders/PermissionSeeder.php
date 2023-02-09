@@ -312,6 +312,14 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'edit fees',],
             ["guard_name"  => 'web', 'name' => 'create fees',],
             ["guard_name"  => 'web', 'name' => 'delete fees',],
+            ["guard_name"  => 'web', 'name' => 'read fees-slips',],
+            ["guard_name"  => 'web', 'name' => 'edit fees-slips',],
+            ["guard_name"  => 'web', 'name' => 'create fees-slips',],
+            ["guard_name"  => 'web', 'name' => 'delete fees-slips',],
+            ["guard_name"  => 'web', 'name' => 'read fees-card',],
+            ["guard_name"  => 'web', 'name' => 'edit fees-card',],
+            ["guard_name"  => 'web', 'name' => 'create fees-card',],
+            ["guard_name"  => 'web', 'name' => 'delete fees-card',],
 
             ["guard_name"  => 'web', 'name' => 'read transport',],
             ["guard_name"  => 'web', 'name' => 'edit transport',],
@@ -330,8 +338,12 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'edit transport-student',],
             ["guard_name"  => 'web', 'name' => 'create transport-student',],
             ["guard_name"  => 'web', 'name' => 'delete transport-student',],
+            ["guard_name"  => 'web', 'name' => 'read transport-vehicle-number',],
+            ["guard_name"  => 'web', 'name' => 'edit transport-vehicle-number',],
+            ["guard_name"  => 'web', 'name' => 'create transport-vehicle-number',],
+            ["guard_name"  => 'web', 'name' => 'delete transport-vehicle-number',],
 
-
+            
 
             ["guard_name"  => 'web', 'name' => 'read finance-incoming',],
             ["guard_name"  => 'web', 'name' => 'edit finance-incoming',],
@@ -379,7 +391,97 @@ class PermissionSeeder extends Seeder
         }
 
 
+// assign permission to Manager
+$super_admin = Role::where('name', 'super-admin')->first();
+$super_admin->givePermissionTo([
+    'menu-staff',
+    'menu-teacher',
+    'menu-student',
+    'menu-class',
+    'menu-attendance',
+    'menu-documents',
+    'menu-fees',
+    'menu-timetable',
+    'menu-transport',
+    'menu-finance',
+    'menu-class-work',
+    'menu-home-work',
+    'menu-salary',
+    'menu-library',
+    'menu-software-plan',
+    'menu-payment-plan',
 
+    'create all-profile',
+    'read self-attendance',
+    'read teacher',
+    'read student',
+    'read class',
+    'create section',
+    'read staff-attendance',
+    'read staff-attendance-register',
+    'read student-attendance',
+    'read student-attendance-register',
+    'read fees',
+    'create fees',
+    'read timetable',
+    'read transport',
+    'create transport',
+    'read transport-fees',
+    'create transport-fees',
+    'create transport-assign-driver',
+    'read transport-student',
+    'read finance-incoming',
+    'read finance-expences',
+    'read class-work',
+    'create class-work',
+    'read home-work',
+    'create home-work',
+    'read salary',
+    'read salary-distribute',
+    'read document-collage-logo',
+    'read document-sign',
+    'read document-id-card',
+    'read document-fees-card',
+    'read document-scheam',
+    'read document-admit-card',
+    'read document-number-sheet',
+    'read document-mark-sheet',
+    'read exam-exam-type',
+    'create staff-admin',
+    'read staff-admin',
+    'update staff-admin',
+    'delete staff-admin',
+    'create staff-manager',
+    'read staff-manager',
+    'update staff-manager',
+    'delete staff-manager',
+    'create staff-principle',
+    'read staff-principle',
+    'update staff-principle',
+    'delete staff-principle',
+    'create staff-incharge',
+    'read staff-incharge',
+    'update staff-incharge',
+    'delete staff-incharge',
+    'create staff-class-teacher',
+    'read staff-class-teacher',
+    'update staff-class-teacher',
+    'delete staff-class-teacher',
+    'create staff-teacher',
+    'read staff-teacher',
+    'update staff-teacher',
+    'delete staff-teacher',
+    'create library',
+    'read library',
+    'update library',
+    'delete library',
+
+
+
+
+
+
+]);
 
 
         /**
@@ -743,41 +845,82 @@ class PermissionSeeder extends Seeder
         //assign permissions to teacher
         $teacher = Role::where('name', 'teacher')->first();
         $teacher->givePermissionTo([
-            'header-academics',
-            'menu-syllabus',
-            'menu-timetable',
-            'menu-exam',
-            'menu-notice',
-            'create syllabus',
-            'read syllabus',
-            'update syllabus',
-            'delete syllabus',
-            'create timetable',
-            'read timetable',
-            'update timetable',
-            'delete timetable',
-            'create exam record',
-            'read exam record',
-            'update exam record',
-            'delete exam record',
-            'read notice',
-            'check result',
+            'menu-staff',
+      'menu-student',
+      
+      //'menu-attendance',
+      'menu-fees',
+      'menu-timetable',
+      'menu-transport',
+      'menu-class-work',
+      'menu-home-work',
+      'menu-exam',
+
+      //'create all-profile',
+      'read self-attendance',
+      //'read student-attendance',
+      //'read student-attendance-register',
+      'read fees',
+      'create fees',
+      'read timetable',
+      'read transport',
+      'create transport',
+      'read transport-fees',
+      'create transport-fees',
+      'read transport-assign-driver',
+      'read class-work',
+      'create class-work',
+      'read home-work',
+      'create home-work',
+      
+      'read exam-exam-type',
+      'create staff-driver',
+      'read staff-driver',
+      'update staff-driver',
+      'delete staff-driver',
+    
+      
+      
         ]);
 
         //assign permissions to student
         $student = Role::where('name', 'student')->first();
         $student->givePermissionTo([
-            'menu-attendance',
-            'read attendance',
-            'header-academics',
-            'menu-syllabus',
+            //'menu-staff',
+            // 'menu-student',
+            
+            //'menu-attendance',
+            'menu-fees',
             'menu-timetable',
-            'menu-notice',
+            'menu-transport',
+            'menu-class-work',
+            'menu-home-work',
             'menu-exam',
-            'read syllabus',
+      
+            //'create all-profile',
+            'read self-attendance',
+            //'read student-attendance',
+            //'read student-attendance-register',
+            'read fees',
+            'create fees',
+            'read fees-slips',
+            'read fees-card',
+
             'read timetable',
-            'read notice',
-            'check result',
+            'read transport',
+            'create transport',
+            'read transport-fees',
+            'create transport-fees',
+            'read transport-assign-driver',
+            'read transport-vehicle-number',
+
+            'read class-work',
+            'create class-work',
+            'read home-work',
+            'create home-work',
+            
+          
+            
         ]);
         //assign permissions to parent
         $parent = Role::where('name', 'parent')->first();

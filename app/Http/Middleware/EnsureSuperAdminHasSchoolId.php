@@ -17,6 +17,7 @@ class EnsureSuperAdminHasSchoolId
      */
     public function handle(Request $request, Closure $next)
     {
+        
         if ($request->user()->school_id == null && request()->user()->hasRole('super-admin')) {
             session()->flash('danger', 'Please set your school of operation first.');
 

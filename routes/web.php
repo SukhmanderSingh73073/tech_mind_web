@@ -180,8 +180,12 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('routes/software_plan', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.software_plan");
         Route::get('routes/payment_plan', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.payment_plan");
         Route::get('routes/staff_driver', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.staff_driver");
+        Route::get('routes/transport_view_driver', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_view_driver");
+        Route::get('routes/fees_slips', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_slips");
+        Route::get('routes/fees_card', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_card");
+        Route::get('routes/transport_vehicle_number', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_vehicle_number");
         
-
+        
         
         //managers routes
         Route::resource('managers', ManagerController::class);

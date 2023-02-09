@@ -436,10 +436,11 @@ return [
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
-                    'text'  => 'View Teachers',
+                    'text'  => 'View Root Driver',
                     'route' => 'routes.staff_driver',
                     'can'   => 'read staff-driver',
                 ],
+                
                 
 
 
@@ -461,7 +462,7 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Withdraw Students',
-                    'route' => 'read student',
+                    'route' => 'students.index',
                     'can'   => 'promote student',
                 ],
                 // [
@@ -663,7 +664,7 @@ return [
 
             ],
         ],
-        ///FEES MANAGMENT
+        ///FEES MANAGMENT OK
         [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Fees Managment',
@@ -694,6 +695,23 @@ return [
                     'route' => 'routes.fees_status',
                     'can'   => 'read fees',
                 ],
+
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Fees Slips',
+                    'route' => 'routes.fees_slips',
+                    'can'   => 'read fees-slips',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Fees Card',
+                    'route' => 'routes.fees_card',
+                    'can'   => 'read fees-card',
+                ],
+
+
+
+
             ],
         ],
         ///TRANSPORT MANAGMENT ok
@@ -726,6 +744,18 @@ return [
                     'text'  => 'View Student',
                     'route' => 'routes.transport_student',
                     'can'   => 'read transport-student',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Root Driver',
+                    'route' => 'routes.transport_view_driver',
+                    'can'   => 'read transport-assign-driver',
+                ],
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Vehicle Number',
+                    'route' => 'routes.transport_vehicle_number',
+                    'can'   => 'read transport-vehicle-number',
                 ],
             ],
         ],
@@ -872,23 +902,7 @@ return [
 
             ],
         ],
-        ///FINANCE MANAGMENT ok
-        [
-            'type' => 'sidebar-menu-item',
-            'text' => 'Finance Managment',
-            'icon' => 'fas fa-school',
-            'can'  => 'menu-finance',
-
-            'submenu' => [
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Add Column',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
-                ],
-
-            ],
-        ],
+   
         ///SOFTWARE PLAN MANAGMENT ok
         [
             'type' => 'sidebar-menu-item',
