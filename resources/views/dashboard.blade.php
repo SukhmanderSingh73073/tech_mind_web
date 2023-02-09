@@ -3,7 +3,7 @@
 @section('title', __('Dashboard'))
 
 @section('content_header')
-    <h1 class="">
+   {{-- <h1 class="">
         {{ __('Dashboard') }}
     </h1>
 
@@ -11,18 +11,18 @@
     
     @livewire('breadcrumbs', ['paths' => [
         ['href'=> route('dashboard'), 'text'=> 'Dashboard', 'active'],
-    ]])
+    ]])--}}
 
 @stop
 
 @section('content')
     
-    <div class="my-3">@livewire('school-set')</div>
+    {{--<div class="my-3">@livewire('school-set')</div>--}}
     @livewire('dashboard-data-cards')
     
     @livewire('academic-year-set')
 
-    {{auth()->user()}}
+    
     @if (auth()->user()->hasRole('student'))
         <a href="{{route('students.print-profile',auth()->user()->id)}}" >
             <x-adminlte-small-box title="Download profile" text="click to download profile" icon="fas fa-download text-white"

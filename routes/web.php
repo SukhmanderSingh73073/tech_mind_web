@@ -184,6 +184,14 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('routes/fees_slips', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_slips");
         Route::get('routes/fees_card', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_card");
         Route::get('routes/transport_vehicle_number', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.transport_vehicle_number");
+        Route::get('routes/leave', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.leave");
+        Route::get('routes/own_manager', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_manager");
+        Route::get('routes/own_principle', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_principle");
+        Route::get('routes/own_admin', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_admin");
+        Route::get('routes/own_incharge', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_incharge");
+        Route::get('routes/own_class_teacher', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_class_teacher");
+        Route::get('routes/own_teacher', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_teacher");
+        Route::get('routes/own_student', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_student");
         
         
         

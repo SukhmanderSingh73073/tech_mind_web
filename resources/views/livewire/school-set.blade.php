@@ -4,13 +4,13 @@
              
             <form  class="d-flex flex-column mx-auto mb-2" action="{{route('schools.setSchool')}}" 
             method="POST" >
-          
             <div class="row">
 
-<div class="col-8">
+<div class="col-12">
                 
             <x-adminlte-select 
             name="school_id" 
+            onchange="this.form.submit()"
             label="Set working school branch" 
             >
                     @foreach ($schools as $school)
@@ -20,11 +20,11 @@
 </div>
 <div class="col-4 col-lg-3 align-self-center mt-3">
                 <x-adminlte-button 
-                
+                 class="d-none"
                 label="Set school" 
                 theme="primary" 
                 icon="fas fa-key" 
-                 type="submit"/>
+                type="submit"/>
 </div>
                  @csrf
 

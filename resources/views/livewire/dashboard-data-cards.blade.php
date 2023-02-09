@@ -1,6 +1,6 @@
 @hasanyrole('admin|super-admin|local-super-admin|sub-super-admin')
 <div class="card">
-    <div class="my-4 card-body">
+    <div class="card-body">
         @can('read school')
             <h4 class="text-bold text-center">Multi schools</h4>
             <div>

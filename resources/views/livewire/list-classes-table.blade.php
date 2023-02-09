@@ -24,3 +24,10 @@
     
     </div>
 </div>
+<style>
+    table.dataTable tbody th, table.dataTable tbody td {
+        padding: 1px 1px; 
+        height: 5px;
+      
+}
+</style>
