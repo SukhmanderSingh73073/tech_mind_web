@@ -25,10 +25,7 @@
                         <tr>
                             <th>S/N</th>
                             <th>Name</th>
-                            <th>Present</th>
-                            <th>Absent</th>
-                            <th>Apply Leave</th>
-                            <th>Half Day Leave</th>
+                            
                             @php
                                 $today = today();
                                 $dates = [$today];
@@ -36,8 +33,13 @@
                                
                                 
                             @endphp
-                            
-       
+                            {{$today}}
+                            @foreach ($dates as $date)
+                                <th>
+                                    {{ $date }}
+                                </th>
+
+                            @endforeach
 
                         </tr>
                     </thead>
@@ -57,30 +59,24 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $user->name }}</td>
 
+
+
+
+
+
+
                                         @php
                                         $i =0;
                                             $date_picker = \Carbon\Carbon::createFromDate($today->year, $today->month, $i)->format('Y-m-d');
                                             
-                                            $check_attd_p = \App\Models\Attendances::query()
+                                            $check_attd = \App\Models\Attendances::query()
                                                 ->where('user_id', $user->id)
                                                 ->where('attendance_date', $date_picker)
-                                                ->where('att_type' ,"P")
-                                                ->first();
-                                                $check_attd_a = \App\Models\Attendances::query()
-                                                ->where('user_id', $user->id)
-                                                ->where('attendance_date', $date_picker)
-                                                ->where('att_type' ,"A")
                                                 ->first();
                                             
-                                            $check_leave_ap = \App\Models\Leaves::query()
+                                            $check_leave = \App\Models\Leaves::query()
                                                 ->where('user_id', $user->id)
                                                 ->where('leave_date', $date_picker)
-                                                ->where('att_type' ,"AP")
-                                                ->first();
-                                                $check_leave_hdl = \App\Models\Leaves::query()
-                                                ->where('user_id', $user->id)
-                                                ->where('leave_date', $date_picker)
-                                                ->where('att_type' ,"HDL")
                                                 ->first();
                                             
                                         @endphp
@@ -88,33 +84,14 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" id="check_box"
-                                                    name="attd[{{ $date_picker }}][{{ $user->id }}][{{'P'}}]" type="checkbox"
-                                                    @if (isset($check_attd_p))  checked @endif id="inlineCheckbox1" value="1">
+                                                    name="attd[{{ $date_picker }}][{{ $user->id }}]" type="checkbox"
+                                                    @if (isset($check_attd))  checked @endif id="inlineCheckbox1" value="1">
 
                                             </div>
-
-                                        </td>
-                                        <td>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" id="check_box"
-                                                    name="attd[{{ $date_picker }}][{{ $user->id }}]][{{'A'}}]" type="checkbox"
-                                                    @if (isset($check_attd_a))  checked @endif id="inlineCheckbox2" value="1">
-
-                                            </div>
-
-                                            <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" id="check_box"
-                                                    name="leave[{{ $date_picker }}][{{ $user->id }}][{{'AL'}}]]" type="checkbox"
-                                                    @if (isset($check_leave_ap))  checked @endif id="inlineCheckbox2" value="1">
-
-                                            </div>
-
-                                            <td>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" id="check_box"
-                                                    name="leave[{{ $date_picker }}][{{ $user->id }}][{{'HDL'}}]]" type="checkbox"
-                                                    @if (isset($check_leave_hdl))  checked @endif id="inlineCheckbox2" value="1">
+                                                    name="leave[{{ $date_picker }}][{{ $user->id }}]]" type="checkbox"
+                                                    @if (isset($check_leave))  checked @endif id="inlineCheckbox2" value="1">
 
                                             </div>
 

@@ -691,7 +691,7 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Staff Attendance',
-                    'route' => 'routes.staff_attendance',
+                    'route' => 'check_staff',
                     'can'   => 'read staff-attendance',
                 ],
                 [

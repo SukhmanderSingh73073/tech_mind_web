@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('leave_date')->default(date("Y-m-d"));
             $table->boolean('status')->default(1);
             $table->boolean('type')->unsigned()->default(1);
-           
+            $table->string('att_type')->comment("AP" , "HDL") ; 
             $table->string('user_id') ; 
             $table->timestamps();
 

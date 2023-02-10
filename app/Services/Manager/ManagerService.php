@@ -40,6 +40,7 @@ class ManagerService
      */
     public function createManager($record)
     {
+        $record['role_type'] = "manager" ; 
         $manager = $this->user->createUser($record);
         $manager->assignRole('manager');
     }

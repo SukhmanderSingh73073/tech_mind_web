@@ -99,8 +99,10 @@ class StudentService
      */
     public function createStudent($record)
     {
+        $record['role_type'] = "student" ; 
        // dd($record) ;
         DB::transaction(function () use ($record) {
+            
             $student = $this->userService->createUser($record);
             $student->assignRole('student');
 

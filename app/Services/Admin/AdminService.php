@@ -37,6 +37,7 @@ class AdminService
      */
     public function createAdmin($records)
     {
+        $record['role_type'] = "admin" ; 
         $admin = $this->user->createUser($records);
         $admin->assignRole('admin');
     }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean('status')->default(1);
             $table->string('user_id');
             $table->boolean('type')->unsigned()->default(0);
+            $table->string('att_type')->comment('P,A,AL,HDL') ;
             $table->timestamps();
         });
     }

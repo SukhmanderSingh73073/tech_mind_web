@@ -199,7 +199,13 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
          //attendance routes
          Route::get('/self_attendance', '\App\Http\Controllers\CheckController@selfAttendance')->name('self_attendance');
          Route::get('/check', '\App\Http\Controllers\CheckController@index')->name('check');
+         Route::get('/check_staff', '\App\Http\Controllers\CheckController@checkStaff')->name('check_staff');
          Route::post('check-store','\App\Http\Controllers\CheckController@CheckStore')->name('check_store');
+
+
+
+
+
 
 
          Route::get('student_attendance', [App\Http\Controllers\AttendanceController::class, "studentAttendance"])->name("student_attendance");
