@@ -25,6 +25,8 @@ class SchoolSeeder extends Seeder
                 'phone'    => '5433567897'
             ]
         );
+        
+
 
         School::factory()
             ->count(3)
