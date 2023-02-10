@@ -232,4 +232,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return 'profile/username';
     }
+
+    public function schedules()
+    {
+        return $this->belongsToMany('App\Models\Schedule', 'schedule_users', 'user_id', 'schedule_id');
+    }
+
 }

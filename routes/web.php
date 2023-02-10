@@ -149,7 +149,6 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('routes/view_self_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.view_self_attendance");
         Route::get('routes/staff_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.staff_attendance");
         Route::get('routes/staff_attendance_register', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.staff_attendance_register");
-        Route::get('routes/student_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.student_attendance");
         Route::get('routes/student_attendance_register', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.student_attendance_register");
         Route::get('routes/fees_chart', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_chart");
         Route::get('routes/fees_consrssion', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.fees_consrssion");
@@ -192,9 +191,20 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('routes/own_class_teacher', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_class_teacher");
         Route::get('routes/own_teacher', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_teacher");
         Route::get('routes/own_student', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_student");
+        Route::get('routes/student_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.student_attendance");
         
         
         
+
+         //attendance routes
+         Route::get('/self_attendance', '\App\Http\Controllers\CheckController@selfAttendance')->name('self_attendance');
+         Route::get('/check', '\App\Http\Controllers\CheckController@index')->name('check');
+         Route::post('check-store','\App\Http\Controllers\CheckController@CheckStore')->name('check_store');
+
+
+         Route::get('student_attendance', [App\Http\Controllers\AttendanceController::class, "studentAttendance"])->name("student_attendance");
+         Route::resource('schedules', AttendanceController::class);
+
         //managers routes
         Route::resource('managers', ManagerController::class);
 

@@ -238,6 +238,11 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'create attendance',],
             ["guard_name"  => 'web', 'name' => 'edit attendance',],
             ["guard_name"  => 'web', 'name' => 'delete attendance',],
+            ["guard_name"  => 'web', 'name' => 'read attendance-schedules',],
+            ["guard_name"  => 'web', 'name' => 'create attendance-schedules',],
+            ["guard_name"  => 'web', 'name' => 'edit attendance-schedules',],
+            ["guard_name"  => 'web', 'name' => 'delete attendance-schedules',],
+           
             ["guard_name"  => 'web', 'name' => 'read attendance register',],
             ["guard_name"  => 'web', 'name' => 'create attendance register',],
             ["guard_name"  => 'web', 'name' => 'edit attendance register',],
@@ -762,6 +767,7 @@ class PermissionSeeder extends Seeder
 
             'create all-profile',
             'read self-attendance',
+            'read attendance-schedules',
             'read staff-incharge',
             'read staff-class-teacher',
             'read staff-teacher',

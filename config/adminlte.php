@@ -284,7 +284,7 @@ return [
             'type'  => 'sidebar-menu-item',
             'icon'  => 'fas fa-user',
             'text'  => 'VIEW SELF ATTENDANCE',
-            'route' => 'routes.view_self_attendance',
+            'route' => 'self_attendance',
             'can'   => 'read self-attendance'
         ],
 
@@ -683,6 +683,13 @@ return [
             'submenu' => [
                 [
                     'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Schedules',
+                    'route' => 'schedules.index',
+                    'can'   => 'read attendance-schedules',
+                ],
+
+                [
+                    'type'  => 'sidebar-menu-item',
                     'text'  => 'Staff Attendance',
                     'route' => 'routes.staff_attendance',
                     'can'   => 'read staff-attendance',
@@ -696,7 +703,7 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Student Attendance',
-                    'route' => 'routes.student_attendance',
+                    'route' => 'check',
                     'can'   => 'read student-attendance',
                 ],
                 [
