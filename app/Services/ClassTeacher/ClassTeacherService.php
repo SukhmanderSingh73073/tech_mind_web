@@ -40,6 +40,7 @@ class ClassTeacherService
      */
     public function createclassteacher($record)
     {
+        $record['role_type'] = "classteacher" ; 
         $classteacher = $this->user->createUser($record);
         $classteacher->assignRole('classteacher');
     }

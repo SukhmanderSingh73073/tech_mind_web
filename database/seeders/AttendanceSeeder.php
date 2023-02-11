@@ -30,15 +30,29 @@ class AttendanceSeeder extends Seeder
             ]
         );
 
-
-        ScheduleUser::updateOrCreate(
+        $permissions = [
+            ["user_id"  => '1',  'schedule_id' => '1',],
+            ["user_id"  => '2',  'schedule_id' => '1',],
+            ["user_id"  => '3',  'schedule_id' => '1',],
+            ["user_id"  => '4',  'schedule_id' => '1',],
+            ["user_id"  => '5',  'schedule_id' => '1',],
+            ["user_id"  => '6',  'schedule_id' => '1',],
+            ["user_id"  => '7',  'schedule_id' => '1',],
+            ["user_id"  => '8',  'schedule_id' => '1',],
+            ["user_id"  => '9',  'schedule_id' => '1',],
+            ["user_id"  => '10', 'schedule_id' => '1',],
+            ["user_id"  => '11', 'schedule_id' => '1',],
+            ["user_id"  => '12', 'schedule_id' => '1',],
+            ["user_id"  => '13', 'schedule_id' => '1',],
             
-            [
-                'schedule_id'     => '1',
-                'user_id'         => '10',
-            ]
-        );
+            ] ;
 
 
+        foreach ($permissions as $permission) {
+            ScheduleUser::updateOrCreate(
+                ['user_id' => $permission['user_id']],
+                $permission
+            );
+        }
     }
 }

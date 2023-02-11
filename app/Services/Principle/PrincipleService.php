@@ -40,6 +40,7 @@ class PrincipleService
      */
     public function createprinciple($record)
     {
+        $record['role_type'] = "principle" ; 
         $principle = $this->user->createUser($record);
         $principle->assignRole('principle');
     }

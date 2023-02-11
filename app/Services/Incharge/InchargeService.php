@@ -40,6 +40,7 @@ class InchargeService
      */
     public function createincharge($record)
     {
+        $record['role_type'] = "incharge" ; 
         $incharge = $this->user->createUser($record);
         $incharge->assignRole('incharge');
     }

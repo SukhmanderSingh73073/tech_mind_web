@@ -41,7 +41,6 @@ class Install extends Command
     {
         $type = $this->argument('db');
         $acceptedArgs = ['fresh', 'refresh'];
-
         if (in_array($type, $acceptedArgs)) {
             $this->line('Received Type' . $this->argument('db'));
             $this->verifyPHPVersion();
@@ -266,6 +265,6 @@ class Install extends Command
      */
     protected function setupGoogleV3reCAPTCHA()
     {
-       
+
     }
 }

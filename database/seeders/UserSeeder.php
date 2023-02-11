@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
 
         $superAdmin = User::firstOrCreate([
             'id'                => 1,
+            'role_type'         =>'super-admin',
             'name'              => 'super admin',
             'email'             => 'super@admin.com',
             'password'          => Hash::make('Qwerty@123'),
@@ -72,7 +73,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000', 
+            'role_type'         =>'local-super-admin',
         ]);
 
         $localsuperAdmin->assignRole('local-super-admin');
@@ -102,7 +104,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         =>'sub-super-admin',
         ]);
 
         $subsuper->assignRole('sub-super-admin');
@@ -131,7 +134,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         =>'admin',
         ]);
 
         $admin->assignRole('admin');
@@ -159,7 +163,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         =>'manager',
         ]);
 
         $manager->assignRole('manager');
@@ -189,7 +194,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000'  ,
+            'role_type'         => 'principle',
 
         ]);
 
@@ -219,7 +225,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         => 'incharge', 
         ]);
 
         $office_incharge->assignRole('incharge');
@@ -248,7 +255,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000',
+            'role_type'         => 'classteacher', 
         ]);
 
         $class_teacher->assignRole('classteacher');
@@ -283,7 +291,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         => 'teacher',
         ]);
 
         $teacher->assignRole('teacher');
@@ -316,7 +325,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         => 'student',
         ]);
         $student->studentRecord()->create([
             'my_class_id'      => 1,
@@ -353,7 +363,8 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         => 'parent',
         ]);
 
         $parent->assignRole('parent');
@@ -383,7 +394,9 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         => 'accountant',
+
         ]);
 
         $accountant->assignRole('accountant');
@@ -411,7 +424,9 @@ class UserSeeder extends Seeder
             'previous_school'    => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+            'role_type'         => 'librarian',
+
         ]);
 
         $librarian->assignRole('librarian');

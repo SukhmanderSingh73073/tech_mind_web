@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Services\Student\StudentService;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
@@ -60,7 +61,15 @@ class StudentController extends Controller
      */
     public function store(StudentStoreRequest $request)
     {
-       // dd($request) ;
+        dd($request->file('csv'));
+        $files = public_path('csv/students_create.csv');
+        $data =  csvToArray($files, ',');
+        $res=saveDataIntoDb($data);
+        // dd($res);
+        $arr = $request->all();
+        foreach ($arr as $key => $value) {
+            echo "<span>$key</span><br/>";
+        }
         $this->authorize('create', [User::class, 'student']);
         $this->student->createStudent($request);
 
@@ -145,9 +154,9 @@ class StudentController extends Controller
     public function withdrawUser(Request $request, User $student)
     {
         //change status here
-        $student->status = 'WITHDRAW' ; 
+        $student->status = 'WITHDRAW';
 
-        dd($student) ;
+        dd($student);
 
         $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
         $this->authorize('update', [$student, 'student']);
@@ -175,3 +184,5 @@ class StudentController extends Controller
         return back()->with('success', 'Student Deleted Successfully');
     }
 }
+
+

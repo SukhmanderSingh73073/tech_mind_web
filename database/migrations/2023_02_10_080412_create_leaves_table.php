@@ -11,23 +11,21 @@ return new class extends Migration
         Schema::create('leaves', static function (Blueprint $table) {
             $table->id();
             $table->integer('uid')->unsigned()->default(0);
-            $table->integer('user_id')->unsigned();
             $table->boolean('state')->default(0);
             $table->time('leave_time')->default(date("H:i:s"));
             $table->date('leave_date')->default(date("Y-m-d"));
             $table->boolean('status')->default(1);
             $table->boolean('type')->unsigned()->default(1);
+            $table->string('att_type')->comment("AP" , "HDL") ; 
+            $table->string('user_id') ; 
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }
 
     public function down(): void
     {
-        Schema::table('leaves', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-           });
+        
    
            Schema::dropIfExists('leaves');
     }
