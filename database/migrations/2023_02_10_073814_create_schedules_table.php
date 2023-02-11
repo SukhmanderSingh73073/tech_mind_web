@@ -27,10 +27,10 @@ return new class extends Migration
             $table->integer('schedule_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
-       
+
         });
-       
-       
+
+
     }
 
     /**
@@ -39,7 +39,7 @@ return new class extends Migration
      * @return void
      */
     public function down()
-    {   
+    {
 
         // Schema::table('schedule_users', function ($table) {
         //     $table->dropForeign(['schedule_id']);
