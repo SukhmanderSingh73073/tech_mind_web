@@ -10,10 +10,15 @@ use Illuminate\Http\Request;
 class CheckController extends Controller
 {
     
+    public function selfLeave(Request $request)
+    {
+        $users = User::where('id' ,$request->user()->id )->get() ;
+        return view('pages.attandance.attendance.indexsheet')->with(['users' => $users , "page_type" => 'leave']);
+    }
     public function selfAttendance(Request $request)
     {
         $users = User::where('id' ,$request->user()->id )->get() ;
-        return view('pages.attandance.attendance.indexsheet')->with(['users' => $users]);
+        return view('pages.attandance.attendance.indexsheet')->with(['users' => $users , "page_type" => 'attendance']);
     }
 
     

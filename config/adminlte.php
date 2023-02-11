@@ -1010,20 +1010,15 @@ return [
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Leave',
-                    'route' => 'routes.leave',
+                    'route' => 'self_leave',
                     'can'   => 'read leave',
                 ],
-
+               
 
 
 
             ],
         ],
-
-
-
-
-
 
         [
             'type'  => 'sidebar-menu-item',

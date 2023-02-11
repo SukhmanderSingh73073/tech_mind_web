@@ -1,6 +1,10 @@
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Class list</h4>
+<div class="card-header">
+        <h4 class="card-title mr-3 mt-1">Class List</h4>
+
+        <form class="mr-3" action={{ route("classes.create") }}>
+    <x-adminlte-button type="submit" label="Create New Class"  theme="primary" icon="fas fa-key"  />
+    </form>
     </div>
     <div class="card-body">
         <x-adminlte-datatable id="class-list-table" :heads="['S/N', 'Name', 'Group', 'Action', '']" Class='text-capitalize' bordered striped head-theme="dark" beautify>
