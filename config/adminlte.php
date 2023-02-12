@@ -269,21 +269,21 @@ return [
         [
             'type'  => 'sidebar-menu-item',
             'icon'  => 'fas fa-user',
-            'text'  => 'PROFILE',
+            'text'  => 'Profile',
             'route' => 'profile.show',
             'can'   => 'read-self-profile'
         ],
         [
             'type'  => 'sidebar-menu-item',
             'icon'  => 'fas fa-user',
-            'text'  => 'Create PROFILE',
+            'text'  => 'Create Profile',
             'route' => 'admins.admin_create_profile',
             'can'   => 'create all-profile'
         ],
         [
             'type'  => 'sidebar-menu-item',
             'icon'  => 'fas fa-user',
-            'text'  => 'VIEW SELF ATTENDANCE',
+            'text'  => 'View Self Attendance',
             'route' => 'self_attendance',
             'can'   => 'read self-attendance'
         ],
@@ -570,6 +570,23 @@ return [
                     'text'  => 'View Class',
                     'route' => 'classes.index',
                     'can'   => 'read class',
+                ],
+
+
+            ],
+        ],
+         ///CLASS SUBJECTS
+         [
+            'type'    => 'sidebar-menu-item',
+            'text'    => 'Subject Managment',
+            'icon'    => 'fas fa-chalkboard',
+            'can'     => 'menu-subjects',
+            'submenu' => [
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'View subjects',
+                    'route' => 'subjects.index',
+                    'can'   => 'read subjects',
                 ],
 
 

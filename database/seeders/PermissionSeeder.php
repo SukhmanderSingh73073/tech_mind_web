@@ -56,7 +56,8 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'menu-software-plan',],
             ["guard_name"  => 'web', 'name' => 'menu-payment-plan',],
             ["guard_name"  => 'web', 'name' => 'menu-leave',],
-
+            ["guard_name"  => 'web', 'name' => 'menu-subjects',],
+           
 
 
 
@@ -122,6 +123,10 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'read leave',],
             ["guard_name"  => 'web', 'name' => 'update leave',],
             ["guard_name"  => 'web', 'name' => 'delete leave',],
+            ["guard_name"  => 'web', 'name' => 'create subjects',],
+            ["guard_name"  => 'web', 'name' => 'read subjects',],
+            ["guard_name"  => 'web', 'name' => 'update subjects',],
+            ["guard_name"  => 'web', 'name' => 'delete subjects',],
 
 
             ["guard_name"  => 'web', 'name' => 'create school',],
@@ -475,6 +480,7 @@ class PermissionSeeder extends Seeder
             'menu-library',
             'menu-software-plan',
             'menu-payment-plan',
+            'menu-subjects',
 
             'create all-profile',
             'read self-attendance',
@@ -541,8 +547,11 @@ class PermissionSeeder extends Seeder
             'read library',
             'update library',
             'delete library',
-
-
+            'create subjects',
+            'read subjects',
+            'update subjects',
+            'delete subjects',
+            
 
 
 
@@ -567,6 +576,7 @@ class PermissionSeeder extends Seeder
              'menu-grade-system',
              'menu-notice',
              'menu-parent',
+             'menu-subjects',
              'menu-account-application',
              'manage school settings',
              'create section',
@@ -650,6 +660,13 @@ class PermissionSeeder extends Seeder
              'update applicant',
              'delete applicant',
              'change account application status',
+
+             'create subjects',
+             'read subjects',
+             'update subjects',
+             'delete subjects',
+            
+
          ]);
 
         // assign permission to Manager
@@ -669,6 +686,7 @@ class PermissionSeeder extends Seeder
             'menu-home-work',
             'menu-salary',
             'menu-library',
+            'menu-subjects' ,
             'menu-software-plan',
             'menu-payment-plan',
             'read fees-consession',
@@ -736,7 +754,10 @@ class PermissionSeeder extends Seeder
             'read library',
             'update library',
             'delete library',
-
+            'create subjects',
+            'read subjects',
+            'update subjects',
+            'delete subjects',
 
 
 
@@ -748,7 +769,7 @@ class PermissionSeeder extends Seeder
         $principle = Role::where('name', 'principle')->first();
         $principle->givePermissionTo([
             'menu-staff',
-            
+            'menu-subjects', 
             'menu-student',
             'menu-class',
             'menu-attendance',
@@ -805,7 +826,10 @@ class PermissionSeeder extends Seeder
             'read exam-exam-type',
             'read library',
             
-
+            'create subjects',
+            'read subjects',
+            'update subjects',
+            'delete subjects',
         ]);
 
         // assign permission to classteacher
