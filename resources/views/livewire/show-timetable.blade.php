@@ -1,7 +1,7 @@
 {{--Written for css 2.1 support--}}
 <div class="card" wire:loading.remove>
     <div class="card-header">
-        <h4 class="card-title">{{ $timetable->name}}</h4>
+        <h4 class="card-title">{{ $timetable->name }}</h4>
     </div>
     <div class="card-body">
         @if ($showDescription == true)  
@@ -10,6 +10,7 @@
             @endisset
         @endif
         <div class="table-responsive my-3">
+           
             <table class="table table-bordered overflow-auto" style="overflow-x: scroll"> 
                 <thead>
                     <tr> 
@@ -54,9 +55,13 @@
             </table>
         </div>
         <style>
+            table td {
+text-align: center;
+}
             .prevent-click {
                 pointer-events: none;
             }
         </style>
     </div>
 </div>
+

@@ -1,7 +1,13 @@
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Timetables</h4>
+<div class="card-header">
+        <h4 class="card-title mr-3 mt-1">Timetable</h4>
+
+        <form class="mr-3" action={{ route("timetables.create") }}>
+    <x-adminlte-button type="submit" label="Create New Timetable"  theme="primary" icon="fas fa-key"  />
+    </form>
     </div>
+
+    
     <div class="card-body">
         {{--Select statement for switching classes--}}
         @if (!auth()->user()->hasRole('student'))

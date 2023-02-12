@@ -60,9 +60,12 @@ class AttandanceService
     public function createSchedule($records)
     {
         $records['school_id'] = auth()->user()->school_id;
-       // dd($records) ; 
-        $Schedule = Schedule::create($records);
-        dd($Schedule) ; 
+        $Schedule = Schedule::create([
+            'school_id'    => $records['school_id'],
+            'slug'         => $records['slug'],
+            'time_in'      => $records['time_in'],
+            'time_out'     => $records['time_out'],
+        ]) ;
     }
 
     /**

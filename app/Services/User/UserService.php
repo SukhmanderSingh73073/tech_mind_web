@@ -104,6 +104,7 @@ class UserService
             'status'                =>'PENDING',
             'tehsil'               => $record['tehsil'],
             'locality'             => $record['locality'],
+            'role_type'             => $record['role_type'],
             
         ]);
 

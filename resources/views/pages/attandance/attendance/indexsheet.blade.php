@@ -27,7 +27,6 @@
                         <tr >
 
                             <th>user Name</th>
-                            <th>user Position</th>
                             <th>user ID</th>
                             @php
                                 $today = today();
@@ -64,7 +63,6 @@
 
                             <tr>
                                 <td>{{ $user->name }}</td>
-                                <td>{{ $user->position }}</td>
                                 <td>{{ $user->id }}</td>
 
 
@@ -92,34 +90,43 @@
                                     @endphp
                                     <td>
 
+                                    @if ($page_type=="attendance")
                                         <div class="form-check form-check-inline ">
 
+                                        
                                             @if (isset($check_attd))
-                                                 @if ($check_attd->status==1)
+                                             <H4>{{$check_attd->att_type}}</H4>
+                                                {{-- @if ($check_attd->status==1)
                                                  <i class="fa fa-check text-success"></i>
                                                  @else
                                                  <i class="fa fa-check text-danger"></i>
-                                                 @endif
+                                                 @endif--}}
                                                
                                             @else
-                                            <i class="fas fa-times text-danger"></i>
+                                            <H4>--</H4>
+                                            <!-- <i class="fas fa-times text-danger"></i> -->
                                             @endif
                                         </div>
+                                        @else
+                                        
                                         <div class="form-check form-check-inline">
                                           
                                             @if (isset($check_leave))
-                                            @if ($check_leave->status==1)
+                                            <H4>{{$check_leave->att_type}}</H4>
+                                            {{--@if ($check_leave->status==1)
                                             <i class="fa fa-check text-success"></i>
                                             @else
                                             <i class="fa fa-check text-danger"></i>
                                             @endif
-                                          
+                                          --}}
                                        @else
-                                       <i class="fas fa-times text-danger"></i>
+                                       <H4>--</H4>
+                                       <!-- <i class="fas fa-times text-danger"></i> -->
                                        @endif
                                         
 
                                         </div>
+                                        @endif
 
                                     </td>
 
