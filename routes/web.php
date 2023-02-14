@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('test', [App\Http\Controllers\SchoolController::class, "testing"]);
+Route::get('/', [App\Http\Controllers\SchoolController::class, "homes"]);
+Route::get('/home', [App\Http\Controllers\SchoolController::class, "homes"]);
 
-Route::get('/', function () {
-    return redirect()->route('dashboard');
-})->name('home');
+// Route::get('/', function () {
+//     return redirect()->route('dashboard');
+// })->name('home');
 
-Route::get('/home', function () {
-    return redirect()->route('dashboard');
-});
+// Route::get('/home', function () {
+//     return redirect()->route('dashboard');
+// });
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/register', ['App\Http\Controllers\RegistrationController', 'registerView'])->name('register');
@@ -36,7 +38,7 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
     //School routes
     Route::get('schools/schools_permission', [App\Http\Controllers\SchoolController::class, "permissionSchools"])->name("schools.schools_permission");
         Route::get('schools/edit_schools', [App\Http\Controllers\SchoolController::class, "editSchools"])->name("schools.edit_schools");
-       
+
     Route::resource('schools', SchoolController::class);
     Route::post('schools/set-school', ['App\Http\Controllers\SchoolController', 'setSchool'])->name('schools.setSchool');
 
@@ -133,7 +135,7 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         });
 
         //student routes
-        
+
         Route::get('students/withdraw_user', [App\Http\Controllers\StudentController::class, "withdrawUser"])->name("students.withdraw_user");
         Route::resource('students', StudentController::class);
         Route::get('students/{student}/print', ['App\Http\Controllers\StudentController', 'printProfile'])->name('students.print-profile')->withoutMiddleware(['App\Http\Middleware\PreventGraduatedStudent']);
@@ -192,9 +194,9 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         Route::get('routes/own_teacher', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_teacher");
         Route::get('routes/own_student', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.own_student");
         Route::get('routes/student_attendance', [App\Http\Controllers\AllRouteController::class, "commingSoon"])->name("routes.student_attendance");
-        
-        
-        
+
+
+
 
          //attendance routes
          Route::get('/self_attendance', '\App\Http\Controllers\CheckController@selfAttendance')->name('self_attendance');
@@ -220,7 +222,7 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
 
         //incharge routes
         Route::resource('incharges', InchargeController::class);
-        
+
         //classteachers routes
         Route::resource('classteachers', ClassTeacherController::class);
 

@@ -1,13 +1,13 @@
 <div class="row">
     @livewire('display-validation-error')
-    <h4 class="text-bold col-12 text-center">Account information</h4> 
+    <h4 class="text-bold col-12 text-center">Account information</h4>
     <p class="text-secondary col-12">
         {{__('All fields marked * are required')}}
     </p>
     <div class="col-12">
         <img id="profile-picture" src="{{asset('application-images/user-profile-image.png')}}" alt="Profile Picture" class="rounded-circle profile-image justify-center mx-auto d-block" height="200px" width="200px" >
         <x-adminlte-input-file name="profile_photo" placeholder="Select profile photo" accept="image/*" fgroup-class="col-md-4 mx-auto my-4"  id="profile-image-input">
-            
+
         </x-adminlte-input-file>
     </div>
     <x-adminlte-input name="first_name" label="First name *" placeholder="{{$role}}'s first name" fgroup-class="col-md-3" enable-old-support/>
@@ -17,10 +17,10 @@
     <x-adminlte-input name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-4" type="password"/>
     <x-adminlte-input name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-4" type="password"/>
     <h4 class="text-bold col-12 text-center">Personal information</h4>
-    
+
     <x-adminlte-input name="fname" label="Father name *" placeholder="{{$role}}'s Father name" fgroup-class="col-md-3" enable-old-support/>
     <x-adminlte-select
-     name="f_occupation" 
+     name="f_occupation"
      label="Father Occupation *"
       fgroup-class="col-md-3"
        enable-old-support>
@@ -37,10 +37,10 @@
             <option value="{{$occupation}}" >{{$occupation}}</option>
         @endforeach
     </x-adminlte-select>
-    
+
     <x-adminlte-input-date name="birthday" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose {{$role}}'s xxbirthday..." label="Birthday *"  fgroup-class="col-md-3" value="{{old('birthday')}}" autocomplete="off"/>
-   
-    
+
+
     <x-adminlte-select name="gender" label="Gender *" fgroup-class="col-md-3" enable-old-support>
         @php ($genders = ['Male', 'Female'])
         @foreach ($genders as $gender)
@@ -58,7 +58,7 @@
     <x-adminlte-input name="aadhaar_number" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-6"/>
     <x-adminlte-input name="address" placeholder="{{$role}}'s address" fgroup-class="col-md-12 no-resize" label="Address *" enable-old-support fgroup-class="col-md-6"/>
     <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Student's Previos School"  enable-old-support autocomplete="off"/>
-    
+
     <div class="col-md-8">
         @livewire('nationality-and-state-input-fields', ['nationality' => old('nationality'), 'state' => old('state')])
     </div>
@@ -93,7 +93,7 @@
 
 
     @section('plugins.TempusDominusBs4', true)
-    
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("profile-image-input").addEventListener("change", function() {
@@ -106,5 +106,37 @@
                 reader.readAsDataURL(file);
             });
         });
+        function dataGet(e) {
+        if (e.name == "bulkUpload") {
+            const date = new Date()
+            const result = date.toLocaleDateString("en-CA", { // you can use undefined as first argument
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            })
+            const myArray = result.split("-");
+            let dt=myArray[0]+"/"+myArray[1]+"/"+myArray[2];
+            let inp=document.getElementById('admission_date');
+            if(inp){
+                inp.value=dt
+            }
+            let elm = document.getElementById("formSections"); // for form
+            elm.classList.add("d-none");
+            let elm1 = document.getElementById("formSections1");
+            elm1.classList.remove("d-none");
+            let btn = document.getElementById("formUpload");
+            btn.classList.remove("d-none");
+            e.classList.add("d-none")
+        }
+        if (e.name == "formUpload") {
+            let elm1 = document.getElementById("formSections1");
+            elm1.classList.add("d-none");
+            let elm = document.getElementById("formSections");
+            elm.classList.remove("d-none");
+            let btn = document.getElementById("bulkUpload");
+            btn.classList.remove("d-none");
+            e.classList.add("d-none")
+        }
+    }
     </script>
 </div>

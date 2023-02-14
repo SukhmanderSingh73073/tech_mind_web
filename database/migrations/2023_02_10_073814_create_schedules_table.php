@@ -27,7 +27,7 @@ return new class extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('schedule_id')->unsigned();
             $table->timestamps();
-          
+
 
            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
            // $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
@@ -47,15 +47,15 @@ return new class extends Migration
         //     $table->timestamps();
         // });
         // Schema::create('schedule_users', function ($table) {
-           
+
         //     $table->integer('user_id')->unsigned();
         //     $table->integer('schedule_id')->unsigned();
         //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         //     $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
-       
+
         // });
-       
-       
+
+
     }
 
     /**
@@ -64,9 +64,9 @@ return new class extends Migration
      * @return void
      */
     public function down()
-    {   
+    {
 
-        
+
         Schema::dropIfExists('schedule_users');
         Schema::dropIfExists('schedules');
     }

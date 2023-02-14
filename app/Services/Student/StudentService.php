@@ -99,10 +99,10 @@ class StudentService
      */
     public function createStudent($record)
     {
-        $record['role_type'] = "student" ; 
-       // dd($record) ;
+        $record['role_type'] = "student" ;
+
+        // dd($record) ;
         DB::transaction(function () use ($record) {
-            
             $student = $this->userService->createUser($record);
             $student->assignRole('student');
 
@@ -128,16 +128,21 @@ class StudentService
             throw new InvalidValueException('Section is not in class');
         }
 
-        $student->studentRecord()->firstOrCreate([
-            'user_id' => $student->id,
-        ], [
-            'my_class_id'      => $record['my_class_id'],
-            'section_id'       => $record['section_id'],
-            'admission_number' => $record['admission_number'],
-            'admission_date'   => $record['admission_date'],
-            'sr_no'            => $record['sr_no'],
-            'roll_no'          => $record['roll_no'],
-        ]);
+        try {
+            $student->studentRecord()->firstOrCreate([
+                'user_id' => $student->id,
+            ], [
+                'my_class_id'      => $record['my_class_id'],
+                'section_id'       => $record['section_id'],
+                'admission_number' => $record['admission_number'],
+                'admission_date'   => $record['admission_date'],
+                'sr_no'            => $record['sr_no'],
+                'roll_no'          => $record['roll_no'],
+            ]);
+        } catch (\Throwable $th) {
+            //throw $th;
+            dd($th->getMessage());
+        }
 
         //create record history
         $currentAcademicYear = $student->school->academicYear;
