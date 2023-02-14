@@ -26,9 +26,9 @@ class SchoolController extends Controller
     public function testing()
     {
         $admin = Role::where('name', 'admin')->first();
-          
+
         $user = User::where('name' ,"admin")->first() ;
-        
+
         $getUsers = $user-> hasPermission("header-administrate");
         return Response::json($getUsers);
 
@@ -135,11 +135,18 @@ class SchoolController extends Controller
         ]);
 
         dd("d") ;
-       
+
     }
 
 
-    
+    public function homes()
+    {
+        # code...
+        return view('welcome');
+    }
+
+
+
  /**
      * Display a listing of the resource.
      *
@@ -182,7 +189,7 @@ class SchoolController extends Controller
     }
 
 
-    
+
     /**
      * Display a listing of the resource.
      *

@@ -73,7 +73,6 @@ class UserService
         if (!$record['other_names']) {
             $record['other_names'] = null;
         }
-
         $record['name'] = $this->createFullName($record['first_name'], $record['last_name'], $record['other_names']);
         $record['school_id'] = $record['school_id'] ?? auth()->user()->school_id;
         $user = $this->createUserAction->create([
@@ -92,7 +91,6 @@ class UserService
             'city'                  => $record['city'],
             'gender'                => $record['gender'],
             'phone'                 => $record['phone'],
-
             'aadhaar_number'        =>$record['aadhaar_number'],
             'caste'                 =>$record['caste'],
             'fname'                 =>$record['fname'],
@@ -105,9 +103,8 @@ class UserService
             'tehsil'               => $record['tehsil'],
             'locality'             => $record['locality'],
             'role_type'             => $record['role_type'],
-            
-        ]);
 
+        ]);
         return $user;
     }
 

@@ -8,6 +8,7 @@ use App\Services\Student\StudentService;
 use App\Services\User\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Reader;
 
 class StudentController extends Controller
 {
@@ -61,19 +62,29 @@ class StudentController extends Controller
      */
     public function store(StudentStoreRequest $request)
     {
-        dd($request->file('csv'));
-        $files = public_path('csv/students_create.csv');
-        $data =  csvToArray($files, ',');
-        $res=saveDataIntoDb($data);
-        // dd($res);
-        $arr = $request->all();
-        foreach ($arr as $key => $value) {
-            echo "<span>$key</span><br/>";
-        }
-        $this->authorize('create', [User::class, 'student']);
-        $this->student->createStudent($request);
+        $file = $request->file('csv');
+        if ($file) {
+            $path = $request->file('csv')->getRealPath();
+            $data = array_map('str_getcsv', file($path));
+            $data = saveDataIntoDb($data);
+            // $reader = ($file->openFile('r'));
+            // $files = public_path('csv/students_create.csv');
+            // $data =  csvToArray($files, ',');
+            if(!isset($data['profile_photo'])){
+                $data['profile_photo']=null;
+            }
+            $this->authorize('create', [User::class, 'student']);
+            $this->student->createStudent($data);
+        return back()->with('success', 'Uploaded Successfully');
 
-        return back()->with('success', 'Student Created Successfully');
+        } else {
+            // $reader = ($file->openFile('r'));
+            // $files = public_path('csv/students_create.csv');
+            // $data =  csvToArray($files, ',');
+            $this->authorize('create', [User::class, 'student']);
+            $this->student->createStudent($request);
+            return back()->with('success', 'Student Created Successfully');
+        }
     }
 
     /**
@@ -184,5 +195,3 @@ class StudentController extends Controller
         return back()->with('success', 'Student Deleted Successfully');
     }
 }
-
-
