@@ -42,6 +42,7 @@ Navigation bar code here
                 <li><a href="#work">Work</a></li>
                 <li><a href="#writings">Writings</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </div>
     </nav>

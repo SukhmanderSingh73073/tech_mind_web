@@ -5,7 +5,7 @@
 
 @section('content_header')
 <h4 class=""> 
-        {{ __('Teachers') }}
+        {{ __('Students') }}
     </h4>
 
    {{--   <h1 class="">

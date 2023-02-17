@@ -6,12 +6,20 @@
     label="Create New student"  theme="primary" 
     icon="fas fa-key"  />
     </form>
+
+
     
     </div>
     <div class="card-body">
         <x-adminlte-datatable id="student-list-table" 
         :heads="['S/N', 'Name','email','gender' 
-        , 'address','Status', 'Edit','View','Lock','Approved', 'Delete']" class='text-capitalize' bordered striped head-theme="dark" beautify >
+        , 'address','Status', 'Edit','View','Lock','Approved'
+        , 'Delete']" class='text-capitalize'
+        
+         bordered striped head-theme="dark" 
+         beautify 
+         
+         >
             @foreach($students as $student)
                 <tr>
                     <td>{{$loop->iteration}}</td>
@@ -30,7 +38,7 @@
                 <td><button  class="btn btn-secondary" onclick="actionHandle('/dashboard/students/{{$student->id}}')" data-url="students.edit" data-id="{{$student->id}}"  >Lock</button>
                 </td>
                 <td>
-                        @livewire('withdraw-modal', ['modal_id' => $student->id ,"action" => route('students.destroy', $student->id), 'item_name' => $student->name])
+                        @livewire('withdraw-modal', ['modal_id' => $student->id ,"action" => route('students.withdraw', $student->id), 'item_name' => $student->name])
                     </td>
                     
                     <td>

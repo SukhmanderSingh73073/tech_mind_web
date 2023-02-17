@@ -6,6 +6,8 @@
     <x-adminlte-button type="submit" label="Create New Subject"  theme="primary" icon="fas fa-key"  />
     </form>
     </div>
+    <!-- #007BFF
+    #FFA401 -->
     <div class="card-body">
         @if (!empty($classes))
         

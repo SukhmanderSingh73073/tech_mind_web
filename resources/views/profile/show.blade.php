@@ -3,14 +3,14 @@
 @section('title', __('Profile'))
 
 @section('content_header')
-    <h1 class="">
+    <h4 class="">
         {{ __('Profile') }}
-    </h1>
+    </h4>
 
-    @livewire('breadcrumbs', ['paths' => [
+   {{-- @livewire('breadcrumbs', ['paths' => [
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
         ['href'=> route('profile.show'), 'text'=> 'Profile' , 'active']
-    ]])
+    ]])--}}
 @stop
 
 @section('content')
@@ -49,7 +49,8 @@
 
 @section('css')
      <!-- Google Font: Source Sans Pro -->
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+     <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 @endsection
 
 @section('js')
