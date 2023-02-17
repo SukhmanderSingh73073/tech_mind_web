@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\AccountStatusChanged;
 use App\Http\Requests\RegistrationRequest;
+use App\Models\School;
 use App\Services\AccountApplication\AccountApplicationService;
 use App\Services\User\UserService;
 
@@ -36,7 +37,13 @@ class RegistrationController extends Controller
 
     public function register(RegistrationRequest $request)
     {
-        $request['school_id'] = $request->school;
+       // dd($request) ; 
+        $school = School::where('code' , $request->school_code)->first() ;
+        if (is_null($school)){
+            return back()->with('failed', 'Please enter a valid school code');
+        }
+        ///$request['school_id'] = $request->school;
+        $request['school_id'] = $school->id;
 
         $user = $this->userService->createUser($request);
 
