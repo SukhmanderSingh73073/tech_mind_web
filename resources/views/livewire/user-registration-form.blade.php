@@ -2,12 +2,17 @@
     @isset($roles)
     <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
         <div class="card-body" >
-            <x-adminlte-select name="role" label="Register as" enable-old-support class="text-capitalize">    
+            <x-adminlte-select
+             
+            name="role"  enable-old-support 
+            class="text-capitalize d-none">    
                     @foreach ($roles as $item)
                         <option value="{{$item['id']}}" >{{$item['name']}}</option>
                     @endforeach
             </x-adminlte-select>
-            <x-adminlte-select name="school" fgroup-class="" label="School" enable-old-support class="text-capitalize">    
+            <x-adminlte-input name="school_code" label="School Code *" placeholder="School Code" fgroup-class="col-md-12" enable-old-support/>
+            <x-adminlte-select name="school" fgroup-class="d-none"
+            enable-old-support class="text-capitalize">    
                     @foreach ($schools as $item)
                         <option value="{{$item['id']}}" >{{$item['name']}} - {{$item['address']}}</option>
                     @endforeach

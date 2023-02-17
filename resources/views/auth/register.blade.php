@@ -2,9 +2,9 @@
 
 @section('body')
     <div class="container">
-        <div class="row justify-content-center my-5">
-            <div class=" col-lg-10 my-4">
-                <div class="col-md-7 m-auto ">
+        <div class="row justify-content-center">
+            <div class=" col">
+                <div class="col-md-12 m-auto ">
                     <x-jet-authentication-card-logo />
                 </div>
                 <div class="card shadow-sm px-1">
