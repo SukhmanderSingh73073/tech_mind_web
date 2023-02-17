@@ -1,10 +1,11 @@
 <div class="card">
 <div class="card-header">
         <h4 class="card-title mr-3 mt-1">Timetable</h4>
-
+        @can('create timetable')
         <form class="mr-3" action={{ route("timetables.create") }}>
-    <x-adminlte-button type="submit" label="Create New Timetable"  theme="primary" icon="fas fa-key"  />
+    <x-adminlte-button    type="submit" label="Create New Timetable"  theme="primary" icon="fas fa-key"  />
     </form>
+    @endcan
     </div>
 
     

@@ -576,7 +576,7 @@ return [
             ],
         ],
          ///CLASS SUBJECTS
-         [
+        [
             'type'    => 'sidebar-menu-item',
             'text'    => 'Subject Managment',
             'icon'    => 'fas fa-chalkboard',

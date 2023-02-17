@@ -167,7 +167,7 @@ class StudentController extends Controller
         //change status here
         $student->status = 'WITHDRAW';
 
-        dd($student);
+      //  dd($student);
 
         $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
         $this->authorize('update', [$student, 'student']);
@@ -177,6 +177,25 @@ class StudentController extends Controller
     }
 
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param User $student
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function withdraw(User $student)
+    {
+        dd('withdraw') ; 
+        
+        $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
+        $this->authorize('delete', [$student, 'student']);
+        $this->student->deleteStudent($student);
+
+        return back()->with('success', 'Student Deleted Successfully');
+    }
     /**
      * Remove the specified resource from storage.
      *

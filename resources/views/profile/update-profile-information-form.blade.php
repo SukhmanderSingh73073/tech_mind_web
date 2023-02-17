@@ -14,7 +14,8 @@
         </x-jet-action-message>
         <!-- Profile Photo -->
         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-            <div class="form-group" x-data="{photoName: null, photoPreview: null}">
+            <div class="row" 
+                 x-data="{photoName: null, photoPreview: null}">
                 <!-- Profile Photo File Input -->
                 <input type="file" hidden
                        wire:model="photo"
@@ -28,7 +29,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
 
-                <x-jet-label for="photo" value="{{ __('Photo') }}" />
+                <!-- <x-jet-label for="photo" value="{{ __('Photo') }}" /> -->
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
@@ -38,11 +39,18 @@
                 <!-- New Profile Photo Preview -->
                 <div class="mt-2" x-show="photoPreview">
                     <img x-bind:src="photoPreview" class="rounded-circle" width="80px" height="80px">
+               
+               
                 </div>
 
-                <x-jet-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
+                <x-jet-secondary-button class="m-4"
+                style="border-style:none;height:50px;" 
+                type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
 				</x-jet-secondary-button>
+
+
+
 				
 				@if ($this->user->profile_photo_path)
                     <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
@@ -52,9 +60,11 @@
 
                 <x-jet-input-error for="photo" class="mt-2" />
             </div>
+
         @endif
 
         <div class="">
+            
             <!-- Name -->
             <div class="form-group">
                 <x-jet-label for="name" value="{{ __('Name') }} ( surname, first name, other names )" />
