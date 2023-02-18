@@ -3,7 +3,7 @@
         <h3 class="card-title">Create Manager</h3>
     </div>
     <div class="card-body">
-        <form action="{{route('teachers.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('managers.store')}}" method="POST" enctype="multipart/form-data">
     
             @livewire('create-user-fields', ['role' => 'manager']) 
             @csrf

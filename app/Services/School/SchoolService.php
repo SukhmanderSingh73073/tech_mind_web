@@ -4,6 +4,7 @@ namespace App\Services\School;
 
 use App\Exceptions\ResourceNotEmptyException;
 use App\Models\School;
+use App\Models\Semester;
 use App\Services\User\UserService;
 use Illuminate\Support\Str;
 
@@ -58,6 +59,13 @@ class SchoolService
         $record['code'] = $this->generateSchoolCode();
         $school = School::create($record);
 
+        $data['academic_year_id'] = auth()->user()->school->academicYear->id;
+        $data['school_id'] = auth()->user()->school->id;
+        $semester = Semester::create([
+            'name'             => "Sem 1" ,
+            'school_id'        => $school->id ,
+            'academic_year_id' => $data['academic_year_id'] ,
+        ]);
         return $school;
     }
 

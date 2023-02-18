@@ -24,6 +24,6 @@ class AcademicYearSeeder extends Seeder
         ]);
         $academicYear->school->academic_year_id = $academicYear->id;
         $academicYear->school->save();
-        AcademicYear::factory()->count(4)->create();
+       // AcademicYear::factory()->count(4)->create();
     }
 }

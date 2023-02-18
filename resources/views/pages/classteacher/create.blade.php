@@ -19,7 +19,7 @@
 @stop
 
 @section('content') 
-    @livewire('create-classteacher-form')
+    @livewire('create-class-teacher-form')
 
     @livewire('display-status')
 @stop

@@ -67,9 +67,6 @@ class StudentController extends Controller
             $path = $request->file('csv')->getRealPath();
             $data = array_map('str_getcsv', file($path));
             $data = saveDataIntoDb($data);
-            // $reader = ($file->openFile('r'));
-            // $files = public_path('csv/students_create.csv');
-            // $data =  csvToArray($files, ',');
             if(!isset($data['profile_photo'])){
                 $data['profile_photo']=null;
             }
@@ -78,9 +75,6 @@ class StudentController extends Controller
         return back()->with('success', 'Uploaded Successfully');
 
         } else {
-            // $reader = ($file->openFile('r'));
-            // $files = public_path('csv/students_create.csv');
-            // $data =  csvToArray($files, ',');
             $this->authorize('create', [User::class, 'student']);
             $this->student->createStudent($request);
             return back()->with('success', 'Student Created Successfully');
@@ -188,7 +182,7 @@ class StudentController extends Controller
      */
     public function withdraw(User $student)
     {
-        dd('withdraw') ; 
+        //dd('withdraw') ; 
         
         $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
         $this->authorize('delete', [$student, 'student']);

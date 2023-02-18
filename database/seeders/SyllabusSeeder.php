@@ -14,6 +14,6 @@ class SyllabusSeeder extends Seeder
      */
     public function run()
     {
-        Syllabus::factory()->count(10)->create();
+      //  Syllabus::factory()->count(10)->create();
     }
 }

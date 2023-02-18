@@ -53,7 +53,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'm_occupation'  ,
         'previous_school' ,
         'sub_caste',
-        'status'
+        'status',
+        'bank_name',
+        'ifsc',
+        'holder_name',
+        'acc_no',
+
 
     ];
 

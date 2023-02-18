@@ -95,7 +95,7 @@ class AdminController extends Controller
      */
     public function abc()
     {
-        dd("dfd") ; 
+      //  dd("dfd") ; 
         return view('pages.admin.create');
     }
     /**

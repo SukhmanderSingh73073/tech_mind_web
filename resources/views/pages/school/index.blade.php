@@ -7,17 +7,11 @@
         {{ __('Manage Schools') }}
     </h4>
 
-    {{-- @livewire('show-set-school') 
-     @livewire('breadcrumbs', ['paths' => [
-        ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
-        ['href'=> route('schools.index'), 'text'=> 'Manage Schools' , 'active']
-    ]])  
-    --}}
+ 
 @endsection
 
 @section('content')
 
-    @livewire('school-set')
     
     @livewire('list-schools-table')
 

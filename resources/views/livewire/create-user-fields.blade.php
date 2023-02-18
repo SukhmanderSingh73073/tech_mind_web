@@ -23,6 +23,7 @@
      label="Father Occupation *"
       fgroup-class="col-md-3"
        enable-old-support>
+       <option value="">--Select--</option>
         @php ($occupations = ['FARMER', 'BUISNESSMAN','GOVERNMENT SERVANT' ,'LABOUR'])
         @foreach ($occupations as $occupation)
             <option value="{{$occupation}}" >{{$occupation}}</option>
@@ -30,7 +31,8 @@
     </x-adminlte-select>
     <x-adminlte-input name="mname" label="Mother name *" placeholder="{{$role}}'s Mother name" fgroup-class="col-md-3" enable-old-support/>
     <x-adminlte-select name="m_occupation" label="Mother Occupation *" fgroup-class="col-md-3" enable-old-support>
-        @php ($occupations = ['FARMER', 'BUISNESSMAN','GOVERNMENT SERVANT' ,'LABOUR','HOUSE WOMAN'])
+    <option value="">--Select--</option>
+    @php ($occupations = ['FARMER', 'BUISNESSMAN','GOVERNMENT SERVANT' ,'LABOUR','HOUSE WOMAN'])
         @foreach ($occupations as $occupation)
             <option value="{{$occupation}}" >{{$occupation}}</option>
         @endforeach
@@ -43,7 +45,7 @@
     </div>
     <x-adminlte-input name="city" label="District *" placeholder="{{$role}}'s city" fgroup-class="col-md-3" enable-old-support/>
     <x-adminlte-input name="tehsil" label="Tehsil *" placeholder="{{$role}}'s Tehsil" fgroup-class="col-md-3" enable-old-support/>
-    <x-adminlte-input  class="d-none" name="locality"  placeholder="{{$role}}'s Locality" fgroup-class="col-md-0" enable-old-support/>
+    <x-adminlte-input  class="d-none" value="test" name="locality"  placeholder="{{$role}}'s Locality" fgroup-class="col-md-0" enable-old-support/>
     <x-adminlte-input name="aadhaar_number" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-3"/>
     <x-adminlte-select name="religion" label="Religion *" fgroup-class="col-md-3" enable-old-support>
         @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
@@ -74,8 +76,12 @@
         @endforeach
     </x-adminlte-select>
     
-    <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Student's Previos School"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
+    <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Previos School"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     
+    <x-adminlte-input  name="bank_name" label="Bank Name *" placeholder="Bank Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
+    <x-adminlte-input  name="ifsc" label="IFSC Code*" placeholder="IFSC Code"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
+    <x-adminlte-input  name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
+    <x-adminlte-input  name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
 
    
 

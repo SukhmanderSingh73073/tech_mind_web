@@ -23,6 +23,6 @@ class ExamSeeder extends Seeder
             'stop_date'   => '2020-01-31',
         ]);
 
-        Exam::factory()->count(10)->create();
+       /// Exam::factory()->count(10)->create();
     }
 }

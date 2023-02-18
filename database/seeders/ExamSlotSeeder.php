@@ -21,6 +21,6 @@ class ExamSlotSeeder extends Seeder
             'exam_id'     => 1,
         ]);
 
-        ExamSlot::factory()->count(10)->create();
+     //   ExamSlot::factory()->count(10)->create();
     }
 }

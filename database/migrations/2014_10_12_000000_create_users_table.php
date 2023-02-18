@@ -34,8 +34,13 @@ return new class() extends Migration {
             $table->string('status')->comment('PENDING' , 'ACTIVE','BANNED','REJECTED','WITHDRAW');
             $table->string('tehsil')->default("Local");
             $table->string('locality')->default("Local");
-            
 
+            $table->string('bank_name')->default("");
+            $table->string('ifsc')->default("");
+            $table->string('holder_name')->default("");
+            $table->string('acc_no')->default("");
+            
+            // bank_name
 
             $table->timestamps();
         });

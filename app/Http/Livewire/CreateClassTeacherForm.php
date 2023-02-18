@@ -8,6 +8,6 @@ class CreateClassTeacherForm extends Component
 {
     public function render()
     {
-        return view('livewire.create-classteacher-form');
+        return view('livewire.create-class-teacher-form');
     }
 }

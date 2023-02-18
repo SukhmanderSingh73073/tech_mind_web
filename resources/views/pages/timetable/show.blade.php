@@ -3,17 +3,7 @@
 @section('title', __("View $timetable->name"))
 
 @section('content_header')
-    <h1 class="">
-        {{ __("View $timetable->name") }}
-    </h1>
-
-    @livewire('show-set-school')
-
-    @livewire('breadcrumbs', ['paths' => [
-        ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
-        ['href'=> route('timetables.index'), 'text'=> 'timetables'],
-        ['href'=> route('timetables.show', $timetable->id), 'text'=> "View $timetable->name", 'active'],
-    ]])
+    
 @endsection
 
 @section('content')

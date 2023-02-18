@@ -28,8 +28,6 @@ class SchoolSeeder extends Seeder
         
 
 
-        School::factory()
-            ->count(3)
-            ->create();
+      
     }
 }

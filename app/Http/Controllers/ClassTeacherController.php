@@ -66,7 +66,7 @@ class ClassTeacherController extends Controller
     {
         $this->authorize('create', [User::class, 'classteacher']);
         $this->classteacher->createclassteacher($request);
-
+      
         return back()->with('success', 'classteacher Created Successfully');
     }
 
