@@ -168,7 +168,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function lastName()
     {
         try {
-            return explode(' ', $this->name)[1];
+            return "";
+            // return explode(' ', $this->name)[1];
         } catch (\Throwable $th) {
             return "" ;
         }
@@ -178,9 +179,9 @@ class User extends Authenticatable implements MustVerifyEmail
     //get other names
     public function otherNames()
     {
-        $names = array_diff_key(explode(' ', $this->name), array_flip([0, 1]));
-
-        return implode(' ', $names);
+        return "" ;
+        //$names = array_diff_key(explode(' ', $this->name), array_flip([0, 1]));
+        //return implode(' ', $names);
     }
 
     public function defaultProfilePhotoUrl()

@@ -16,17 +16,46 @@
 
 @section('content')
 
-<x-adminlte-input-date name="birthday" :config="['format' => 'YYYY/MM/DD']" label="Date of Birth *"  fgroup-class="col-md-3" autocomplete="off"/>
+<form action="{{route('view_check_student')}}" autocomplete="off" method="GET">
 
 
-<div class="col-12">
+<div class='card-header row'>
 
-    <x-adminlte-select name="school_id" onchange='changeHandler()'>
-        @foreach ($class_data as $school)
+<div class='col-3'>
+            
+            <x-adminlte-select name="school_id" onChange="this.form.submit()">
+        @foreach ($all_data->schools as $school)
         <option value="{{ $school }}">{{ $school['name'] }} </option>
         @endforeach
     </x-adminlte-select>
-</div>
+    </div>
+    
+<div class='col-3'>
+    <x-adminlte-select name="class_id" onChange="this.form.submit()">
+        @foreach ($all_data->classes as $school)
+        <option value="{{ $school }}">{{ $school['name'] }} </option>
+        @endforeach
+    </x-adminlte-select>
+    </div>
+
+
+        <div class='col-3'>
+        <x-adminlte-input-date name="date_from" onChange="this.form.submit()" :config="['format' => 'YYYY/MM/DD']" placeholder="Date From"  autocomplete="off"/>
+
+            </div>
+            <div class='col-3'>
+            <x-adminlte-input-date name="date_to" onChange="this.form.submit()" :config="['format' => 'YYYY/MM/DD']" placeholder="Date To"   autocomplete="off"/>
+
+            </div>
+    
+            
+            </div>
+</form>
+   
+
+
+    @section('plugins.TempusDominusBs4', true)
+
 
 <div class="card">
     <div class="card-body">
@@ -49,7 +78,7 @@
 
                 
                 @csrf
-                            @foreach ($class_data->iems_data as $user)
+                            @foreach ($all_data->iems_data as $user)
 
 
                                 <tr>
@@ -72,13 +101,25 @@
 </div>
 @endsection
 
-<script>
 
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("profile-image-input").addEventListener("change", function() {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                var profilePicture = document.getElementById("profile-picture");
+                profilePicture.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+      
 function changeHandler(e) {
    
     
      //$class_data['iems_data']
-     $class_data['iems_data'] = $class_data[0]['studentRecords'] ;
+    // $class_data['iems_data'] = $class_data[0]['studentRecords'] ;
 }
 
 </script>

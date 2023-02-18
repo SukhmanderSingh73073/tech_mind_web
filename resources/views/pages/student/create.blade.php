@@ -4,9 +4,7 @@
 
 
 @section('content_header')
-    <h4 class=""> 
-        {{ __('Create students') }}
-    </h4>
+    
 
     {{--
     @livewire('show-set-school')
