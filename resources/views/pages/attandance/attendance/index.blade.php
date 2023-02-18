@@ -32,13 +32,10 @@
                             @php
                                 $today = today();
                                 $dates = [$today];
-                                
-                               
-                                
                             @endphp
                             
        
-
+                           
                         </tr>
                     </thead>
 
@@ -58,8 +55,7 @@
                                     <td>{{ $user->name }}</td>
 
                                         @php
-                                        $i =0;
-                                            $date_picker = \Carbon\Carbon::createFromDate($today->year, $today->month, $i)->format('Y-m-d');
+                                            $date_picker = \Carbon\Carbon::createFromDate($today->year, $today->month, $today->day)->format('Y-m-d');
                                             
                                             $check_attd_p = \App\Models\Attendances::query()
                                                 ->where('user_id', $user->id)

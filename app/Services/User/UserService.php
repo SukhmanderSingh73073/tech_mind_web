@@ -57,7 +57,7 @@ class UserService
     {
         return User::Role($role)
         ->where('school_id', auth()->user()->school_id)
-        ->with('school')
+        //->with('school')
         ->get();
     }
 

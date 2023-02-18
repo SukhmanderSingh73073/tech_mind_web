@@ -1,22 +1,24 @@
 <div class="row">
     @livewire('display-validation-error')
-    <h4 class="text-bold col-12 text-center">Account information</h4>
     <p class="text-secondary col-12">
         {{__('All fields marked * are required')}}
     </p>
     <div class="col-12">
         <img id="profile-picture" src="{{asset('application-images/user-profile-image.png')}}" alt="Profile Picture" class="rounded-circle profile-image justify-center mx-auto d-block" height="200px" width="200px" >
         <x-adminlte-input-file name="profile_photo" placeholder="Select profile photo" accept="image/*" fgroup-class="col-md-4 mx-auto my-4"  id="profile-image-input">
-
         </x-adminlte-input-file>
     </div>
-    <x-adminlte-input name="first_name" label="First name *" placeholder="{{$role}}'s first name" fgroup-class="col-md-3" enable-old-support/>
-    <x-adminlte-input name="last_name" label="Last name *" placeholder="{{$role}}'s last name" fgroup-class="col-md-3" enable-old-support/>
-    <div id="infoPart" style="visibility: hidden"><x-adminlte-input name="other_names"  value="test" label="Other names *" placeholder="{{$role}}'s other names " fgroup-class="col-md-6" enable-old-support/></div>
-    <x-adminlte-input name="email" type="email" label="Email address *" placeholder="Enter {{$role}}'s email address" fgroup-class="col-md-4" enable-old-support/>
-    <x-adminlte-input name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-4" type="password"/>
-    <x-adminlte-input name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-4" type="password"/>
-    <h4 class="text-bold col-12 text-center">Personal information</h4>
+
+    <x-adminlte-input  name="first_name" label="First name *" placeholder="{{$role}}'s first name" fgroup-class="col-md-3" enable-old-support/>
+    <x-adminlte-input name="phone" label="Phone number" placeholder="{{$role}}'s phone number" fgroup-class="col-md-3" enable-old-support/>
+    <x-adminlte-input name="aadhaar_number" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-3"/>
+  
+    <x-adminlte-input class="d-none" name="last_name"  placeholder="{{$role}}'s last name" fgroup-class="col-md-0" enable-old-support/>
+    <x-adminlte-input class="d-none" name="other_names"  value="test" placeholder="{{$role}}'s other names " fgroup-class="col-md-0" enable-old-support/>
+    <x-adminlte-input name="email" type="email" label="Email address *" placeholder="Enter {{$role}}'s email address" fgroup-class="col-md-3" enable-old-support/>
+
+    <x-adminlte-input name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-3" type="password"/>
+    <x-adminlte-input name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-3" type="password"/>
 
     <x-adminlte-input name="fname" label="Father name *" placeholder="{{$role}}'s Father name" fgroup-class="col-md-3" enable-old-support/>
     <x-adminlte-select
@@ -38,7 +40,7 @@
         @endforeach
     </x-adminlte-select>
 
-    <x-adminlte-input-date name="birthday" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose {{$role}}'s xxbirthday..." label="Birthday *"  fgroup-class="col-md-3" value="{{old('birthday')}}" autocomplete="off"/>
+    <x-adminlte-input-date name="birthday" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose {{$role}}'s Date of Birth..." label="Date of Birth *"  fgroup-class="col-md-3" value="{{old('birthday')}}" autocomplete="off"/>
 
 
     <x-adminlte-select name="gender" label="Gender *" fgroup-class="col-md-3" enable-old-support>
@@ -47,19 +49,26 @@
             <option value="{{$gender}}" >{{$gender}}</option>
         @endforeach
     </x-adminlte-select>
-    <div id="infoPart" style="visibility: hidden"><x-adminlte-select name="blood_group" label="Blood group *" fgroup-class="col-md-3" enable-old-support>
+    <x-adminlte-select class="d-none" name="blood_group"  fgroup-class="col-md-0" enable-old-support>
         @php ($bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'Ab-', 'O+', 'O-'])
         @foreach ($bloodGroups as $bloodGroup)
             <option value="{{$bloodGroup}}" >{{$bloodGroup}}</option>
         @endforeach
     </x-adminlte-select>
-    </div>
-    <x-adminlte-input name="phone" label="Phone number" placeholder="{{$role}}'s phone number" fgroup-class="col-md-3" enable-old-support/>
-    <x-adminlte-input name="aadhaar_number" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-6"/>
-    <x-adminlte-input name="address" placeholder="{{$role}}'s address" fgroup-class="col-md-12 no-resize" label="Address *" enable-old-support fgroup-class="col-md-6"/>
-    <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Student's Previos School"  enable-old-support autocomplete="off"/>
+    <x-adminlte-input name="address" placeholder="{{$role}}'s address" label="Address *" enable-old-support fgroup-class="col-md-3"/>
+    <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Student's Previos School"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
+    <x-adminlte-select name="caste" label="Caste *" fgroup-class="col-md-3" enable-old-support>
+        @php ($castes = ['GENERAL', 'OBC', 'SC','ST'])
+        @foreach ($castes as $caste)
+            <option value="{{$caste}}"  >{{$caste}}</option>
+        @endforeach
+    </x-adminlte-select>
 
-    <div class="col-md-8">
+    <x-adminlte-input name="sub_caste" label="Sub-Caste *" placeholder="{{$role}}'s Sub-Caste" fgroup-class="col-md-3" enable-old-support/>
+
+
+
+    <div class="col-md-6">
         @livewire('nationality-and-state-input-fields', ['nationality' => old('nationality'), 'state' => old('state')])
     </div>
     <x-adminlte-input name="city" label="District *" placeholder="{{$role}}'s city" fgroup-class="col-md-3" enable-old-support/>
@@ -74,15 +83,7 @@
         @endforeach
     </x-adminlte-select>
 
-    <x-adminlte-select name="caste" label="Caste *" fgroup-class="col-md-3" enable-old-support>
-        @php ($castes = ['GENERAL', 'OBC', 'SC','ST'])
-        @foreach ($castes as $caste)
-            <option value="{{$caste}}"  >{{$caste}}</option>
-        @endforeach
-    </x-adminlte-select>
-
-    <x-adminlte-input name="sub_caste" label="Sub-Caste *" placeholder="{{$role}}'s Sub-Caste" fgroup-class="col-md-3" enable-old-support/>
-
+  
     <!-- <x-adminlte-select name="sub_caste" label="Sub-Caste *" fgroup-class="col-md-3" enable-old-support>
         @php ($castes = ['ABC', 'DEF', 'GHI'])
         @foreach ($castes as $caste)

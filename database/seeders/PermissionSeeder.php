@@ -447,9 +447,6 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'edit-self-profile',],
             ["guard_name"  => 'web', 'name' => 'create-self-profile',],
             ["guard_name"  => 'web', 'name' => 'delete-self-profile',],
-
-
-
         ];
 
 

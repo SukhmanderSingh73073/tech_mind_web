@@ -14,6 +14,7 @@ class AdminController extends Controller
     {
         $this->admin = $admin;
     }
+    
 
     /**
      * Display a listing of the resource.

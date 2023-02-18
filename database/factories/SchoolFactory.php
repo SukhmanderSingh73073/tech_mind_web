@@ -26,7 +26,7 @@ class SchoolFactory extends Factory
         return $this->state(function (array $attributes) {
             return [
                 'id'      => 1,
-                'name'    => 'Default school',
+                'name'    => 'Govt Sen Sec School (Boys)',
                 'address' => $this->faker->address(),
                 'initials'=> $this->faker->unique()->word(),
                 'code'    => $this->faker->unique()->randomNumber(5),

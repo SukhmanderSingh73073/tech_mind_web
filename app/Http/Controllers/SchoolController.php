@@ -9,6 +9,7 @@ use App\Models\School;
 use App\Models\User;
 use App\Services\School\SchoolService;
 use Illuminate\Http\Response;
+use Request;
 use Spatie\Permission\Models\Role;
 
 class SchoolController extends Controller
@@ -23,119 +24,69 @@ class SchoolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function testing()
+    public function testing(Request $request)
     {
-        $admin = Role::where('name', 'admin')->first();
-
-        $user = User::where('name' ,"admin")->first() ;
-
-        $getUsers = $user-> hasPermission("header-administrate");
-        return Response::json($getUsers);
+       
 
 
-        $admin->givePermissionTo([
-             'header-administrate',
-            // 'header-academics',
-            // 'menu-section',
-            // 'menu-class',
-            // 'menu-student',
-            // 'menu-teacher',
-            // 'menu-academic-year',
-            // 'menu-subject',
-            // 'menu-syllabus',
-            // 'menu-timetable',
-            // 'menu-semester',
-            // 'menu-exam',
-            // 'menu-grade-system',
-            // 'menu-notice',
-            // 'menu-parent',
-            // 'menu-account-application',
-            // 'manage school settings',
-            // 'create section',
-            // 'read section',
-            // 'update section',
-            // 'delete section',
-            // 'create class',
-            // 'read class',
-            // 'update class',
-            // 'delete class',
-            // 'create class group',
-            // 'read class group',
-            // 'update class group',
-            // 'delete class group',
-            // 'create student',
-            // 'read student',
-            // 'update student',
-            // 'delete student',
-            // 'create academic year',
-            // 'read academic year',
-            // 'update academic year',
-            // 'delete academic year',
-            // 'set academic year',
-            // 'create teacher',
-            // 'read teacher',
-            // 'update teacher',
-            // 'delete teacher',
-            // 'create subject',
-            // 'read subject',
-            // 'update subject',
-            // 'delete subject',
-            // 'promote student',
-            // 'read promotion',
-            // 'reset promotion',
-            // 'graduate student',
-            // 'view graduations',
-            // 'reset graduation',
-            // 'create semester',
-            // 'read semester',
-            // 'update semester',
-            // 'delete semester',
-            // 'set semester',
-            // 'create syllabus',
-            // 'read syllabus',
-            // 'update syllabus',
-            // 'delete syllabus',
-            // 'create timetable',
-            // 'read timetable',
-            // 'update timetable',
-            // 'delete timetable',
-            // 'create custom timetable item',
-            // 'read custom timetable item',
-            // 'update custom timetable item',
-            // 'delete custom timetable item',
-            // 'create exam',
-            // 'read exam',
-            // 'update exam',
-            // 'delete exam',
-            // 'create grade system',
-            // 'read grade system',
-            // 'update grade system',
-            // 'delete grade system',
-            // 'create exam slot',
-            // 'read exam slot',
-            // 'update exam slot',
-            // 'delete exam slot',
-            // 'create exam record',
-            // 'read exam record',
-            // 'update exam record',
-            // 'delete exam record',
-            // 'create notice',
-            // 'read notice',
-            // 'update notice',
-            // 'delete notice',
-            // 'check result',
-            // 'create parent',
-            // 'read parent',
-            // 'update parent',
-            // 'delete parent',
-            // 'read applicant',
-            // 'update applicant',
-            // 'delete applicant',
-            // 'change account application status',
-        ]);
+    $file = $request['file'] ;
+     dd($file) ;
+    // File Details
+    $filename = $file->getClientOriginalName();
+    $extension = $file->getClientOriginalExtension();
+    $tempPath = $file->getRealPath();
+    $fileSize = $file->getSize();
+    $mimeType = $file->getMimeType();
 
-        dd("d") ;
+    // Valid File Extensions
+    $valid_extension = array("csv");
 
+    // 2MB in Bytes
+    $maxFileSize = 2097152;
+
+    // Check file extension
+    if (in_array(strtolower($extension), $valid_extension)) {
+
+        // Check file size
+
+        // File upload location
+        $location = 'uploads';
+
+        // Upload file
+        $file->move($location, $filename);
+
+        // Import CSV to Database
+        $filepath = public_path($location . "/" . $filename);
+
+        // Reading file
+        $file = fopen($filepath, "r");
+
+        $importData_arr = array();
+        $i = 0;
+
+        while (($filedata = fgetcsv($file, 1000, ",")) !== FALSE) {
+            $num = count($filedata);
+
+            // Skip first row (Remove below comment if you want to skip the first row)
+            /*if($i == 0){
+                $i++;
+                continue;
+             }*/
+            for ($c = 0; $c < $num; $c++) {
+                $importData_arr[$i][] = $filedata[$c];
+                dd($filedata[$c]) ; 
+            }
+            $i++;
+        }
+        fclose($file);
+        // Insert to MySQL database
+        return $importData_arr;
+        dd("Import Successful") ;
+       // Session::flash('message', 'Import Successful.');
+    } else {
+        dd("Invalid File Extension.") ;
+        // Session::flash('message', 'Invalid File Extension.');
+    }
     }
 
 

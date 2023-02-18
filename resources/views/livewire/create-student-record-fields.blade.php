@@ -1,11 +1,12 @@
 <div class="row">
     <h4 class="text-bold col-12 text-center">Class information</h4>
-    <x-adminlte-select name="my_class_id" label="Choose a class *" fgroup-class="col-md-6" wire:model="myClass">
+
+    <x-adminlte-select name="my_class_id" label="Choose a class *" fgroup-class="col-md-3" wire:model="myClass">
         @foreach ($myClasses as $item)
             <option value="{{$item['id']}}">{{$item['name']}}</option>
         @endforeach
     </x-adminlte-select>
-    <x-adminlte-select name="section_id" label="Choose a section *" fgroup-class="col-md-6" wire:model="section">
+    <x-adminlte-select name="section_id" label="Choose a section *" fgroup-class="col-md-3" wire:model="section">
         @if (isset($sections))
             @foreach ($sections as $item)
                 <option value="{{$item['id']}}">{{$item['name']}}</option>

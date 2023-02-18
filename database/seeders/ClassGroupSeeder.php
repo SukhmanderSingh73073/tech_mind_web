@@ -16,17 +16,12 @@ class ClassGroupSeeder extends Seeder
     {
         ClassGroup::firstOrcreate([
             'id'        => 1,
-            'name'      => 'Kindergarten',
+            'name'      => 'Middle',
             'school_id' => 1,
         ]);
         ClassGroup::firstOrcreate([
             'id'        => 2,
-            'name'      => 'Nursery',
-            'school_id' => 1,
-        ]);
-        ClassGroup::firstOrcreate([
-            'id'        => 3,
-            'name'      => 'Primary',
+            'name'      => 'Matrix',
             'school_id' => 1,
         ]);
         ClassGroup::firstOrcreate([
@@ -34,6 +29,6 @@ class ClassGroupSeeder extends Seeder
             'name'      => 'Secondary',
             'school_id' => 1,
         ]);
-        ClassGroup::factory()->times(4)->create();
+        ClassGroup::factory()->times(3)->create();
     }
 }

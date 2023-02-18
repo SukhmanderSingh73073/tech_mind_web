@@ -26,7 +26,7 @@
 @section('content') 
 
 
-@livewire('school-set')
+
 
 @livewire('list-managers-table')
     

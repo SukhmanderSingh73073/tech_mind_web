@@ -725,6 +725,13 @@ return [
                 ],
                 [
                     'type'  => 'sidebar-menu-item',
+                    'text'  => 'View Student Attendance',
+                    'route' => 'view_check_student',
+                    'can'   => 'read student-attendance',
+                ],
+                
+                [
+                    'type'  => 'sidebar-menu-item',
                     'text'  => 'Student Attendance Register',
                     'route' => 'routes.student_attendance_register',
                     'can'   => 'read student-attendance-register',

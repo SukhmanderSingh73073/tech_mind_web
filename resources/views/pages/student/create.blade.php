@@ -4,10 +4,11 @@
 
 
 @section('content_header')
-    <h1 class=""> 
+    <h4 class=""> 
         {{ __('Create students') }}
-    </h1>
+    </h4>
 
+    {{--
     @livewire('show-set-school')
     
     @livewire('breadcrumbs', ['paths' => [
@@ -15,7 +16,7 @@
         ['href'=> route('students.index'), 'text'=> 'Students'],
         ['href'=> route('students.create'), 'text'=> 'create', 'active'],
     ]])
-
+    --}}
 @stop
 
 @section('content') 

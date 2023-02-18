@@ -1,13 +1,18 @@
 <div class="card">
-    <div class="card-header">
-    <h4 class="card-title mr-3 mt-1">Subjects List </h4>
-        
-        <form action={{ route("subjects.create") }}>
-    <x-adminlte-button type="submit" label="Create New Subject"  theme="primary" icon="fas fa-key"  />
-    </form>
+    
+    <div class='card-header row'>
+
+<div class='col-6'>
+        @livewire('school-set')
     </div>
-    <!-- #007BFF
-    #FFA401 -->
+
+    <div class='col-2'>
+        <form action={{ route("subjects.create") }}>
+            <x-adminlte-button type="submit" label="Create New Subject" theme="primary"  />
+        </form>
+    </div>
+   
+</div>
     <div class="card-body">
         @if (!empty($classes))
         
