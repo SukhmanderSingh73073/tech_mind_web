@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Attendances;
 use App\Models\Leaves;
+use App\Models\MyClass;
+use App\Models\School;
 use App\Models\User;
+use App\Services\School\SchoolService;
 use Illuminate\Http\Request;
 
 class CheckController extends Controller
@@ -33,6 +36,26 @@ class CheckController extends Controller
         $users = User::where('role_type' , 'student')->get() ;
         return view('pages.attandance.attendance.index')->with(['users' => $users]);
     }
+
+    public function viewCheckStudent(Request $request)
+    {
+        
+        $data = School::find($request->user()->school_id)->myClasses->load('studentRecords');
+        foreach ($data as $key => $value) {
+            foreach ($value->studentRecords as $keay => $student) {
+                $student->p = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'P')->count() ;
+                $student->a = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'A')->count() ;
+                $student->al = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'AL')->count() ;
+                $student->hdl = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'HDL')->count() ;
+            }     
+        }  
+        
+        $data->iems_data = $data[0]->studentRecords ; 
+        return view('pages.attandance.attendance.view_student_attendance')->with(['class_data' => $data]) ;
+
+    }
+    
+
 
     public function CheckStore(Request $request)
     {

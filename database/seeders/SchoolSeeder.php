@@ -18,8 +18,8 @@ class SchoolSeeder extends Seeder
         School::updateOrCreate(
             ['id' => 1],
             [
-                'name'     => 'Default School',
-                'address'  => 'School of Computing',
+                'name'     => 'Govt Sen Sec School (Boys)',
+                'address'  => 'Panjgrain Kalan',
                 'code'     => Str::Random(10),
                 'initials' => 'DSI',
                 'phone'    => '5433567897'

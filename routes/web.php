@@ -135,7 +135,6 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
         });
 
         //student routes
-        
         Route::get('students/withdraw', [App\Http\Controllers\StudentController::class, "withdraw"])->name("students.withdraw");
         Route::get('students/withdraw_user', [App\Http\Controllers\StudentController::class, "withdrawUser"])->name("students.withdraw_user");
         Route::resource('students', StudentController::class);
@@ -203,6 +202,8 @@ Route::middleware('auth:sanctum', 'verified', 'App\Http\Middleware\EnsureDefault
          Route::get('/self_attendance', '\App\Http\Controllers\CheckController@selfAttendance')->name('self_attendance');
          Route::get('/self_leave', '\App\Http\Controllers\CheckController@selfLeave')->name('self_leave');
          Route::get('/check', '\App\Http\Controllers\CheckController@index')->name('check');
+         
+         Route::get('/view_check_student', '\App\Http\Controllers\CheckController@viewCheckStudent')->name('view_check_student');
          Route::get('/check_staff', '\App\Http\Controllers\CheckController@checkStaff')->name('check_staff');
          Route::post('check-store','\App\Http\Controllers\CheckController@CheckStore')->name('check_store');
 

@@ -9,7 +9,7 @@ function dataFormate($tempData)
         foreach ($tempData as $key => $value) {
             $data[$value['0']] = $value['1'];
         }
-        dd($data);
+       
     } catch (\Throwable $th) {
         //throw $th;
     }
@@ -57,6 +57,8 @@ function saveDataIntoDb($tempData, $isRequestFile = true)
     $Headerdata = $tempData[0];
     if ($isRequestFile) {
         foreach ($tempData[1] as $key => $value) {
+            //dd($$value) ;
+
             if($key){
                 $sn=$key-1;
                 $saveData[$mapArr[$sn]] = $value;

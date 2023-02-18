@@ -20,7 +20,6 @@
 @stop
 
 @section('content') 
-@livewire('school-set')
     @livewire('list-students-table')
 
     @livewire('display-status')

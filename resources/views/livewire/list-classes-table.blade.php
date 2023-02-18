@@ -1,11 +1,17 @@
 <div class="card">
-<div class="card-header">
-        <h4 class="card-title mr-3 mt-1">Class List</h4>
+<div class='card-header row'>
 
-        <form class="mr-3" action={{ route("classes.create") }}>
-    <x-adminlte-button type="submit" label="Create New Class"  theme="primary" icon="fas fa-key"  />
-    </form>
+<div class='col-6'>
+        @livewire('school-set')
     </div>
+
+    <div class='col-2'>
+        <form action={{ route("classes.create") }}>
+            <x-adminlte-button type="submit" label="Create New Class" theme="primary"  />
+        </form>
+    </div>
+   
+</div>
     <div class="card-body">
         <x-adminlte-datatable id="class-list-table" :heads="['S/N', 'Name', 'Group', 'Action', '']" Class='text-capitalize' bordered striped head-theme="dark" beautify>
             @foreach($myClasses as $myClass)

@@ -1,13 +1,19 @@
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title mr-5 mt-2">Managers</h4>
-        <form action={{ route("managers.create") }}>
-    <x-adminlte-button type="submit" 
-    label="Create New manager"  theme="primary" 
-    icon="fas fa-key"  />
-    </form>
-    
+
+<div class='card-header row'>
+
+<div class='col-6'>
+        @livewire('school-set')
     </div>
+
+    <div class='col-2'>
+        <form action={{ route("managers.create") }}>
+            <x-adminlte-button type="submit" label="Create New Manager" theme="primary"  />
+        </form>
+    </div>
+   
+</div>
+
     <div class="card-body">
         <x-adminlte-datatable id="manager-list-table" 
         :heads="['S/N', 'Name','email','gender' 

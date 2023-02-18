@@ -23,7 +23,7 @@
 
 @section('content') 
 
-@livewire('school-set')
+
 
 @livewire('list-principles-table')
     

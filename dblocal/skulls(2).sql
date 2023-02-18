@@ -1587,7 +1587,7 @@ CREATE TABLE `schools` (
 --
 
 INSERT INTO `schools` (`id`, `name`, `initials`, `address`, `email`, `phone`, `code`, `created_at`, `updated_at`, `academic_year_id`, `semester_id`) VALUES
-(1, 'Default School', 'DSI', 'School of Computing', NULL, '5433567897', 'BT7U38gIAu', '2023-02-14 11:19:13', '2023-02-14 11:19:15', 1, 1),
+(1, 'Govt Sen Sec School (Boys)', 'DSI', 'School of Computing', NULL, '5433567897', 'BT7U38gIAu', '2023-02-14 11:19:13', '2023-02-14 11:19:15', 1, 1),
 (2, 'Jeanette Jakubowski', 'voluptas', '8310 Margarete Crest\nAdelamouth, KS 38427-3514', NULL, NULL, '72177', '2023-02-14 11:19:13', '2023-02-14 11:19:13', NULL, NULL),
 (3, 'Granville Blick IV', 'fugiat', '185 Terrell Islands\nJohnniehaven, MI 14519-0778', NULL, NULL, '50296', '2023-02-14 11:19:13', '2023-02-14 11:19:13', NULL, NULL),
 (4, 'Jadon Lehner', 'blanditiis', '5499 O\'Reilly Crest Suite 452\nBransonmouth, NE 53212', NULL, NULL, '42013', '2023-02-14 11:19:13', '2023-02-14 11:19:13', NULL, NULL);

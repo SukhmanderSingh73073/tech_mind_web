@@ -24,7 +24,7 @@
 
 @section('content') 
 
-@livewire('school-set')
+
 
 @livewire('list-teachers-table')
     

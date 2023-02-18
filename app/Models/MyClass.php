@@ -43,6 +43,15 @@ class MyClass extends Model
     }
 
     /**
+     * Get all of the students for the MyClass.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function studentRecordsIds()
+    {
+        return $this->hasMany(StudentRecord::class);
+    }
+    /**
      * The subjects that belong to the MyClass.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
