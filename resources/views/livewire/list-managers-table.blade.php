@@ -36,7 +36,7 @@
                 <td><button  class="btn btn-secondary" onclick="actionHandle('/dashboard/managers/{{$manager->id}}')" data-url="managers.edit" data-id="{{$manager->id}}"  >Lock</button>
                 </td>
                 <td>
-                        @livewire('withdraw-modal', ['modal_id' => $manager->id ,"action" => route('managers.destroy', $manager->id), 'item_name' => $manager->name])
+                        @livewire('approve-model', ['modal_id' => $manager->id ,"action" => route('managers.destroy', $manager->id), 'item_name' => $manager->name])
                     </td>
                     
                     <td>

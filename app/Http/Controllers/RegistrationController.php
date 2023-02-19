@@ -37,25 +37,22 @@ class RegistrationController extends Controller
 
     public function register(RegistrationRequest $request)
     {
-       // dd($request) ; 
+
+        
         $school = School::where('code' , $request->school_code)->first() ;
         if (is_null($school)){
             return back()->with('failed', 'Please enter a valid school code');
         }
-        ///$request['school_id'] = $request->school;
         $request['school_id'] = $school->id;
+        $request['role_type'] = 'student';
 
         $user = $this->userService->createUser($request);
 
-        //assign applicant role
         $user->assignRole('applicant');
-
         $accountApplication = $this->accountApplicationService->createAccountApplication($user->id, $request->role);
-
         $status = 'Application Received';
         $reason = 'Application has been received, we would reach out to you for further information';
         $accountApplication->setStatus($status, $reason);
-
         //dispatch event
         AccountStatusChanged::dispatch($user, $status, $reason);
 

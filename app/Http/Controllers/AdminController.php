@@ -32,7 +32,7 @@ class AdminController extends Controller
      */
     public function adminCreateProfile()
     {
-        return view('pages.admin.createprofile');
+        return view('pages.admin.createprofile')->with(['type_data' => '1']) ;
     }
 
     
@@ -95,7 +95,7 @@ class AdminController extends Controller
      */
     public function abc()
     {
-        dd("dfd") ; 
+      //  dd("dfd") ; 
         return view('pages.admin.create');
     }
     /**

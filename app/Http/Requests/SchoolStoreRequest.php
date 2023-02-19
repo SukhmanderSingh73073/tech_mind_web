@@ -16,6 +16,8 @@ class SchoolStoreRequest extends FormRequest
         return [
             'name'    => 'required|max:255',
             'address' => 'required|min:8|max:1000',
+            'phone' => 'required|min:10|max:1000',
+            'email' => 'required|min:8|max:1000',
         ];
     }
 }

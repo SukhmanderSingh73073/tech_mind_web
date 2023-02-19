@@ -49,6 +49,11 @@ class CreateNewUser implements CreatesNewUsers
             'sub_caste'      => ['required', 'string', 'max:255'],
             'tehsil'         => ['required', 'string', 'max:255'],
             'locality'       => ['required', 'string', 'max:255'],
+            
+            'bank_name'       => ['required', 'string', 'max:255'],
+            'ifsc'            => ['required', 'string', 'max:255'],
+            'holder_name'     => ['required', 'string', 'max:255'],
+            'acc_no'          => ['required', 'string', 'max:255'],
 
 
 
@@ -80,6 +85,13 @@ class CreateNewUser implements CreatesNewUsers
             'tehsil'               => $input['tehsil'],
             'locality'             => $input['locality'],
             'status'               =>'PENDING',
+            'bank_name'             => $input['bank_name'],
+            'ifsc'                  => $input['ifsc'],
+            'holder_name'           => $input['holder_name'],
+            'acc_no'                => $input['acc_no'],
+            'role_type'                => $input['role_type'],
+
+
         ]);
 
         if (isset($input['photo'])) {

@@ -123,6 +123,7 @@ class TimetableController extends Controller
     {
         $this->authorize('update', $timetable);
 
+       // return ($timetable) ; 
         return view('pages.timetable.manage', compact('timetable'));
     }
 }

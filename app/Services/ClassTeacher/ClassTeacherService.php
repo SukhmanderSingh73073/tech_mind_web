@@ -2,6 +2,7 @@
 
 namespace App\Services\ClassTeacher;
 
+use App\Models\TeacherRecord;
 use App\Models\User;
 use App\Services\Print\PrintService;
 use App\Services\User\UserService;
@@ -42,6 +43,14 @@ class ClassTeacherService
     {
         $record['role_type'] = "classteacher" ; 
         $classteacher = $this->user->createUser($record);
+        TeacherRecord::updateOrCreate(
+            [
+                'user_id' => $classteacher->id,
+                'type'    =>"class_teacher",
+                
+            ]
+        );
+
         $classteacher->assignRole('classteacher');
     }
 

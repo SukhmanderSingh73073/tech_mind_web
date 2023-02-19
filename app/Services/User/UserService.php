@@ -100,10 +100,15 @@ class UserService
             'previous_school'       =>$record['previous_school'],
             'sub_caste'             =>$record['sub_caste'],
             'status'                =>'PENDING',
-            'tehsil'               => $record['tehsil'],
-            'locality'             => $record['locality'],
+            'tehsil'                => $record['tehsil'],
+            'locality'              => $record['locality'],
             'role_type'             => $record['role_type'],
-
+            
+            'bank_name'             => $record['bank_name'],
+            'ifsc'                  => $record['ifsc'],
+            'holder_name'           => $record['holder_name'],
+            'acc_no'                => $record['acc_no'],
+            
         ]);
         return $user;
     }

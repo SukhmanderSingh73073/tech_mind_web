@@ -1,20 +1,15 @@
 <div class="card">
     <div class="card-header">
         <div class='row'>
-            <div class='col-10 '>
+            <div class='col-12 '>
                 <h3 class="card-title">Create Student account</h3>
             </div>
-
-
-           
-
         </div>
     </div>
     <div class="card-body">
 
 
         <form action="{{ route('students.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
-           
         
         @if($_GET['type_data']==1)
             <div class="" id="formSections">
@@ -31,6 +26,8 @@
                 @csrf
             </div>
             @endif
+
+         
             <div class='col-12 my-2'>
                 <x-adminlte-button label="Create" theme="primary" icon="fas fa-key" type="submit" class="col-md-3" />
             </div>

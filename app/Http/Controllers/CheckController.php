@@ -6,9 +6,11 @@ use App\Models\Attendances;
 use App\Models\Leaves;
 use App\Models\MyClass;
 use App\Models\School;
+use App\Models\StudentRecord;
 use App\Models\User;
 use App\Services\School\SchoolService;
 use Illuminate\Http\Request;
+use stdClass;
 
 class CheckController extends Controller
 {
@@ -40,18 +42,41 @@ class CheckController extends Controller
     public function viewCheckStudent(Request $request)
     {
         
-        $data = School::find($request->user()->school_id)->myClasses->load('studentRecords');
-        foreach ($data as $key => $value) {
-            foreach ($value->studentRecords as $keay => $student) {
-                $student->p = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'P')->count() ;
-                $student->a = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'A')->count() ;
-                $student->al = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'AL')->count() ;
-                $student->hdl = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'HDL')->count() ;
-            }     
-        }  
+        $user = $request->user() ;
+        $date = date('Y-m-d');
+        if(is_null($request->date_from)){
+            $request->date_from = $date ;
+        }
+        if(is_null($request->date_to)){
+            $request->date_to = $date ;
+        }
+
+        $data = new stdClass();
+
+        if($user->role_type = 'student'){
+            $school = School::where('id' , $request->user()->school_id)->get() ;
+            $data->schools =  $school ;
+            $student = StudentRecord::where('user_id' , $request->user()->id)->first() ;
+            $classs = MyClass::where('id' , $student->my_class_id)->get() ;
+            $data->classes =  $classs ;
+           
+            $student->p = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'P')->count() ;
+            $student->a = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'A')->count() ;
+            $student->al = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'AL')->count() ;
+            $student->hdl = Attendances::where('user_id' , $student->user_id)->where('att_type' , 'HDL')->count() ;
+            $data->iems_data = [$student] ;
+
+          //  return $data ; 
+
+        }
+
+
+
+
+
+
         
-        $data->iems_data = $data[0]->studentRecords ; 
-        return view('pages.attandance.attendance.view_student_attendance')->with(['class_data' => $data]) ;
+        return view('pages.attandance.attendance.view_student_attendance')->with(['all_data' => $data]) ;
 
     }
     

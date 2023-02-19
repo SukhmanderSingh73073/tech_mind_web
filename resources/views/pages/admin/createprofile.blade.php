@@ -29,7 +29,7 @@ name="role_type" label="Select Role Here *" fgroup-class="tttt col-md-3" enable-
             <option  value="{{$occupation}}" >{{$occupation}}</option>
         @endforeach
     </x-adminlte-select>
-
+    <x-adminlte-input fgroup-class="col-md-0" type="hidden" name="type_data" value="1" />
   
     <div id="admin" >
     @livewire('create-admin-form')

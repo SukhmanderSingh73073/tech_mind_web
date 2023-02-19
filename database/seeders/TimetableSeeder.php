@@ -22,6 +22,6 @@ class TimetableSeeder extends Seeder
             'my_class_id' => 1,
             'semester_id' => 1,
         ]);
-        Timetable::factory()->count(1)->create();
+       // Timetable::factory()->count(1)->create();
     }
 }

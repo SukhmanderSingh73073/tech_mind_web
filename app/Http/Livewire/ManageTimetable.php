@@ -26,7 +26,7 @@ class ManageTimetable extends Component
         if ($this->timeSlots->isNotEmpty()) {
             $this->timeSlot = $this->timeSlots->first()->id;
         }
-        $this->weekdays = Weekday::all();
+        $this->weekdays = Weekday::where('id' ,'1')->get();
         $this->subjects = $this->timetable->MyClass->subjects;
         $this->customItems = $timetableService->getAllCustomTimetableItem();
         $this->types = ['subject', 'customTimetableItem'];

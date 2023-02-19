@@ -47,7 +47,9 @@ class ListTimetablesTable extends Component
             $this->timetables = collect();
         }
 
-        $this->weekdays = Weekday::all();
+        //TODO Change here
+        //$this->weekdays = Weekday::all();
+        $this->weekdays = Weekday::where('id','1')->get() ;
     }
 
     public function updatedClass()

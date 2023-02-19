@@ -22,6 +22,5 @@ class SemesterSeeder extends Seeder
         ]);
         $semester->school->semester_id = $semester->id;
         $semester->school->save();
-        Semester::factory()->count(4)->create();
     }
 }

@@ -288,6 +288,14 @@ return [
             'can'   => 'read self-attendance'
         ],
 
+        [
+            'type'  => 'sidebar-menu-item',
+            'text'  => 'View Student Attendance',
+            'route' => 'view_check_student',
+            'can'   => 'read self-attendance',
+        ],
+        
+
 
         // [
         //     'type'  => 'sidebar-menu-item',
@@ -727,7 +735,7 @@ return [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'View Student Attendance',
                     'route' => 'view_check_student',
-                    'can'   => 'read student-attendance',
+                    'can'   => 'read self-attendance',
                 ],
                 
                 [

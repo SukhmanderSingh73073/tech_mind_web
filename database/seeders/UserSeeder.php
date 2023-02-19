@@ -43,7 +43,12 @@ class UserSeeder extends Seeder
             'previous_school'   => "Test School",
             'sub_caste'         => 'General',
             'status'            => 'ACTIVE',
-            'phone'             => '7300000000' 
+            'phone'             => '7300000000' ,
+
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $superAdmin->assignRole('super-admin');
@@ -75,6 +80,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000', 
             'role_type'         =>'local-super-admin',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $localsuperAdmin->assignRole('local-super-admin');
@@ -106,6 +115,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         =>'sub-super-admin',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $subsuper->assignRole('sub-super-admin');
@@ -136,6 +149,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         =>'admin',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $admin->assignRole('admin');
@@ -165,6 +182,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         =>'manager',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $manager->assignRole('manager');
@@ -196,6 +217,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000'  ,
             'role_type'         => 'principle',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
 
         ]);
 
@@ -227,6 +252,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         => 'incharge', 
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $office_incharge->assignRole('incharge');
@@ -257,6 +286,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000',
             'role_type'         => 'classteacher', 
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $class_teacher->assignRole('classteacher');
@@ -293,6 +326,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         => 'teacher',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $teacher->assignRole('teacher');
@@ -327,6 +364,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         => 'student',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
         $student->studentRecord()->create([
             'my_class_id'      => 1,
@@ -365,6 +406,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         => 'parent',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
         ]);
 
         $parent->assignRole('parent');
@@ -396,6 +441,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         => 'accountant',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
 
         ]);
 
@@ -426,6 +475,10 @@ class UserSeeder extends Seeder
             'status'            => 'ACTIVE',
             'phone'             => '7300000000' ,
             'role_type'         => 'librarian',
+            'bank_name'         => 'PNB', 
+            'ifsc'              => 'PUNB0730400', 
+            'holder_name'       => 'test', 
+            'acc_no'            => '411111111111', 
 
         ]);
 
