@@ -182,8 +182,8 @@ class StudentController extends Controller
      */
     public function withdraw(User $student)
     {
-        //dd('withdraw') ; 
-        
+        //dd('withdraw') ;
+
         $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
         $this->authorize('delete', [$student, 'student']);
         $this->student->deleteStudent($student);

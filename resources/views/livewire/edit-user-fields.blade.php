@@ -1,6 +1,31 @@
 <?php
 $myClasses=getClasses();
-$sections=["A","B","C","D"];
+$sections=[];
+$temps=[
+    "id"=>1,
+    "name"=>"A"
+];
+array_push($sections,$temps);
+$temps=[
+    "id"=>2,
+    "name"=>"B"
+];
+array_push($sections,$temps);
+$temps=[
+    "id"=>3,
+    "name"=>"C"
+];
+array_push($sections,$temps);
+$temps=[
+    "id"=>4,
+    "name"=>"D"
+];
+array_push($sections,$temps);
+$temps=[
+    "id"=>5,
+    "name"=>"E"
+];
+array_push($sections,$temps);
 // dd($user);
 // $myClasses=getSections();
 ?>
@@ -49,13 +74,15 @@ $sections=["A","B","C","D"];
     <x-adminlte-input name="address" value="{{$user->address}}" placeholder="Vill/Mohalla" label="Address *" enable-old-support fgroup-class="col-md-3"/>
     <div class="col-md-6">
         @livewire('nationality-and-state-input-fields', ['nationality' => $user->nationality, 'state' => $user->state])
-    </div>
-    <x-adminlte-input name="city" label="City" placeholder="{{$role}}'s city" fgroup-class="col-md-4" enable-old-support value="{{$user->city}}"/>
+      </div>
+    {{-- <div class="col-md-4"> --}}
+        <x-adminlte-input name="city" label="District" placeholder="{{$role}}'s District" fgroup-class="col-md-3" enable-old-support value="{{$user->city}}"/>
+    {{-- </div> --}}
         {{-- <x-adminlte-input name="city" label="District *" placeholder="{{$role}}'s city" fgroup-class="col-md-3" enable-old-support/> --}}
         <x-adminlte-input name="tehsil" value="{{$user->tehsil}}" label="Tehsil *" placeholder="{{$role}}'s Tehsil" fgroup-class="col-md-3" enable-old-support/>
         <x-adminlte-input  class="d-none" value="{{$user->locality}}" name="locality"  placeholder="{{$role}}'s Locality" fgroup-class="col-md-0" enable-old-support/>
         <x-adminlte-input name="aadhaar_number" value="{{$user->aadhaar_number}}" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-3"/>
-        <x-adminlte-select name="religion" label="Religion" fgroup-class="col-md-6" enable-old-support>
+        <x-adminlte-select name="religion" label="Religion" fgroup-class="col-md-3" enable-old-support>
     {{-- <x-adminlte-select name="religion" label="Religion *" fgroup-class="col-md-3" enable-old-support> --}}
         @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
         @foreach ($religions as $religion)
@@ -70,9 +97,8 @@ $sections=["A","B","C","D"];
     </x-adminlte-select>
     <x-adminlte-input value="{{$user->sub_caste}}"  name="sub_caste" label="Sub-Caste *" placeholder="{{$role}}'s Sub-Caste" fgroup-class="col-md-3" enable-old-support/>
     <x-adminlte-input value="{{$user->email}}"  name="email" type="email" label="Email address *" placeholder="Enter {{$role}}'s email address" fgroup-class="col-md-3" enable-old-support/>
-    {{-- <x-adminlte-input value="{{$user->password}}"  name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-3" type="password"/>
-    <x-adminlte-input value="{{$user->password_confirmation}}"  name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-3" type="password"/> --}}
-
+    <x-adminlte-input    name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-3" type="password"/>
+    <x-adminlte-input value="{{$user->password_confirmation}}"  name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-3" type="password"/>
 
     <x-adminlte-input class="d-none" name="last_name"  placeholder="{{$role}}'s last name" fgroup-class="col-md-0" enable-old-support/>
     <x-adminlte-input class="d-none" name="other_names"  value="test" placeholder="{{$role}}'s other names " fgroup-class="col-md-0" enable-old-support/>
@@ -88,15 +114,14 @@ $sections=["A","B","C","D"];
     <x-adminlte-input value="{{$user->ifsc}}"  name="ifsc" label="IFSC Code*" placeholder="IFSC Code"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input value="{{$user->holder_name}}"  name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input value="{{$user->acc_no}}"  name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
-    <div class="row d-none">
+    <div class="row">
         <h4 class="text-bold col-12 text-center">Class information</h4>
-
         <x-adminlte-input name="sr_no" value="{{$user->sr_no}}" label="Unique ID*" placeholder="Unique ID" fgroup-class="col-md-3" enable-old-support
             autocomplete="off" />
         <x-adminlte-input name="roll_no" value="{{$user->roll_no}}" label="Roll number *" placeholder="Student's Roll number" fgroup-class="col-md-3"
             enable-old-support autocomplete="off" />
 
-        {{-- <x-adminlte-select name="my_class_id"  label="Choose a class *" fgroup-class="col-md-3" wire:model="myClass">
+        <x-adminlte-select name="my_class_id"  label="Choose a class *" fgroup-class="col-md-3" wire:model="myClass">
             @foreach ($myClasses as $item)
                 <option value="{{ $item['id'] }}" {{Str::lower($bloodGroup) == $item['id'] ? 'selected' : ''}}>{{ $item['name'] }}</option>
             @endforeach
@@ -109,12 +134,12 @@ $sections=["A","B","C","D"];
             @else
                 <option value="" disabled>Select a class first</option>
             @endif
-        </x-adminlte-select> --}}
+        </x-adminlte-select>
         <x-adminlte-input value="{{$user->admission_date}}" name="admission_date" label="Admission number *" placeholder="Student's admission number"
             fgroup-class="col-md-3" enable-old-support autocomplete="off" />
         <x-adminlte-input-date value="{{$user->admission_date}}" name="admission_date" id="admission_date" :config="['format' => 'YYYY/MM/DD']"
             placeholder="Choose student's admission date..." label="Date of admission" fgroup-class="col-md-3"
-            value="{{ old('admission_date') }}" autocomplete="off" />
+         autocomplete="off" />
             @csrf
     </div>
     @section('plugins.BsCustomFileInput', true)
