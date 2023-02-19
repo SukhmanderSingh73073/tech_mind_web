@@ -103,12 +103,12 @@ class UserService
             'tehsil'                => $record['tehsil'],
             'locality'              => $record['locality'],
             'role_type'             => $record['role_type'],
-            
+
             'bank_name'             => $record['bank_name'],
             'ifsc'                  => $record['ifsc'],
             'holder_name'           => $record['holder_name'],
             'acc_no'                => $record['acc_no'],
-            
+
         ]);
         return $user;
     }
@@ -185,6 +185,21 @@ class UserService
      */
     public function deleteUser(User $user)
     {
+        $user->delete();
+    }
+
+
+     /**
+     * approve a user.
+     *
+     * @param User   $user
+     * @param string $role
+     *
+     * @return void
+     */
+    public function approveUser(User $user)
+    {
+        dd($user);
         $user->delete();
     }
 

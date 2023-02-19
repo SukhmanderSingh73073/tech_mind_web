@@ -169,6 +169,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return explode(' ', $this->name)[0];
     }
 
+
+
     //get last name
     public function lastName()
     {
@@ -178,7 +180,7 @@ class User extends Authenticatable implements MustVerifyEmail
         } catch (\Throwable $th) {
             return "" ;
         }
-        
+
     }
 
     //get other names

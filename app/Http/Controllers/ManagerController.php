@@ -137,4 +137,24 @@ class ManagerController extends Controller
 
         return back()->with('success', 'manager Deleted Successfully');
     }
+
+     /**
+     * approve the specified resource from storage.
+     *
+     * @param User $manager
+     *
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function approve(User $manager)
+    {
+        $this->authorize('approve', [$manager, 'manager']);
+        $this->manager->approveManager($manager);
+
+        return back()->with('success', 'manager Deleted Successfully');
+    }
+
+
+
 }

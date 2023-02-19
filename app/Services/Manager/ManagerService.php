@@ -40,7 +40,7 @@ class ManagerService
      */
     public function createManager($record)
     {
-        $record['role_type'] = "manager" ; 
+        $record['role_type'] = "manager" ;
         $manager = $this->user->createUser($record);
         $manager->assignRole('manager');
     }
@@ -68,6 +68,17 @@ class ManagerService
     public function deleteManager(User $manager)
     {
         $this->user->deleteUser($manager);
+    }
+    /**
+     * approve manager.
+     *
+     * @param User $manager
+     *
+     * @return void
+     */
+    public function approveManager(User $manager)
+    {
+        $this->user->approveUser($manager);
     }
 
     /**
