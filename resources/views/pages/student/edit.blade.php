@@ -1,3 +1,6 @@
+<?php
+// dd($studentRecord);
+?>
 @extends('adminlte::page')
 
 @section('title', __("Edit $student->name"))

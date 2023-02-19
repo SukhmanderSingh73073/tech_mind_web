@@ -140,8 +140,8 @@ class StudentService
                 'roll_no'          => $record['roll_no'],
             ]);
         } catch (\Throwable $th) {
-            //throw $th;
-            dd($th->getMessage());
+            throw $th;
+            // dd($th->getMessage());
         }
 
         //create record history

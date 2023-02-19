@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentStoreRequest;
+use App\Models\StudentRecord;
 use App\Models\User;
 use App\Services\Student\StudentService;
 use App\Services\User\UserService;
@@ -122,8 +123,9 @@ class StudentController extends Controller
     {
         $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
         $this->authorize('update', [$student, 'student']);
+        $studentRecord=StudentRecord::where("user_id",$student->id)->first();
+        $student['studentRecord']=$studentRecord;
         $data['student'] = $student;
-
         return view('pages.student.edit', $data);
     }
 
@@ -142,6 +144,7 @@ class StudentController extends Controller
         $this->userService->verifyUserIsOfRoleElseNotFound($student, 'student');
         $this->authorize('update', [$student, 'student']);
         $data = $request->except('_token', '_method');
+        // dd($data);
         $this->student->updateStudent($student, $data);
         return back()->with('success', 'Student Updated Successfully');
     }
