@@ -22,16 +22,16 @@
             <x-jet-section-border />
         @endif
 
-        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+        {{-- @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
         <div id="update-password">
              @livewire('profile.update-password-form')
         </div>
-           
+
 
             <x-jet-section-border />
-        @endif
+        @endif --}}
 
-        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+        {{-- @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
             @livewire('profile.two-factor-authentication-form')
 
             <x-jet-section-border />
@@ -43,7 +43,7 @@
             <x-jet-section-border />
 
             @livewire('profile.delete-user-form')
-        @endif
+        @endif --}}
     </div>
 @endsection
 

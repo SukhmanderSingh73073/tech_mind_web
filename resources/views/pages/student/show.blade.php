@@ -23,5 +23,5 @@
 
     @livewire('display-status')
 
-    
+
 @endsection

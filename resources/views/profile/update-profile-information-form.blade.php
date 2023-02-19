@@ -1,149 +1,223 @@
-<x-jet-form-section submit="updateProfileInformation">
-    <x-slot name="title">
-        {{ __('Profile Information') }}
-    </x-slot>
+<?php
+$myClasses = getClasses();
+$sections = [];
+$temps = [
+    'id' => 1,
+    'name' => 'A',
+];
+array_push($sections, $temps);
+$temps = [
+    'id' => 2,
+    'name' => 'B',
+];
+array_push($sections, $temps);
+$temps = [
+    'id' => 3,
+    'name' => 'C',
+];
+array_push($sections, $temps);
+$temps = [
+    'id' => 4,
+    'name' => 'D',
+];
+array_push($sections, $temps);
+$temps = [
+    'id' => 5,
+    'name' => 'E',
+];
+array_push($sections, $temps);
+$user = $this->user;
+$studentRecord = $user->studentRecord;
+?>
+<div class="row">
+    @livewire('display-validation-error')
+    <p class="text-secondary col-12">
+        {{ __('All fields marked * are required') }}
+    </p>
+    <div class="col-12">
+        <img id="profile-picture"
+            src="{{ $user->profile_photo_url ?? asset('application-images/user-profile-image.png') }}"
+            alt="Profile Picture" class="border profile-image justify-center mx-auto d-block" height="200px"
+            width="200px">
+        <x-adminlte-input-file name="profile_photo" placeholder="Select profile photo" accept="image/*"
+            fgroup-class="col-md-3 mx-auto my-4" id="profile-image-input">
+        </x-adminlte-input-file>
+    </div>
+    <x-adminlte-input readonly="true" name="first_name" label="First name" placeholder=" first name"
+        fgroup-class="col-md-3" enable-old-support value="{{ $user->name }}" />
+    <x-adminlte-select readonly="true" name="gender" label="Gender *" fgroup-class="col-md-3" enable-old-support>
+        @php($genders = ['Male', 'Female'])
+        @foreach ($genders as $gender)
+            <option value="{{ $gender }}"
+                {{ Str::lower($gender) == str::lower($user->gender) ? 'selected' : '' }}>{{ $gender }}</option>
+        @endforeach
+    </x-adminlte-select>
 
-    <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
-    </x-slot>
+    <x-adminlte-input readonly="true" name="fname" value="{{ $user->fname }}" label="Father name *"
+        placeholder=" Father name" fgroup-class="col-md-3" enable-old-support />
+    <x-adminlte-select readonly="true" name="f_occupation" label="Father Occupation *" fgroup-class="col-md-3" enable-old-support>
+        <option value="">--Select--</option>
+        @php($occupations = ['FARMER', 'BUISNESSMAN', 'GOVERNMENT SERVANT', 'LABOUR'])
+        @foreach ($occupations as $occupation)
+            <option value="{{ $occupation }}"
+                {{ Str::lower($occupation) == str::lower($user->f_occupation) ? 'selected' : '' }}>{{ $occupation }}
+            </option>
+        @endforeach
+    </x-adminlte-select>
+    <x-adminlte-input readonly="true" name="mname" value="{{ $user->mname }}" label="Mother name *"
+        placeholder=" Mother name" fgroup-class="col-md-3" enable-old-support />
+    <x-adminlte-select readonly="true" name="m_occupation" label="Mother Occupation *" fgroup-class="col-md-3" enable-old-support>
+        <option value="">--Select--</option>
+        @php($occupations = ['FARMER', 'BUISNESSMAN', 'GOVERNMENT SERVANT', 'LABOUR', 'HOUSE WOMAN'])
+        @foreach ($occupations as $occupation)
+            <option value="{{ $occupation }}"
+                {{ Str::lower($occupation) == str::lower($user->m_occupation) ? 'selected' : '' }}>{{ $occupation }}
+            </option>
+        @endforeach
+    </x-adminlte-select>
+    <x-adminlte-input-date readonly="true" name="birthday" value="{{ $user->birthday }}" :config="['format' => 'YYYY/MM/DD']"
+        placeholder="Choose  Date of Birth..." label="Date of Birth *" fgroup-class="col-md-3"
+        autocomplete="off" />
+    <x-adminlte-input readonly="true" name="phone" value="{{ $user->phone }}" label="Phone number"
+        placeholder=" phone number" fgroup-class="col-md-3" enable-old-support />
+    <x-adminlte-input  readonly="true" name="address" value="{{ $user->address }}" placeholder="Vill/Mohalla" label="Address *"
+        enable-old-support fgroup-class="col-md-3" />
+    <div class="col-md-6">
+        @livewire('nationality-and-state-input-fields', ['nationality' => $user->nationality, 'state' => $user->state])
+    </div>
+   <x-adminlte-input readonly="true" name="city" label="District" placeholder=" District"
+        fgroup-class="col-md-3" enable-old-support value="{{ $user->city }}" />
+    <x-adminlte-input readonly="true" name="tehsil" value="{{ $user->tehsil }}" label="Tehsil *"
+        placeholder=" Tehsil" fgroup-class="col-md-3" enable-old-support />
+    <x-adminlte-input  readonly="true"  class="d-none" value="{{ $user->locality }}" name="locality"
+        placeholder=" Locality" fgroup-class="col-md-0" enable-old-support />
+    <x-adminlte-input readonly="true"  name="aadhaar_number" value="{{ $user->aadhaar_number }}"
+        placeholder=" Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *"
+        enable-old-support fgroup-class="col-md-3" />
+    <x-adminlte-select readonly="true"  name="religion" label="Religion" fgroup-class="col-md-3" enable-old-support>
+        @php($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism', 'Sikhsm', 'Other'])
+        @foreach ($religions as $religion)
+            <option value="{{ $religion }}"
+                {{ Str::lower($religion) == str::lower($user->religion) ? 'selected' : '' }}>{{ $religion }}
+            </option>
+        @endforeach
+    </x-adminlte-select>
+    <x-adminlte-select  readonly="true" name="caste" label="Caste *" fgroup-class="col-md-3" enable-old-support>
+        @php($castes = ['GENERAL', 'OBC', 'SC', 'ST'])
+        @foreach ($castes as $caste)
+            <option value="{{ $caste }}"
+                {{ Str::lower($caste) == str::lower($user->caste) ? 'selected' : '' }}>{{ $caste }}</option>
+        @endforeach
+    </x-adminlte-select>
+    <x-adminlte-input  readonly="true" value="{{ $user->sub_caste }}" name="sub_caste" label="Sub-Caste *"
+        placeholder=" Sub-Caste" fgroup-class="col-md-3" enable-old-support />
+    <x-adminlte-input  readonly="true" value="{{ $user->email }}" readonly="true" name="email" type="email" label="Email address *"
+        placeholder="Enter  email address" fgroup-class="col-md-3" enable-old-support />
+    <x-adminlte-input readonly="true"  name="" label=" Password *" placeholder="input a password" readonly="true"
+        fgroup-class="col-md-3" type="password" />
+     <x-adminlte-input  readonly="true" value="{{ $user->password_confirmation }}" name="" readonly="true"
+        label="Confirm password *" placeholder="input password again" fgroup-class="col-md-3" type="password" />
+    <x-adminlte-input readonly="true"  class="d-none" name="last_name" placeholder=" last name"
+        fgroup-class="col-md-0" enable-old-support />
+    <x-adminlte-input readonly="true"  class="d-none" name="other_names" value="test"
+        placeholder=" other names " fgroup-class="col-md-0" enable-old-support />
+    <x-adminlte-select  readonly="true" class="d-none" name="blood_group" fgroup-class="col-md-0" enable-old-support>
+        @php($bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'Ab-', 'O+', 'O-'])
+        @foreach ($bloodGroups as $bloodGroup)
+            <option value="{{ $bloodGroup }}"
+                {{ Str::lower($bloodGroup) == str::lower($user->blood_group) ? 'selected' : '' }}>{{ $bloodGroup }}
+            </option>
+        @endforeach
+    </x-adminlte-select>
 
-    <x-slot name="form">
+    <x-adminlte-input readonly="true"  value="{{ $user->previous_school }}" name="previous_school" label="Previos School *"
+        placeholder="Previos School" enable-old-support autocomplete="off" fgroup-class="col-md-3" />
+    <x-adminlte-input  readonly="true" value="{{ $user->bank_name }}" name="bank_name" label="Bank Name *" placeholder="Bank Name"
+        enable-old-support autocomplete="off" fgroup-class="col-md-3" />
+    <x-adminlte-input  readonly="true" value="{{ $user->ifsc }}" name="ifsc" label="IFSC Code*" placeholder="IFSC Code"
+        enable-old-support autocomplete="off" fgroup-class="col-md-3" />
+    <x-adminlte-input  readonly="true" value="{{ $user->holder_name }}" name="holder_name" label="Account Holder Name *"
+        placeholder="Account Holder Name" enable-old-support autocomplete="off" fgroup-class="col-md-3" />
+    <x-adminlte-input readonly="true"  value="{{ $user->acc_no }}" name="acc_no" label="Account Number *"
+        placeholder="Account Number" enable-old-support autocomplete="off" fgroup-class="col-md-3" />
+    <div class="row">
+        <h4 class="text-bold col-12 text-center">Class information</h4>
+        <x-adminlte-input readonly="true"  name="sr_no" value="{{ $studentRecord->sr_no }}" label="Unique ID*"
+            placeholder="Unique ID" fgroup-class="col-md-3" enable-old-support autocomplete="off" />
+        <x-adminlte-input readonly="true"  name="roll_no" value="{{ $studentRecord->roll_no }}" label="Roll number *"
+            placeholder="Student's Roll number" fgroup-class="col-md-3" enable-old-support autocomplete="off" />
 
-        <x-jet-action-message on="saved">
-            {{ __('Saved.') }}
-        </x-jet-action-message>
-        <!-- Profile Photo -->
-        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-            <div class="row" 
-                 x-data="{photoName: null, photoPreview: null}">
-                <!-- Profile Photo File Input -->
-                <input type="file" hidden
-                       wire:model="photo"
-                       x-ref="photo"
-                       x-on:change="
-                                    photoName = $refs.photo.files[0].name;
-                                    const reader = new FileReader();
-                                    reader.onload = (e) => {
-                                        photoPreview = e.target.result;
-                                    };
-                                    reader.readAsDataURL($refs.photo.files[0]);
-                            " />
+        <x-adminlte-select  readonly="true" name="my_class_id" label="Choose a class *" fgroup-class="col-md-3" wire:model="myClass">
+            @foreach ($myClasses as $item)
+                <option value="{{ $item['id'] }}"
+                    {{ $studentRecord->my_class_id == $item['id'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
+            @endforeach
+        </x-adminlte-select>
+         <x-adminlte-select  readonly="true" name="section_id" label="Choose a section " fgroup-class="col-md-3" wire:model="section">
+            @if (isset($sections))
+                @foreach ($sections as $item)
+                    <option value="{{ $item['id'] }}"
+                        {{ $studentRecord->section_id == $item['id'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
+                @endforeach
+            @else
+                <option value="" disabled>Select a class first</option>
+            @endif
+        </x-adminlte-select>
+        <x-adminlte-input readonly="true"  value="{{ $studentRecord->admission_date }}" name="admission_date"
+            label="Admission number *" placeholder="Student's admission number" fgroup-class="col-md-3"
+            enable-old-support autocomplete="off" />
+        <x-adminlte-input-date readonly="true"  value="{{ $studentRecord->admission_date }}" name="admission_date"
+            id="admission_date" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose student's admission date..."
+            label="Date of admission" fgroup-class="col-md-3" autocomplete="off" />
+        @csrf
+    </div>
+    @section('plugins.BsCustomFileInput', true)
 
-                <!-- <x-jet-label for="photo" value="{{ __('Photo') }}" /> -->
-
-                <!-- Current Profile Photo -->
-                <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" class="rounded-circle" height="80px" width="80px">
-                </div>
-
-                <!-- New Profile Photo Preview -->
-                <div class="mt-2" x-show="photoPreview">
-                    <img x-bind:src="photoPreview" class="rounded-circle" width="80px" height="80px">
-               
-               
-                </div>
-
-                <x-jet-secondary-button class="m-4"
-                style="border-style:none;height:50px;" 
-                type="button" x-on:click.prevent="$refs.photo.click()">
-                    {{ __('Select A New Photo') }}
-				</x-jet-secondary-button>
-
-
-
-				
-				@if ($this->user->profile_photo_path)
-                    <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        {{ __('Remove Photo') }}
-                    </x-jet-secondary-button>
-                @endif
-
-                <x-jet-input-error for="photo" class="mt-2" />
-            </div>
-
-        @endif
-
-        <div class="">
-            
-            <!-- Name -->
-            <div class="form-group">
-                <x-jet-label for="name" value="{{ __('Name') }} ( surname, first name, other names )" />
-                <x-jet-input id="name" type="text" class="{{ $errors->has('name') ? 'is-invalid' : '' }}" wire:model.defer="state.name" autocomplete="name" />
-                <x-jet-input-error for="name" />
-            </div>
-
-            <!-- Email -->
-            <div class="form-group">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}" wire:model.defer="state.email" />
-                <x-jet-input-error for="email" />
-            </div>
-
-            <!-- birthday -->
-            <x-adminlte-input-date name="birthday" :config="['format' => 'YYYY/MM/DD']" placeholder="Choose birth date..." label="Birthday (YYYY/MM/DD)"  fgroup-class="+" wire:model="state.birthday"/>
-
-            <div class="row col-12">
-                <!--Gender-->
-                <x-adminlte-select name="gender" label="Gender" fgroup-class="my-3 col-md-6" enable-old-support wire:model="state.gender">
-                    @php ($genders = ['Male', 'Female'])
-                    @foreach ($genders as $gender)
-                        <option value="{{$gender}}" @selected(Str::lower($gender) == str::lower($this->user->gender)) >{{$gender}}</option>
-                    @endforeach
-                </x-adminlte-select>
-
-                <!--Blood group-->
-                <x-adminlte-select name="blood_group" label="Blood group" fgroup-class="my-3 col-md-6" enable-old-support wire:model="state.blood_group">
-                    @php ($bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'Ab-', 'O+', 'O-'])
-                    @foreach ($bloodGroups as $bloodGroup)
-                        <option value="{{$bloodGroup}}" {{Str::lower($bloodGroup) == str::lower($this->user->blood_group) ? 'selected' : ''}} >{{$bloodGroup}}</option>
-                    @endforeach
-                </x-adminlte-select>
-            </div> 
-
-            <!--nationality and state-->
-            <div class="mt-3 mx-2">
-                @livewire('nationality-and-state-input-fields', ['nationality' => ucfirst($this->user->nationality), 'state' => ucfirst($this->user->state)])
-            </div>
-            
-            {{-- listen for change in nationality and state event and set it as the value of their respective state variable. The values of $state is passed on form submit. therefore we set the selected nationality using the browser event fired  --}}
-            <script>
-                window.addEventListener('nationality-updated',event => {
-                    @this.set('state.nationality', event.detail.nationality)
-               })
-               window.addEventListener('state-updated',event => {
-                    @this.set('state.state', event.detail.state)
-               })
-            </script>
-
-            <div class='row mx-1'>
-                <div class=" col-md-6 mb-3">
-                    <!--city-->
-                    <x-jet-label for="city" value="{{ __('City') }}" />
-                    <x-jet-input id="city" type="text" class="{{ $errors->has('city') ? 'is-invalid' : '' }}" wire:model.defer="state.city" />
-                    <x-jet-input-error for="city" />
-                </div>
-                <div class=" col-md-6">
-                    <!--phone-->
-                    <x-jet-label for="phone" value="{{ __('Phone') }}" />
-                    <x-jet-input id="phone" type="text" class="{{ $errors->has('phone') ? 'is-invalid' : '' }}" wire:model.defer="state.phone" />
-                    <x-jet-input-error for="phone" />
-                </div>
-                <x-adminlte-select name="religion" label="Religion" fgroup-class="my-3 col-12" enable-old-support wire:model="state.religion">
-                    @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
-                    @foreach ($religions as $religion)
-                        <option value="{{$religion}}" {{Str::lower($religion) == str::lower($this->user->religion) ? 'selected' : ''}} >{{$religion}}</option>
-                    @endforeach
-                </x-adminlte-select>
-            </div>
-        </div>
-    </x-slot>
-
-    <x-slot name="actions">
-		<div class="d-flex align-items-baseline">
-			<x-jet-button>
-				{{ __('Save') }}
-			</x-jet-button>
-		</div>
-    </x-slot>
     @section('plugins.TempusDominusBs4', true)
-</x-jet-form-section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("profile-image-input").addEventListener("change", function() {
+                var file = this.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var profilePicture = document.getElementById("profile-picture");
+                    profilePicture.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+
+        function dataGet(e) {
+            if (e.name == "bulkUpload") {
+                const date = new Date()
+                const result = date.toLocaleDateString("en-CA", { // you can use undefined as first argument
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                })
+                const myArray = result.split("-");
+                let dt = myArray[0] + "/" + myArray[1] + "/" + myArray[2];
+                let inp = document.getElementById('admission_date');
+                if (inp) {
+                    inp.value = dt
+                }
+                let elm = document.getElementById("formSections"); // for form
+                elm.classList.add("d-none");
+                let elm1 = document.getElementById("formSections1");
+                elm1.classList.remove("d-none");
+                let btn = document.getElementById("formUpload");
+                btn.classList.remove("d-none");
+                e.classList.add("d-none")
+            }
+            if (e.name == "formUpload") {
+                let elm1 = document.getElementById("formSections1");
+                elm1.classList.add("d-none");
+                let elm = document.getElementById("formSections");
+                elm.classList.remove("d-none");
+                let btn = document.getElementById("bulkUpload");
+                btn.classList.remove("d-none");
+                e.classList.add("d-none")
+            }
+        }
+    </script>
+</div>
