@@ -44,7 +44,7 @@
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
                         @if (Route::has('password.request'))
-                            
+
                             <a class="text-muted mx-3" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
                             </a>
@@ -57,9 +57,9 @@
                 </div>
             </form>
             <hr>
-            <div> Dont Have An account? 
+            <div class="d-none"> Dont Have An account?
                 <a href="{{route('register')}}" class="">
-                    {{__('Create Account')}} 
+                    {{__('Create Account')}}
                 </a>
             </div>
         </div>
