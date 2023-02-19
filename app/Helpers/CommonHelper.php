@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ClassGroup;
 
 function dataFormate($tempData)
 {
@@ -9,7 +10,6 @@ function dataFormate($tempData)
         foreach ($tempData as $key => $value) {
             $data[$value['0']] = $value['1'];
         }
-       
     } catch (\Throwable $th) {
         //throw $th;
     }
@@ -59,12 +59,12 @@ function saveDataIntoDb($tempData, $isRequestFile = true)
         foreach ($tempData[1] as $key => $value) {
             //dd($$value) ;
 
-            if($key){
-                $sn=$key-1;
+            if ($key) {
+                $sn = $key - 1;
                 $saveData[$mapArr[$sn]] = $value;
             }
         }
-        $saveData["password_confirmation"]=$saveData["password"];
+        $saveData["password_confirmation"] = $saveData["password"];
     } else {
         foreach ($tempData as $key => $value) {
             $data[$value['Field']] = $value['Value'];
@@ -108,6 +108,26 @@ function saveDataIntoDb($tempData, $isRequestFile = true)
     // } catch (\Throwable $th) {
     //     //throw $th;
     // }
+
+}
+
+/**
+ * Get Classes by Auth user School id
+ *
+ */
+function getClasses()
+{
+    $temp=[];
+    $myClasses= ClassGroup::where("school_id",auth()->user()->school_id)->get();
+    foreach ($myClasses as $key => $myClass) {
+        $obj=array(
+            "id"=>$myClass->id,
+            "name"=>$myClass->name,
+        );
+        array_push($temp,$obj);
+    }
+    return $temp;
+    // dd($temp);
 }
 
 function csvToArray($filename = '', $delimiter = ',')

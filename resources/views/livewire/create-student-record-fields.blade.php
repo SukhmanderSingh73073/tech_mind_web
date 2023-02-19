@@ -1,10 +1,10 @@
 <div class="row">
     <h4 class="text-bold col-12 text-center">Class information</h4>
 
-   
+
     <x-adminlte-input name="sr_no" label="Unique ID*" placeholder="Unique ID" fgroup-class="col-md-3" enable-old-support autocomplete="off"/>
     <x-adminlte-input name="roll_no" label="Roll number *" placeholder="Student's Roll number" fgroup-class="col-md-3" enable-old-support autocomplete="off"/>
-   
+
     <x-adminlte-select name="my_class_id" label="Choose a class *" fgroup-class="col-md-3" wire:model="myClass">
         @foreach ($myClasses as $item)
             <option value="{{$item['id']}}">{{$item['name']}}</option>

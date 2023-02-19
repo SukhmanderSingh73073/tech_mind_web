@@ -63,7 +63,7 @@
     <x-adminlte-input name="email" type="email" label="Email address *" placeholder="Enter {{$role}}'s email address" fgroup-class="col-md-3" enable-old-support/>
     <x-adminlte-input name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-3" type="password"/>
     <x-adminlte-input name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-3" type="password"/>
-    
+
 
 
 
@@ -75,23 +75,23 @@
             <option value="{{$bloodGroup}}" >{{$bloodGroup}}</option>
         @endforeach
     </x-adminlte-select>
-    
+
     <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Previos School"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
-    
+
     <x-adminlte-input  name="bank_name" label="Bank Name *" placeholder="Bank Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input  name="ifsc" label="IFSC Code*" placeholder="IFSC Code"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input  name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input  name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
 
-   
 
 
 
-    
-    
+
+
+
     @section('plugins.BsCustomFileInput', true)
-    
-  
+
+
     <!-- <x-adminlte-select name="sub_caste" label="Sub-Caste *" fgroup-class="col-md-3" enable-old-support>
         @php ($castes = ['ABC', 'DEF', 'GHI'])
         @foreach ($castes as $caste)

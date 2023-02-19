@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             SubjectSeeder::class,
             AcademicYearSeeder::class,
             SemesterSeeder::class,
-            PromotionSeeder::class,
+           // PromotionSeeder::class,
             SyllabusSeeder::class,
             TimetableSeeder::class,
             ExamSeeder::class,

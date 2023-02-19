@@ -8,7 +8,7 @@
     </h1>
 
     @livewire('show-set-school')
-    
+
     @livewire('breadcrumbs', ['paths' => [
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],
         ['href'=> route('students.index'), 'text'=> 'students' , ],
