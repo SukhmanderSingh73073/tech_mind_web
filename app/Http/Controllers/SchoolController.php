@@ -8,8 +8,9 @@ use App\Http\Requests\SchoolUpdateRequest;
 use App\Models\School;
 use App\Models\User;
 use App\Services\School\SchoolService;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Request;
+
 use Spatie\Permission\Models\Role;
 
 class SchoolController extends Controller
@@ -18,6 +19,20 @@ class SchoolController extends Controller
      * @var SchoolService
      */
     public $school;
+
+    
+
+      /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getSchoolName(Request $request)
+    {
+        
+      return  School::where('code' , $request->q)->first() ;
+
+    }
 
        /**
      * Display a listing of the resource.

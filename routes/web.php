@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('get_school_name', [App\Http\Controllers\SchoolController::class, "getSchoolName"]);
 Route::get('test', [App\Http\Controllers\SchoolController::class, "testing"]);
 Route::get('/', [App\Http\Controllers\SchoolController::class, "homes"]);
 Route::get('/home', [App\Http\Controllers\SchoolController::class, "homes"]);

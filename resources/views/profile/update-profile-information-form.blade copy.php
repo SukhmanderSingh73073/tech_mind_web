@@ -63,7 +63,6 @@
 
         @endif
 
-        
         <div class="">
             
             <!-- Name -->

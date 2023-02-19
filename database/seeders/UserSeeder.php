@@ -126,7 +126,7 @@ class UserSeeder extends Seeder
 
         $admin = User::firstOrCreate([
             'id'                => 4,
-            'name'              => 'admin principal',
+            'name'              => 'admin',
             'email'             => 'admin@admin.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -194,7 +194,7 @@ class UserSeeder extends Seeder
 
         $principle = User::firstOrCreate([
             'id'                => 6,
-            'name'              => 'principle principal',
+            'name'              => 'principle',
             'email'             => 'principle@principle.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -229,7 +229,7 @@ class UserSeeder extends Seeder
 
         $office_incharge = User::firstOrCreate([
             'id'                => 7,
-            'name'              => 'office incharge',
+            'name'              => 'office-incharge',
             'email'             => 'office@incharge.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -263,7 +263,7 @@ class UserSeeder extends Seeder
 
         $class_teacher = User::create([
             'id'                => 8,
-            'name'              => 'class teacher',
+            'name'              => 'class-teacher',
             'email'             => 'class_teacher@teacher.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -303,7 +303,7 @@ class UserSeeder extends Seeder
 
         $teacher = User::create([
             'id'                => 9,
-            'name'              => 'school teacher',
+            'name'              => 'teacher',
             'email'             => 'teacher@teacher.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -341,7 +341,7 @@ class UserSeeder extends Seeder
 
         $student = User::create([
             'id'                => 10,
-            'name'              => 'class student',
+            'name'              => 'student',
             'email'             => 'student@student.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -383,7 +383,7 @@ class UserSeeder extends Seeder
 
         $parent = User::create([
             'id'                => 11,
-            'name'              => 'student parent',
+            'name'              => 'parent',
             'email'             => 'parent@parent.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -418,7 +418,7 @@ class UserSeeder extends Seeder
 
         $accountant = User::create([
             'id'                => 12,
-            'name'              => 'collage accountant',
+            'name'              => 'accountant',
             'email'             => 'accountant@accountant.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,
@@ -452,7 +452,7 @@ class UserSeeder extends Seeder
 
         $librarian = User::create([
             'id'                => 13,
-            'name'              => 'collage libratian',
+            'name'              => 'libratian',
             'email'             => 'libratian@librarian.com',
             'password'          => Hash::make('Qwerty@123'),
             'school_id'         => 1,

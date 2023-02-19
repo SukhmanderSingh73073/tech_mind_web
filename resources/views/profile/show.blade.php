@@ -3,9 +3,7 @@
 @section('title', __('Profile'))
 
 @section('content_header')
-    <h4 class="">
-        {{ __('Profile') }}
-    </h4>
+   
 
    {{-- @livewire('breadcrumbs', ['paths' => [
         ['href'=> route('dashboard'), 'text'=> 'Dashboard'],

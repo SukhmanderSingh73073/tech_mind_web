@@ -1,4 +1,4 @@
-@role('super-admin')
+@role('super-admin|manager|principle|incharge|admin|classteacher|teacher')
 <div  class="" >
         <div class="">
 

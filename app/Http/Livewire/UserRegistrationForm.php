@@ -10,6 +10,7 @@ class UserRegistrationForm extends Component
 {
     public $roles;
     public $schools;
+    public $schoolName;
 
     public function mount(SchoolService $schoolService)
     {
@@ -18,6 +19,7 @@ class UserRegistrationForm extends Component
         // $this->roles = Role::whereIn('name', ['teacher', 'student', 'parent'])->get();
     }
 
+   
     public function render()
     {
         return view('livewire.user-registration-form');
