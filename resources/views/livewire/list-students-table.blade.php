@@ -48,7 +48,6 @@
 
                 <td>
                     <button class="btn btn-primary" onclick="actionHandle('/dashboard/students/{{$student->id}}/edit')">Edit</button>
-
                 </td>
                 <td><button class="btn btn-secondary" onclick="actionHandle('/dashboard/students/{{$student->id}}')" data-url="students.edit" data-id="{{$student->id}}">View</button>
                 </td>

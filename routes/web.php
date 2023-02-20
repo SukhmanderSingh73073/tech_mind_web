@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+Route::get('get_class_sections', [App\Http\Controllers\SchoolController::class, "getClassSections"]);
 Route::get('get_school_name', [App\Http\Controllers\SchoolController::class, "getSchoolName"]);
-Route::get('test', [App\Http\Controllers\SchoolController::class, "testing"]);
+Route::get('test', [App\Http\Controllers\TestController::class, "testing"]);
 Route::get('/', [App\Http\Controllers\SchoolController::class, "homes"]);
 Route::get('/home', [App\Http\Controllers\SchoolController::class, "homes"]);
 

@@ -131,7 +131,7 @@ $studentRecord = $user->studentRecord;
             <option value="{{ $item['id'] }}" {{ $studentRecord->section_id == $item['id'] ? 'selected' : '' }}>{{ $item['name'] }}</option>
             @endforeach
             @else
-            <option value="" disabled>Select a class first</option>
+            <option value="" disabled >Select a class first</option>
             @endif
         </x-adminlte-select>
         <x-adminlte-input readonly value="{{ $studentRecord->admission_date }}" name="admission_date" label="Admission number *" placeholder="Student's admission number" fgroup-class="col-md-3" enable-old-support autocomplete="off" />

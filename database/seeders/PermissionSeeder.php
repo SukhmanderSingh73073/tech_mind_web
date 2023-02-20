@@ -228,6 +228,7 @@ class PermissionSeeder extends Seeder
             ["guard_name"  => 'web', 'name' => 'read notice',],
             ["guard_name"  => 'web', 'name' => 'update notice',],
             ["guard_name"  => 'web', 'name' => 'delete notice',],
+            
             ["guard_name"  => 'web', 'name' => 'read applicant',],
             ["guard_name"  => 'web', 'name' => 'update applicant',],
             ["guard_name"  => 'web', 'name' => 'delete applicant',],
@@ -757,6 +758,11 @@ class PermissionSeeder extends Seeder
             'read subjects',
             'update subjects',
             'delete subjects',
+            'read applicant',
+            'update applicant',
+            'delete applicant',
+            'change account application status',
+
 
 
 
@@ -830,6 +836,11 @@ class PermissionSeeder extends Seeder
             'read subjects',
             'update subjects',
             'delete subjects',
+            'read applicant',
+             'update applicant',
+             'delete applicant',
+             'change account application status',
+
         ]);
 
         // assign permission to classteacher

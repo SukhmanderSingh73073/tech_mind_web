@@ -38,7 +38,6 @@ class AccountApplicationController extends Controller
     public function index()
     {
         $this->authorize('viewAny', [User::class, 'applicant']);
-
         return view('pages.account-application.index');
     }
 

@@ -498,6 +498,19 @@ return [
                     'can'   => 'read staff-driver',
                 ],
 
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Verify Users',
+                    'route' => 'account-applications.index',
+                    'can'   => 'read applicant',
+                ],
+                
+                [
+                    'type'  => 'sidebar-menu-item',
+                    'text'  => 'Verify Staffs',
+                    'route' => 'account-applications.index',
+                    'can'   => 'read applicant',
+                ],
                 
 
             ],

@@ -1,7 +1,19 @@
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Academic year list</h4>
+<div class='card-header row'>
+
+<div class='col-6'>
+        @livewire('academic-year-set')
     </div>
+    <div class='col-2'>
+        <form action={{ route("academic-years.create") }}>
+            <x-adminlte-button type="submit" label="Create Academic-years" theme="primary"  />
+            <x-adminlte-input fgroup-class="col-md-0" type="hidden" name="type_data" value="1" />
+
+        </form>
+    </div>
+    
+</div>
+
     <div class="card-body">
         <x-adminlte-datatable id="school-list-table" :heads="['S/N','duration', 'action', '', ]" class='text-capitalize' bordered striped head-theme="dark" beautify>
             @foreach($academicYears as $academicYear)

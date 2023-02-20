@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SchoolSetRequest;
 use App\Http\Requests\SchoolStoreRequest;
 use App\Http\Requests\SchoolUpdateRequest;
+use App\Models\ClassGroup;
+use App\Models\MyClass;
 use App\Models\School;
+use App\Models\Section;
 use App\Models\User;
 use App\Services\School\SchoolService;
 use Illuminate\Http\Request;
@@ -21,6 +24,18 @@ class SchoolController extends Controller
     public $school;
 
     
+      /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getClassSections(Request $request)
+    {
+      
+     return Section::whereIn('my_class_id' , [$request->class_id])->get() ; 
+      
+    }
+
 
       /**
      * Display a listing of the resource.
@@ -29,9 +44,13 @@ class SchoolController extends Controller
      */
     public function getSchoolName(Request $request)
     {
-        
-      return  School::where('code' , $request->q)->first() ;
-
+      $school =  School::where('id' , '1')
+      ->first() ;
+      $groups = ClassGroup::where('school_id' , $school->id)->pluck('id')->toArray() ;
+      $classes = MyClass::whereIn('class_group_id' , $groups)->get() ;      
+      $school['classes'] = $classes ;
+     return $school ; 
+      
     }
 
        /**
