@@ -25,6 +25,15 @@ class SchoolService
         $this->user = $user;
     }
 
+     /**
+     * Get all schools.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getSchoolsByCode($code)
+    {
+        return School::where('code' , $code)->first();
+    }
     /**
      * Get all schools.
      *

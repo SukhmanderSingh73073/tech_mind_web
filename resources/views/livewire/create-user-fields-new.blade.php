@@ -48,7 +48,7 @@
     <x-adminlte-input  class="d-none" value="test" name="locality"  placeholder="{{$role}}'s Locality" fgroup-class="col-md-0" enable-old-support/>
     <x-adminlte-input name="aadhaar_number" placeholder="{{$role}}'s Aadhaar Number" fgroup-class="col-md-12 no-resize" label="Aadhaar Number *" enable-old-support fgroup-class="col-md-3"/>
     <x-adminlte-select name="religion" label="Religion *" fgroup-class="col-md-3" enable-old-support>
-        @php ($religions = ['Christianity', 'Islam', 'Hinduism', 'Buddhism','Sikhsm', 'Other'])
+        @php ($religions = ['Hinduism','Christianity', 'Islam',  'Buddhism','Sikhsm', 'Other'])
         @foreach ($religions as $religion)
             <option value="{{$religion}}"  >{{$religion}}</option>
         @endforeach
@@ -83,9 +83,9 @@
     <x-adminlte-input  name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input  name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
 
-    <x-adminlte-select style="visibility: hidden"  onchange="getClassSections(this)" id="select_class" label="Select Class *" fgroup-class="col-md-3" name="casss_id" enable-old-support class="text-capitalize">
+    <x-adminlte-select style="visibility: hidden"  onchange="getClassSections(this)" id="select_class"  fgroup-class="col-md-3" name="casss_id" enable-old-support class="text-capitalize">
                 </x-adminlte-select>
-                <x-adminlte-select style="visibility: hidden"  label="Select Section *" id="select_section" fgroup-class="col-md-3" name="section_id" enable-old-support class="text-capitalize">
+                <x-adminlte-select style="visibility: hidden"  id="select_section" fgroup-class="col-md-3" name="section_id" enable-old-support class="text-capitalize">
                 </x-adminlte-select>
 
 

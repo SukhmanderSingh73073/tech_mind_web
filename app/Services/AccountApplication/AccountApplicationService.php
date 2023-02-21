@@ -75,11 +75,14 @@ class AccountApplicationService
      *
      * @return AccountApplication
      */
-    public function createAccountApplication(int $userId, int $roleId)
+    public function createAccountApplication(int $userId, int $roleId ,String $applicant_type )
     {
         return AccountApplication::create([
             'role_id' => $roleId,
             'user_id' => $userId,
+            'applicant_type' => $applicant_type,
+
+            
         ]);
     }
 
