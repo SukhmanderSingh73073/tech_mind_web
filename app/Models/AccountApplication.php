@@ -13,7 +13,7 @@ class AccountApplication extends Model
     use HasFactory;
     use HasStatuses;
 
-    protected $fillable = ['role_id', 'user_id'];
+    protected $fillable = ['role_id', 'user_id','applicant_type'];
 
     /**
      * Get the user that owns the AccountApplication.

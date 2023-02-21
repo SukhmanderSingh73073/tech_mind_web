@@ -78,14 +78,14 @@
 
     <x-adminlte-input  name="previous_school" label="Previos School *" placeholder="Previos School"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
 
-    <x-adminlte-input  name="bank_name" label="Bank Name *" placeholder="Bank Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
-    <x-adminlte-input  name="ifsc" label="IFSC Code*" placeholder="IFSC Code"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
-    <x-adminlte-input  name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
-    <x-adminlte-input  name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
+    <x-adminlte-input value="--" name="bank_name" label="Bank Name *" placeholder="Bank Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3 d-none"/>
+    <x-adminlte-input value="--" name="ifsc" label="IFSC Code*" placeholder="IFSC Code"  enable-old-support autocomplete="off" fgroup-class="col-md-3 d-none"/>
+    <x-adminlte-input value="--" name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3 d-none"/>
+    <x-adminlte-input value="--" name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3 d-none"/>
 
-    <x-adminlte-select style="visibility: hidden"  onchange="getClassSections(this)" id="select_class"  fgroup-class="col-md-3" name="casss_id" enable-old-support class="text-capitalize">
+    <x-adminlte-select  onchange="getClassSections(this)" id="select_class" label="Select Class *" fgroup-class="col-md-3" name="casss_id" enable-old-support class="text-capitalize">
                 </x-adminlte-select>
-                <x-adminlte-select style="visibility: hidden"  id="select_section" fgroup-class="col-md-3" name="section_id" enable-old-support class="text-capitalize">
+                <x-adminlte-select   label="Select Section *" id="select_section" fgroup-class="col-md-3" name="section_id" enable-old-support class="text-capitalize">
                 </x-adminlte-select>
 
 
