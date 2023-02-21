@@ -7,6 +7,7 @@ use App\Http\Requests\RegistrationRequest;
 use App\Models\School;
 use App\Services\AccountApplication\AccountApplicationService;
 use App\Services\User\UserService;
+use Illuminate\Support\Str;
 
 class RegistrationController extends Controller
 {
@@ -38,7 +39,12 @@ class RegistrationController extends Controller
     public function register(RegistrationRequest $request)
     {
        // dd($request->all()) ;
-
+       $school_code = $request->school_code ;
+       $stringLength = Str::length($school_code);
+       $dd_type ="staff" ;
+       if($stringLength == 10){
+        $dd_type ="student" ;
+       }
 
         $school = School::where('id' , $request->school_id)->first() ;
         if (is_null($school)){
@@ -50,7 +56,7 @@ class RegistrationController extends Controller
         
         $user = $this->userService->createUser($request);
         $user->assignRole('applicant');
-        $accountApplication = $this->accountApplicationService->createAccountApplication($user->id, $request->role,"");
+        $accountApplication = $this->accountApplicationService->createAccountApplication($user->id, $request->role,$dd_type) ;
         $status = 'Application Received';
         $reason = 'Application has been received, we would reach out to you for further information';
         $accountApplication->setStatus($status, $reason);
