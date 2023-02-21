@@ -10,6 +10,7 @@
             'Photo' ,
             'Name',
             'Father Name',
+            'Type',
             'Qr Code' ,
             'Mobile' ,
             'Joining Date' ,
@@ -26,19 +27,21 @@
             
             ]" class='text-capitalize' bordered striped head-theme="dark" beautify>
 
+           
             @foreach($applicants as $applicant)
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td> <img id="profile-picture" src="{{ $applicant->profile_photo_url ?? asset('application-images/user-profile-image.png') }}" alt="Profile Picture" class="profile-image justify-center mx-auto d-block" height="50px" width="50px"></td>
                 <td>{{$applicant->name}}</td>
                 <td>{{$applicant->fname}}</td>
+                <td>{{$applicant->account_application['id']}}</td>
 
                 <td></td>
                 <td>{{$applicant->phone}}</td>
                 <td>{{$applicant->created_at}}</td>
 
                 <td><x-adminlte-select name="ddd">
-                        @php($mRoles = ['--Select--', 'Manager','Principle','Vice-Principle','Office-Incharge','Sub-Office-Incharge','Exam-Incharge','Sport-Incharge','Class Teacher','Teacher','Peon','Driver','Sub-Driver'])
+                        @php($mRoles = ['--Select--', 'Manager','Principle','Vice-Principle','Office-Incharge','Sub-Office-Incharge','Exam-Incharge','Sport-Incharge','Class Teacher','Teacher','Student','Peon','Driver','Sub-Driver'])
                         @foreach ($mRoles as $rol)
                         <option value="{{$rol}}">{{ $rol }}</option>
                         @endforeach

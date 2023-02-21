@@ -4,6 +4,7 @@ namespace App\Services\User;
 
 use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\AccountApplication;
 use App\Models\User;
 
 class UserService
@@ -44,6 +45,23 @@ class UserService
     public function getUserById($id)
     {
         return User::find($id);
+    }
+
+    /**
+     * Get users by role.
+     *
+     * @param string $role
+     *
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public function getAllUsersApplicants($role)
+    {
+        $items = AccountApplication::orderBy('applicant_type')->pluck('user_id')->toArray(); 
+        return User::Role($role)
+        ->whereIn('id', $items)
+        ->where('school_id', auth()->user()->school_id)
+        //->with('school')
+        ->get();
     }
 
     /**

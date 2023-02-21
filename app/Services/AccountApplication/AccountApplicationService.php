@@ -38,9 +38,12 @@ class AccountApplicationService
      */
     public function getAllOpenApplicantsAndApplicationRecords()
     {
-        return $this->userService->getUsersByRole('applicant')->load('accountApplication', 'accountApplication.statuses')->filter(function ($applicant) {
-            $status = $applicant->accountApplication->status ?? null;
 
+     
+        return $this->userService->getAllUsersApplicants('applicant')
+        ->load('accountApplication', 'accountApplication.statuses')
+        ->filter(function ($applicant) {
+            $status = $applicant->accountApplication->status ?? null;
             if ($status != 'rejected') {
                 return true;
             } else {

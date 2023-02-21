@@ -505,12 +505,7 @@ return [
                     'can'   => 'read applicant',
                 ],
                 
-                [
-                    'type'  => 'sidebar-menu-item',
-                    'text'  => 'Verify Staffs',
-                    'route' => 'account-applications.index',
-                    'can'   => 'read applicant',
-                ],
+             
                 
 
             ],
