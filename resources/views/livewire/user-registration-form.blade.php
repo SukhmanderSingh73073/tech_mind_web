@@ -4,15 +4,48 @@
             <div class="row">
                 <x-adminlte-input maxlength='11' id="code" onchange="getSchool(this)" name="school_code"
                     label="School Code *" placeholder="School Code" fgroup-class="col-md-2" enable-old-support />
-                    <x-adminlte-input readonly id="school_name" name="school_nae" label="School Name" placeholder="School Code"
+                <x-adminlte-input readonly id="school_name" name="school_nae" label="School Name" placeholder="School Code"
                     fgroup-class="col-md-10" enable-old-support />
-                </div>
-                <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" style="margin-top: -71px;">
-                    <x-adminlte-input hidden maxlength='11' id="code-inp" name="school_code"
-                       placeholder="School Code"   enable-old-support />
-                    <x-adminlte-input  hidden  readonly id="school_name-inp" name="school_name"   placeholder="School Code"
-                      enable-old-support />
+            </div>
+            {{-- <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" style="margin-top: -71px;"> --}}
+
+            <div class="row" id="student-form-div">
+                {{-- for Student register --}}
+                {{-- @livewire('create-user-fields') --}}
+                <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data"
+                    autocomplete="off">
+                    <x-adminlte-input hidden maxlength='11' id="code-inp" name="school_code" placeholder="School Code"
+                        enable-old-support />
+                    <x-adminlte-input hidden readonly id="school_name-inp" name="school_name" placeholder="School Code"
+                        enable-old-support />
                     <x-adminlte-input class="d-none" id="school_id" name="school_id" fgroup-class="col-md-0" />
+                    <x-adminlte-select name="role" enable-old-support class="text-capitalize d-none">
+                        @foreach ($roles as $item)
+                            <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
+                        @endforeach
+                    </x-adminlte-select>
+                    <x-adminlte-select name="school" fgroup-class="d-none" enable-old-support class="text-capitalize">
+                        @foreach ($schools as $item)
+                            <option value="{{ $item['id'] }}">{{ $item['name'] }} - {{ $item['address'] }}</option>
+                        @endforeach
+                    </x-adminlte-select>
+
+                    @livewire('create-user-fields', ['role' => 'Student'])
+                    @csrf
+                    <div class='col-12 my-2'>
+                        <x-adminlte-button label="Register" theme="primary" icon="fas fa-key" type="submit" class="col-md-3"/>
+                    </div>
+                </form>
+            </div>
+            <div class="row d-none" id="staff-form-div">
+                {{-- for staff register --}}
+                {{-- @livewire('create-user-fields-staff') --}}
+                <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
+                    <x-adminlte-input hidden maxlength='11' id="code-inp" name="school_code" placeholder="School Code"
+                    enable-old-support />
+                <x-adminlte-input hidden readonly id="school_name-inp" name="school_name" placeholder="School Code"
+                    enable-old-support />
+                <x-adminlte-input class="d-none" id="school_id" name="school_id" fgroup-class="col-md-0" />
                 <x-adminlte-select name="role" enable-old-support class="text-capitalize d-none">
                     @foreach ($roles as $item)
                         <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
@@ -23,19 +56,22 @@
                         <option value="{{ $item['id'] }}">{{ $item['name'] }} - {{ $item['address'] }}</option>
                     @endforeach
                 </x-adminlte-select>
-                <div class="row" id="student-form-div">
-                    {{-- for Student register --}}
-                    @livewire('create-user-fields')
-                </div>
-                <div class="row d-none" id="staff-form-div">
-                    {{-- for staff register --}}
-                    @livewire('create-user-fields-staff')
-                </div>
-                @csrf
-                <div class='col-12 my-2'>
-                    <x-adminlte-button label="Register" theme="primary" icon="fas fa-key" type="submit" class="col-md-3" />
-                </div>
-            </form>
+                <x-adminlte-input hidden  name="role" value="applicant"
+                    enable-old-support />
+                    <x-adminlte-input hidden  name="type" value="staff"
+                    enable-old-support />
+                    @livewire('create-user-fields-staff', ['role' => 'applicants'])
+                    @csrf
+                    <div class='col-12 my-2'>
+                        <x-adminlte-button label="Register" theme="primary" icon="fas fa-key" type="submit" class="col-md-3"/>
+                    </div>
+                </form>
+
+            </div>
+            <div class='col-12 my-2'>
+                {{-- <x-adminlte-button label="Register" theme="primary" icon="fas fa-key" type="submit" class="col-md-3" /> --}}
+            </div>
+            {{-- </form> --}}
         </div>
     @else
         Couldn't create user, Roles not found.
@@ -66,25 +102,24 @@
 
     function getSchool() {
         var w = $("#code").val();
-          $("#code-inp").val(w);
+        $("#code-inp").val(w);
         // school_name
         var apiCall = false;
         if (w.length == 10) {
             let studentElm = document.getElementById("student-form-div"); // for form
             studentElm.classList.add("d-block");
             let staffElm = document.getElementById("staff-form-div"); // for form
-                staffElm.classList.add("d-none");
+            staffElm.classList.add("d-none");
             //document.getElementById("select_class").style.visibility="visible";
             // document.getElementById("select_section").style.visibility="visible";
             apiCall = true;
         } else if (w.length == 11) {
             apiCall = true;
+            let studentElm = document.getElementById("student-form-div"); // for form
+            studentElm.classList.add("d-none");
+            let staffElm = document.getElementById("staff-form-div"); // for form
+            staffElm.classList.add("d-block");
             if (w[w.length - 1] == 'S') {
-                let studentElm = document.getElementById("student-form-div"); // for form
-                studentElm.classList.add("d-none");
-
-                let staffElm = document.getElementById("staff-form-div"); // for form
-                staffElm.classList.add("d-block");
                 //  document.getElementById("select_class").style.visibility="hidden";
                 // document.getElementById("select_section").style.visibility="hidden";
 
