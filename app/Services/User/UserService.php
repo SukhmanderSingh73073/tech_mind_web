@@ -58,6 +58,8 @@ class UserService
     {
         $items = AccountApplication::orderBy('applicant_type')
         ->pluck('user_id')->toArray(); 
+       
+
         return User::Role($role)
         ->whereIn('id', $items)
         ->where('school_id', auth()->user()->school_id)
