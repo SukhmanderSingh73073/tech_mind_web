@@ -2,6 +2,7 @@
     @isset($roles)
         <div class="card-body">
             <div class="row">
+
                 <x-adminlte-input maxlength='11' id="code" onchange="getSchool(this)" name="school_code"
                     label="School Code *" placeholder="School Code" fgroup-class="col-md-2" enable-old-support />
                 <x-adminlte-input readonly id="school_name" name="school_nae" label="School Name" placeholder="School Code"
@@ -46,21 +47,21 @@
                 <x-adminlte-input hidden readonly id="school_name-inp" name="school_name" placeholder="School Code"
                     enable-old-support />
                 <x-adminlte-input class="d-none" id="school_id" name="school_id" fgroup-class="col-md-0" />
-                <x-adminlte-select name="role" enable-old-support class="text-capitalize d-none">
+                {{-- <x-adminlte-select name="role" enable-old-support class="text-capitalize d-none">
                     @foreach ($roles as $item)
                         <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
                     @endforeach
-                </x-adminlte-select>
+                </x-adminlte-select> --}}
                 <x-adminlte-select name="school" fgroup-class="d-none" enable-old-support class="text-capitalize">
                     @foreach ($schools as $item)
                         <option value="{{ $item['id'] }}">{{ $item['name'] }} - {{ $item['address'] }}</option>
                     @endforeach
                 </x-adminlte-select>
-                <x-adminlte-input hidden  name="role" value="applicant"
+                <x-adminlte-input hidden  name="role" value="{{isset($roles[0])?$roles[0]['id']:1}}"
                     enable-old-support />
-                    <x-adminlte-input hidden  name="type" value="staff"
+                    <x-adminlte-input hidden  name="type" value="Student"
                     enable-old-support />
-                    @livewire('create-user-fields-staff', ['role' => 'applicants'])
+                    @livewire('create-user-fields-staff', ['role' => 'Student'])
                     @csrf
                     <div class='col-12 my-2'>
                         <x-adminlte-button label="Register" theme="primary" icon="fas fa-key" type="submit" class="col-md-3"/>
