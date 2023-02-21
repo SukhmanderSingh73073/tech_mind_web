@@ -8,11 +8,16 @@
             <p class="text-secondary">
                 {{__('All fields marked * are required')}}
             </p>
+            <div>
+
+            
             <x-adminlte-input name="name" placeholder="Enter name of school" label="School Name *" enable-old-support fgroup-class="col-md-6 mb-3"/>
             <x-adminlte-textarea name="address" placeholder="Enter school branch address" label="School Address *" enable-old-support fgroup-class="col-md-6 my-3"/>
             <x-adminlte-input name="initials" placeholder="Enter school initials" label="School initials" enable-old-support fgroup-class="col-md-6 my-3"/>
             <x-adminlte-input name="phone" placeholder="Enter school contact number" label="School contact number" enable-old-support fgroup-class="col-md-6 my-3"/>
             <x-adminlte-input name="email" placeholder="Enter school email" label="School Email Address" enable-old-support fgroup-class="col-md-6 my-3"/>
+            </div>
+            
             @csrf
             <x-adminlte-button label="  Create" theme="primary" icon="fas fa-key" type="submit" class="col-md-3"/>
         </form>
