@@ -88,13 +88,7 @@
                 <x-adminlte-select style="visibility: hidden"  label="Select Section *" id="select_section" fgroup-class="col-md-3" name="section_id" enable-old-support class="text-capitalize">
                 </x-adminlte-select>
 
-
-
-
-
     @section('plugins.BsCustomFileInput', true)
-
-
     <!-- <x-adminlte-select name="sub_caste" label="Sub-Caste *" fgroup-class="col-md-3" enable-old-support>
         @php ($castes = ['ABC', 'DEF', 'GHI'])
         @foreach ($castes as $caste)

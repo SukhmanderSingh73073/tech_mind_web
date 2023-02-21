@@ -294,7 +294,7 @@ return [
             'route' => 'view_check_student',
             'can'   => 'read self-attendance',
         ],
-        
+
 
 
         // [
@@ -504,14 +504,14 @@ return [
                     'route' => 'account-applications.index',
                     'can'   => 'read applicant',
                 ],
-                
+
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Verify Staffs',
                     'route' => 'account-applications.index',
                     'can'   => 'read applicant',
                 ],
-                
+
 
             ],
         ],
@@ -750,7 +750,7 @@ return [
                     'route' => 'view_check_student',
                     'can'   => 'read self-attendance',
                 ],
-                
+
                 [
                     'type'  => 'sidebar-menu-item',
                     'text'  => 'Student Attendance Register',
@@ -1002,7 +1002,7 @@ return [
 
             ],
         ],
-   
+
         ///SOFTWARE PLAN MANAGMENT ok
         [
             'type' => 'sidebar-menu-item',
@@ -1058,7 +1058,7 @@ return [
                     'route' => 'self_leave',
                     'can'   => 'read leave',
                 ],
-               
+
 
 
 
