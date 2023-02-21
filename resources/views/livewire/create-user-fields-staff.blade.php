@@ -91,7 +91,7 @@
         @endforeach
     </x-adminlte-select>
 
-    <x-adminlte-input name="previous_school" label="Previos School *" placeholder="Previos School" enable-old-support
+    <x-adminlte-input value="--" hidden name="previous_school"  placeholder="Previos School" enable-old-support
         autocomplete="off" fgroup-class="col-md-3" />
 
     <x-adminlte-input value="--" name="bank_name" label="Bank Name *" placeholder="Bank Name" enable-old-support

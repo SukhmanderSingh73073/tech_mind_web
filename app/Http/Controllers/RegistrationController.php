@@ -37,6 +37,7 @@ class RegistrationController extends Controller
 
     public function register(RegistrationRequest $request)
     {
+        // dd($request->all());
         $school = School::where('id' , $request->school_id)->first() ;
         if (is_null($school)){
             return back()->with('failed', 'Please enter a valid school code');
