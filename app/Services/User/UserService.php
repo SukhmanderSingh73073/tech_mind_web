@@ -56,11 +56,11 @@ class UserService
      */
     public function getAllUsersApplicants($role)
     {
-        $items = AccountApplication::orderBy('applicant_type')->pluck('user_id')->toArray(); 
+        $items = AccountApplication::orderBy('applicant_type')
+        ->pluck('user_id')->toArray(); 
         return User::Role($role)
         ->whereIn('id', $items)
         ->where('school_id', auth()->user()->school_id)
-        //->with('school')
         ->get();
     }
 

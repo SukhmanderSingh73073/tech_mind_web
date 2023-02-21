@@ -64,9 +64,6 @@
     <x-adminlte-input name="password" label=" Password *" placeholder="input a password" fgroup-class="col-md-3" type="password"/>
     <x-adminlte-input name="password_confirmation" label="Confirm password *" placeholder="input password again" fgroup-class="col-md-3" type="password"/>
 
-
-
-
     <x-adminlte-input class="d-none" name="last_name"  placeholder="{{$role}}'s last name" fgroup-class="col-md-0" enable-old-support/>
     <x-adminlte-input class="d-none" name="other_names"  value="test" placeholder="{{$role}}'s other names " fgroup-class="col-md-0" enable-old-support/>
      <x-adminlte-select class="d-none" name="blood_group"  fgroup-class="col-md-0" enable-old-support>
@@ -83,15 +80,11 @@
     <x-adminlte-input  name="holder_name" label="Account Holder Name *" placeholder="Account Holder Name"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
     <x-adminlte-input  name="acc_no" label="Account Number *" placeholder="Account Number"  enable-old-support autocomplete="off" fgroup-class="col-md-3"/>
 
-
-
-
-
-
-
+    <x-adminlte-select  onchange="getClassSections(this)" id="select_class" label="Select Class *" fgroup-class="col-md-3" name="casss_id" enable-old-support class="text-capitalize">
+    </x-adminlte-select>
+    <x-adminlte-select   label="Select Section *" id="select_section" fgroup-class="col-md-3" name="section_id" enable-old-support class="text-capitalize">
+    </x-adminlte-select>
     @section('plugins.BsCustomFileInput', true)
-
-
     <!-- <x-adminlte-select name="sub_caste" label="Sub-Caste *" fgroup-class="col-md-3" enable-old-support>
         @php ($castes = ['ABC', 'DEF', 'GHI'])
         @foreach ($castes as $caste)
@@ -99,10 +92,7 @@
         @endforeach
     </x-adminlte-select> -->
 
-
-
     @section('plugins.TempusDominusBs4', true)
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("profile-image-input").addEventListener("change", function() {

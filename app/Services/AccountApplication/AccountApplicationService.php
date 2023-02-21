@@ -38,8 +38,6 @@ class AccountApplicationService
      */
     public function getAllOpenApplicantsAndApplicationRecords()
     {
-
-     
         return $this->userService->getAllUsersApplicants('applicant')
         ->load('accountApplication', 'accountApplication.statuses')
         ->filter(function ($applicant) {
@@ -51,7 +49,6 @@ class AccountApplicationService
             }
         });
     }
-
     /**
      * Get all  applicants application records in the school.
      *

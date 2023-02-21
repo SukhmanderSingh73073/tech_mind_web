@@ -29,12 +29,14 @@
 
            
             @foreach($applicants as $applicant)
+          
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td> <img id="profile-picture" src="{{ $applicant->profile_photo_url ?? asset('application-images/user-profile-image.png') }}" alt="Profile Picture" class="profile-image justify-center mx-auto d-block" height="50px" width="50px"></td>
                 <td>{{$applicant->name}}</td>
                 <td>{{$applicant->fname}}</td>
-                <td>{{$applicant->account_application['id']}}</td>
+                <td>{{$applicant->accountApplication->applicant_type}}</td>
+                
 
                 <td></td>
                 <td>{{$applicant->phone}}</td>
