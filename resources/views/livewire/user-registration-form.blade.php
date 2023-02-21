@@ -20,7 +20,9 @@
                         <option value="{{ $item['id'] }}">{{ $item['name'] }} - {{ $item['address'] }}</option>
                     @endforeach
                 </x-adminlte-select>
+                {{-- for Student login --}}
                 @livewire('create-user-fields')
+                {{-- @livewire('create-sta-fields') --}}
                 @csrf
 
                 <div class="row">
